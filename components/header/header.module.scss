@@ -2,13 +2,17 @@
 @import "/styles/mixins";
 
 .Header {
+  width: 100%;
   height: 5rem;
   padding: 0.25rem 1.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 
   .imageContainer {
     position: relative;
@@ -20,7 +24,7 @@
     display: none;
     ul {
       @include flexCenter(row);
-      gap: 2rem;
+      gap: 1.5rem;
 
       a {
         color: #ffffff;
@@ -61,7 +65,7 @@
 
 @media (min-width: 1024px) {
   .Header {
-    padding: 0.25rem 5rem;
+    padding: 0.25rem 3rem;
     nav {
       display: block;
       a:hover::before,
