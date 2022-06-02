@@ -1,0 +1,73 @@
+@import "/styles/variables";
+@import "/styles/mixins";
+
+.Header {
+  height: 5rem;
+  padding: 0.25rem 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  .imageContainer {
+    position: relative;
+    width: 50px;
+    height: 100%;
+  }
+
+  nav {
+    display: none;
+    ul {
+      @include flexCenter(row);
+      gap: 2rem;
+
+      a {
+        color: #ffffff;
+        font-family: "Gambetta";
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        position: relative;
+
+        &::before,
+        &::after {
+          content: "";
+          width: 0;
+          height: 2px;
+          background-color: $purple-primary;
+          border-radius: 1rem;
+          position: absolute;
+          bottom: -6px;
+          transition: 200ms;
+        }
+
+        &:active::before,
+        &:active::after {
+          width: 35%;
+        }
+
+        &::before {
+          left: 50%;
+        }
+        &::after {
+          right: 50%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .Header {
+    padding: 0.25rem 5rem;
+    nav {
+      display: block;
+      a:hover::before,
+      a:hover::after {
+        width: 35%;
+      }
+    }
+  }
+}
