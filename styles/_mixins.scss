@@ -1,0 +1,20 @@
+@mixin flexCenter($dir) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// media queries
+@mixin desktop() {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
