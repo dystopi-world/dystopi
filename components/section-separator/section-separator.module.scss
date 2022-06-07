@@ -1,0 +1,22 @@
+@import "/styles/mixins";
+
+.SectionSeparator {
+  @include flexCenter(row);
+  gap: 1rem;
+  padding: 1rem 0 0.5rem;
+  margin: 0 auto;
+
+  .decorLine {
+    width: 30%;
+    height: 3px;
+    transform: translateY(-0.25rem);
+
+    &:first-of-type {
+      background: linear-gradient(to left, #a967ff, #a967ff18);
+    }
+
+    &:last-of-type {
+      background: linear-gradient(to right, #a967ff, #a967ff18);
+    }
+  }
+}

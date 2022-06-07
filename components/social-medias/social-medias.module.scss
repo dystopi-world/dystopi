@@ -1,0 +1,36 @@
+@import "/styles/mixins";
+@import "/styles/variables";
+
+.SocialMedias {
+  transform: translateY(-30rem);
+  width: 3rem;
+  position: sticky;
+  top: 80%;
+  right: 2rem;
+  float: right;
+  display: none;
+
+  ul {
+    @include flexCenter(column);
+    gap: 1.75rem;
+    color: $purple-primary;
+    font-size: 1.5rem;
+
+    li {
+      transition: 150ms;
+
+      &:active {
+        color: $purple-secondary;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .SocialMedias {
+    display: block;
+    ul li:hover {
+      color: $purple-secondary;
+    }
+  }
+}
