@@ -1,0 +1,42 @@
+@import "/styles/mixins";
+@import "/styles/variables";
+
+.Characters {
+  @include flexCenter(column);
+
+  .characterContainer {
+    position: relative;
+    .arrow {
+      position: absolute;
+      top: 40%;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .arrowLeft {
+      left: 1rem;
+    }
+
+    .arrowRight {
+      right: 1rem;
+    }
+  }
+
+  .Character {
+    text-align: center;
+    padding: 0.5rem;
+    .imageContainer {
+      position: relative;
+      min-width: 300px;
+      min-height: 300px;
+    }
+
+    h5 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    p {
+      color: $text-secondary;
+    }
+  }
+}
