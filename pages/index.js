@@ -2,6 +2,7 @@ import Head from "next/head";
 import Scene from "../components/3d/scene/scene";
 import Landing from "../components/landing/landing";
 import SectionSeparator from "../components/section-separator/section-separator";
+import SocialMedias from "../components/social-medias/social-medias";
 import Story from "../components/story/story";
 import styles from "../styles/Home.module.scss";
 
@@ -14,6 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Landing />
+      <SocialMedias />
       <Story />
       <SectionSeparator />
       <Scene />

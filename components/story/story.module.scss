@@ -3,11 +3,11 @@
 
 .Story {
   min-height: 100vh;
-  padding: 1rem;
+  padding: 5rem;
 
   h2 {
     text-align: center;
-    max-width: 30ch;
+    max-width: 35ch;
     margin: 5rem auto;
   }
 
@@ -18,5 +18,34 @@
   .innerContainer {
     @include flexCenter(column-reverse);
     gap: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .Story {
+    .outerContainer {
+      @include flexCenter(row);
+      gap: 5rem;
+
+      .instructions {
+        align-self: flex-end;
+        font-size: 1.5rem;
+        transform: translateY(-4rem);
+
+        h5 {
+          margin: 0.25rem 0;
+        }
+      }
+    }
+    .innerContainer {
+      @include flexCenter(row);
+      gap: 5rem;
+
+      h4 {
+        align-self: flex-start;
+        font-size: 3rem;
+        transform: translateY(4rem);
+      }
+    }
   }
 }

@@ -2,10 +2,11 @@
 @import "/styles/variables";
 
 .SocialMedias {
-  transform: translateY(-30rem);
+  transform: translateY(5rem);
   width: 3rem;
+  position: -webkit-sticky;
   position: sticky;
-  top: 80%;
+  top: 15%;
   right: 2rem;
   float: right;
   display: none;

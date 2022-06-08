@@ -3,6 +3,29 @@
 
 .Characters {
   @include flexCenter(column);
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: -40%;
+    width: 2px;
+    height: 160%;
+    background: linear-gradient(to bottom, #a967ff18, #a967ff98, #a967ff18);
+    border-radius: 5px;
+  }
+  &::before {
+    left: -0.5rem;
+  }
+  &::after {
+    right: -0.5rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+  }
 
   .characterContainer {
     position: relative;
@@ -38,5 +61,11 @@
     p {
       color: $text-secondary;
     }
+  }
+}
+
+@media (min-width: 1024px) {
+  .Characters {
+    max-width: 500px;
   }
 }

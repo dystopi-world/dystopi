@@ -26,7 +26,6 @@ function Story() {
           </h5>
         </div>
       </div>
-      <SocialMedias />
     </section>
   );
 }
