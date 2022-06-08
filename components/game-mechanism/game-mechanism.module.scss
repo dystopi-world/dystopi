@@ -1,2 +1,75 @@
+@import "/styles/mixins";
+@import "/styles/variables";
 .GameMechanism {
+  min-height: 80vh;
+
+  .container {
+    position: relative;
+    z-index: 10;
+    @include flexCenter(column);
+
+    h2 {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      margin: 2rem 0 5rem;
+      max-width: 50ch;
+      color: $text-secondary;
+    }
+  }
+
+  .cards {
+    @include flexCenter(column);
+    border: 1px solid $purple-primary;
+    border-radius: 0.75rem;
+    position: relative;
+    width: 90%;
+
+    &::before {
+      content: "";
+      width: calc(100% + 8px);
+      height: calc(100% + 8px);
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      border: 1px solid $purple-primary;
+      border-radius: 0.75rem;
+      z-index: -1;
+    }
+  }
+
+  .card {
+    width: 100%;
+    height: 25%;
+    @include flexCenter(column);
+    border-bottom: 1px solid $purple-primary;
+    min-height: 50vh;
+    cursor: pointer;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .GameMechanism {
+    .cards {
+      @include flexCenter(row);
+    }
+
+    .card {
+      width: 25%;
+      height: 100%;
+      border-right: 1px solid $purple-primary;
+      min-height: 50vh;
+      cursor: pointer;
+
+      &:last-of-type {
+        border-right: none;
+      }
+    }
+  }
 }

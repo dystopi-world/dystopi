@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Scene from "../components/3d/scene/scene";
+import GameMechanism from "../components/game-mechanism/game-mechanism";
 import Landing from "../components/landing/landing";
 import SectionSeparator from "../components/section-separator/section-separator";
 import SocialMedias from "../components/social-medias/social-medias";
@@ -17,6 +18,8 @@ export default function Home() {
       <Landing />
       <SocialMedias />
       <Story />
+      <SectionSeparator />
+      <GameMechanism />
       <SectionSeparator />
       <Scene />
     </div>

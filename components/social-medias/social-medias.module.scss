@@ -10,6 +10,7 @@
   right: 2rem;
   float: right;
   display: none;
+  z-index: 100;
 
   ul {
     @include flexCenter(column);
