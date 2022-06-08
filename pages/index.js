@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Scene from "../components/3d/scene/scene";
 import Landing from "../components/landing/landing";
 import SectionSeparator from "../components/section-separator/section-separator";
 import Story from "../components/story/story";
@@ -15,6 +16,7 @@ export default function Home() {
       <Landing />
       <Story />
       <SectionSeparator />
+      <Scene />
     </div>
   );
 }
