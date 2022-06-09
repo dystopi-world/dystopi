@@ -8,7 +8,7 @@ function Model({ ...props }) {
   const { nodes, materials } = useGLTF("/3d/coin/scene.gltf");
   return (
     <group ref={group} {...props} dispose={null}>
-      <group position={[0, 0, 0]} rotation={[0, props.mouseX, -0.04]}>
+      <group position={[0, 0.45, 0]} rotation={[0, props.mouseX, -0.04]}>
         <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
           <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
             <mesh
@@ -57,8 +57,7 @@ function Scene() {
         setIsGrabbing(false);
       }}
     >
-      <h2>Az érmét meg lehet fogni és tudod úgy is forgatni!</h2>
-      <Canvas camera={{ position: [0, 0, 1] }}>
+      <Canvas camera={{ position: [0, 0, 1.1] }}>
         <Suspense fallback={null}>
           <ambientLight />
           <spotLight

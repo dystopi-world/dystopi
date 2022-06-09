@@ -1,6 +1,7 @@
 import Image from "next/image";
 import DecorSquare from "../decor-square/decor-square";
 import styles from "./game-mechanism.module.scss";
+import InfoCards from "./info-cards/info-cards";
 function GameMechanism() {
   return (
     <section className={styles.GameMechanism}>
@@ -35,6 +36,7 @@ function GameMechanism() {
           </div>
         </div>
       </div>
+      <InfoCards />
     </section>
   );
 }
