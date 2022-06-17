@@ -5,7 +5,7 @@
   width: 100%;
   height: 5rem;
   padding: 0.25rem 1.5rem;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -25,10 +25,12 @@
     ul {
       @include flexCenter(row);
       gap: 1.5rem;
+      transform: translateX(3rem);
 
       a {
         color: #ffffff;
         font-family: "Gambetta";
+        font-size: 0.8rem;
         font-style: normal;
         font-weight: 500;
         letter-spacing: 0.1em;

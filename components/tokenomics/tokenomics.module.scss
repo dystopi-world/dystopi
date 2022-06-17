@@ -1,0 +1,80 @@
+@import "/styles/mixins";
+@import "/styles/variables";
+
+.Tokenomics {
+  padding: 2rem 0 5rem;
+  background: linear-gradient(to bottom, transparent, #1e1625);
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    max-width: 70ch;
+    text-align: center;
+    margin: 2rem auto 5rem;
+  }
+}
+
+.Diagram {
+  width: 80%;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 3px solid red;
+  position: relative;
+  @include flexCenter(row);
+
+  .dashedCircle {
+    width: 60%;
+    height: 60%;
+    border: 3px dashed $purple-primary;
+    border-radius: 50%;
+    position: relative;
+    animation: rotateToLeft 30s linear infinite;
+    @include flexCenter(row);
+
+    .content {
+      width: 70%;
+      height: 70%;
+      border-radius: 50%;
+      background-color: #332441;
+      animation: rotateToRight 30s linear infinite;
+      @include flexCenter(column);
+
+      h6,
+      p {
+        align-items: center;
+        margin: 0 auto;
+        font-weight: 300;
+      }
+
+      h6 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        color: $text-secondary;
+      }
+    }
+  }
+}
+
+@keyframes rotateToRight {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateToLeft {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

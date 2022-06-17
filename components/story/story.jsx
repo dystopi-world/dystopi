@@ -4,7 +4,7 @@ import styles from "./story.module.scss";
 
 function Story() {
   return (
-    <section className={styles.Story}>
+    <section className={styles.Story} id="story">
       <h2>
         A NEW GENERATION <strong>NFT GAME</strong> TO SAVE THE EARTH FROM ALIEN
         INVASION

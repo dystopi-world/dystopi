@@ -14,16 +14,16 @@ function Header() {
             <a href="#home">HOME</a>
           </li>
           <li>
-            <a href="#game-mechanism">GAME MECHANISM</a>
+            <a href="#story">STORY</a>
           </li>
           <li>
-            <a href="#story">STORY</a>
+            <a href="#game-mechanism">GAME MECHANISM</a>
           </li>
           <li>
             <a href="#nfts">NFTS</a>
           </li>
           <li>
-            <a href="#tokemonics">TOKEMONICS</a>
+            <a href="#tokenomics">TOKEMONICS</a>
           </li>
           <li>
             <a href="#whitepaper">WHITEPAPER</a>

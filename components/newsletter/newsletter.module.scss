@@ -1,0 +1,33 @@
+@import "/styles/mixins";
+@import "/styles/variables";
+
+.Newsletter {
+  min-height: 30vh;
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, #1e1625, transparent);
+  @include flexCenter(column);
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $text-secondary;
+    margin: 0.75rem 0 3rem;
+  }
+
+  form {
+    @include flexCenter(row);
+    gap: 1rem;
+  }
+
+  input {
+    min-width: 300px;
+    width: 60vh;
+    padding: 0.75rem 0.5rem;
+    background-color: transparent;
+    border: 1px solid $purple-primary;
+    color: $text-primary;
+  }
+}

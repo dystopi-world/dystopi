@@ -1,0 +1,43 @@
+@import "/styles/mixins";
+@import "/styles/variables";
+
+.Roadmap {
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+    margin: 2rem auto 4rem;
+    color: $text-secondary;
+    max-width: 70ch;
+  }
+
+  .buttonGroup {
+    position: absolute;
+    right: 8rem;
+    top: 50%;
+    button {
+      margin: 0 0.5rem;
+      padding: 0.5rem;
+      color: $text-primary;
+      background-color: transparent;
+      border: 1px solid $purple-primary;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: calc(100% + 6px);
+        height: calc(100% + 6px);
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        border: 1px solid $purple-primary;
+      }
+    }
+  }
+  .sliderContainer {
+    margin: 8rem 0 2rem;
+    padding: 0 2rem;
+  }
+}

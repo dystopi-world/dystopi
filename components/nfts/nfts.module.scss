@@ -1,0 +1,12 @@
+.Nfts {
+  min-height: 70vh;
+
+  h2 {
+    text-align: center;
+  }
+  & > p {
+    text-align: center;
+    margin: 1rem auto 3rem;
+    max-width: 70ch;
+  }
+}

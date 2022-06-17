@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function Landing() {
   return (
-    <section className={styles.Landing}>
+    <section className={styles.Landing} id="home">
       <Image
         src="/images/landing.png"
         layout="fill"

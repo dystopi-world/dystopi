@@ -4,7 +4,7 @@ import styles from "./game-mechanism.module.scss";
 import InfoCards from "./info-cards/info-cards";
 function GameMechanism() {
   return (
-    <section className={styles.GameMechanism}>
+    <section className={styles.GameMechanism} id="game-mechanism">
       <Image
         src={"/images/game-mechanism.png"}
         layout="fill"

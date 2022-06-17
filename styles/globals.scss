@@ -5,6 +5,11 @@
   padding: 0;
   margin: 0;
   font-weight: 400;
+  font-family: gambetta;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -30,4 +35,13 @@ ul {
 
 section {
   position: relative;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+@font-face {
+  font-family: gambetta;
+  src: url("./gambetta-font/gambetta-light.otf") format("opentype");
 }

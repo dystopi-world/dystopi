@@ -14,7 +14,7 @@
 
     p {
       text-align: center;
-      margin: 2rem 0 5rem;
+      margin: 2rem 0 4rem;
       max-width: 50ch;
       color: $text-secondary;
     }
@@ -58,13 +58,14 @@
   .GameMechanism {
     .cards {
       @include flexCenter(row);
+      width: 80%;
     }
 
     .card {
       width: 25%;
       height: 100%;
       border-right: 1px solid $purple-primary;
-      min-height: 50vh;
+      min-height: 60vh;
       cursor: pointer;
 
       &:last-of-type {
