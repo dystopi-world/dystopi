@@ -37,8 +37,21 @@ section {
   position: relative;
 }
 
+section > p {
+  padding: 0 1rem;
+}
+
 h2 {
-  font-size: 2rem;
+  font-size: 1.3rem;
+}
+
+@media (min-width: 767px) {
+  h2 {
+    font-size: 2rem;
+  }
+  section > p {
+    padding: 0;
+  }
 }
 
 @font-face {

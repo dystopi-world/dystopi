@@ -17,9 +17,8 @@
 }
 
 .Diagram {
-  width: 80%;
-  width: 500px;
-  height: 500px;
+  width: 320px;
+  height: 320px;
   margin: 0 auto;
   border-radius: 50%;
   border: 3px solid red;
@@ -27,8 +26,8 @@
   @include flexCenter(row);
 
   .dashedCircle {
-    width: 60%;
-    height: 60%;
+    width: 65%;
+    height: 65%;
     border: 3px dashed $purple-primary;
     border-radius: 50%;
     position: relative;
@@ -36,8 +35,8 @@
     @include flexCenter(row);
 
     .content {
-      width: 70%;
-      height: 70%;
+      width: 75%;
+      height: 75%;
       border-radius: 50%;
       background-color: #332441;
       animation: rotateToRight 30s linear infinite;
@@ -59,6 +58,13 @@
         color: $text-secondary;
       }
     }
+  }
+}
+
+@media (min-width: 1024px) {
+  .Diagram {
+    width: 500px;
+    height: 500px;
   }
 }
 

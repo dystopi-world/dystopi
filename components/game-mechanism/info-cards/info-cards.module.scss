@@ -4,16 +4,19 @@
 .InfoCards {
   margin: 10rem 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 3rem;
   justify-content: space-evenly;
   position: relative;
   z-index: 10;
 }
 
 .InfoCard {
-  max-width: 380px;
+  max-width: 320px;
   background-color: #26222a;
   position: relative;
+  left: 1rem;
 
   &:first-of-type {
     transform: translate(-10%, -10%);
@@ -33,7 +36,7 @@
   }
 
   .contentContainer {
-    transform: translate(15%, 25%);
+    transform: translate(10%, 25%);
     h3 {
       padding-top: 5rem;
       margin-bottom: 2rem;
@@ -44,6 +47,29 @@
       color: $text-secondary;
       margin: 1.5rem 0;
       font-size: 0.9rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .InfoCards {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .InfoCard {
+    max-width: 380px;
+    left: 0;
+
+    &:first-of-type {
+      transform: translate(-10%, -10%);
+    }
+    &:last-of-type {
+      transform: translate(-10%, 10%);
+    }
+
+    .contentContainer {
+      transform: translate(15%, 25%);
     }
   }
 }
