@@ -1,5 +1,5 @@
-@import "/styles/mixins";
-@import "/styles/variables";
+@import '/styles/mixins';
+@import '/styles/variables';
 
 .Roadmap {
   h2 {
@@ -24,9 +24,10 @@
       background-color: transparent;
       border: 1px solid $purple-primary;
       position: relative;
+      cursor: pointer;
 
       &::before {
-        content: "";
+        content: '';
         width: calc(100% + 6px);
         height: calc(100% + 6px);
         position: absolute;
@@ -39,5 +40,66 @@
   .sliderContainer {
     margin: 8rem 0 2rem;
     padding: 0 2rem;
+
+    .decorLine {
+      height: 2px;
+      background-color: $purple-secondary;
+      margin-bottom: 1.5rem;
+      position: relative;
+      // display: flex;
+      // align-items: center;
+
+      .decorLineDot {
+        width: 5px;
+        height: 5px;
+        background-color: $purple-secondary;
+        border-radius: 50%;
+        position: absolute;
+        top: -2px;
+        // transform: translateX(-10vw);
+
+        &:nth-of-type(1) {
+          left: 1rem;
+        }
+        &:nth-of-type(2) {
+          left: calc(1rem + 25%);
+        }
+        &:nth-of-type(3) {
+          left: calc(2rem + 50%);
+        }
+        &:nth-of-type(4) {
+          left: calc(3rem + 75%);
+        }
+
+        &::before {
+          content: '';
+          width: calc(100% + 4px);
+          height: calc(100% + 4px);
+          position: absolute;
+          top: -3px;
+          left: -3px;
+          border: 1px solid $purple-secondary;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    article {
+      h4 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      ul {
+        padding-left: 1.5rem;
+        list-style: disc;
+        list-style-position: outside;
+
+        li {
+          margin: 0.25rem 0;
+          color: $text-secondary;
+        }
+      }
+    }
   }
 }

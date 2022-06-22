@@ -1,5 +1,5 @@
-@import "/styles/mixins";
-@import "/styles/variables";
+@import '/styles/mixins';
+@import '/styles/variables';
 
 .Characters {
   @include flexCenter(column);
@@ -7,7 +7,7 @@
 
   &::before,
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: -40%;
     width: 2px;
@@ -27,22 +27,26 @@
     letter-spacing: 0.15em;
   }
 
+  .arrow {
+    position: absolute;
+    top: 40%;
+    font-size: 2rem;
+    z-index: 10;
+    cursor: pointer;
+    background-color: transparent;
+    color: $text-primary;
+    border: none;
+  }
+
+  .arrowLeft {
+    left: 1rem;
+  }
+
+  .arrowRight {
+    right: 1rem;
+  }
   .characterContainer {
     position: relative;
-    .arrow {
-      position: absolute;
-      top: 40%;
-      font-size: 2rem;
-      cursor: pointer;
-    }
-
-    .arrowLeft {
-      left: 1rem;
-    }
-
-    .arrowRight {
-      right: 1rem;
-    }
   }
 
   .Character {

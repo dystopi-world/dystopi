@@ -1,13 +1,19 @@
-import React from "react";
-import SectionSeparator from "../section-separator/section-separator";
-import styles from "./roadmap.module.scss";
+import { useRef } from 'react';
+import SectionSeparator from '../section-separator/section-separator';
+import styles from './roadmap.module.scss';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, EffectFade } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
-
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
+import { roadmapData } from './roadmap-data';
 function Roadmap() {
+  const swiperPrevButtonRef = useRef(null);
+  const swiperNextButtonRef = useRef(null);
+
   return (
     <section className={styles.Roadmap}>
       <SectionSeparator />
@@ -20,59 +26,48 @@ function Roadmap() {
         velit esse cillum.
       </p>
       <div className={styles.buttonGroup}>
-        <button>{"<-"}</button>
-        <button>{"->"}</button>
+        <button ref={swiperPrevButtonRef}>{'<-'}</button>
+        <button ref={swiperNextButtonRef}>{'->'}</button>
       </div>
       <div className={styles.sliderContainer}>
-        <div className={styles.decorLine}></div>
+        <div className={styles.decorLine}>
+          <div className={styles.decorLineDot}></div>
+          <div className={styles.decorLineDot}></div>
+          <div className={styles.decorLineDot}></div>
+          <div className={styles.decorLineDot}></div>
+        </div>
 
         <Swiper
-          spaceBetween={0}
+          // install Swiper modules
+          modules={[Navigation, EffectFade]}
+          spaceBetween={50}
           slidesPerView={4}
           grabCursor={true}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
+          navigation={{
+            prevEl: swiperPrevButtonRef.current,
+            nextEl: swiperNextButtonRef.current,
+          }}
+          speed={800}
+          loop
+          onInit={(swiper) => {
+            swiper.params.navigation.prevEl = swiperPrevButtonRef.current;
+            swiper.params.navigation.nextEl = swiperNextButtonRef.current;
+            swiper.navigation.init();
+            swiper.navigation.update();
+          }}
         >
-          <SwiperSlide>
-            <div style={{ background: "#555", minHeight: "15rem" }}>
-              Slide 1
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div style={{ background: "#555", minHeight: "15rem" }}>
-              Slide 2
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div style={{ background: "#555", minHeight: "15rem" }}>
-              Slide 3
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div style={{ background: "#555", minHeight: "15rem" }}>
-              Slide 4
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div style={{ background: "#555", minHeight: "15rem" }}>
-              Slide 5
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div style={{ background: "#555", minHeight: "15rem" }}>
-              Slide 6
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div style={{ background: "#555", minHeight: "15rem" }}>
-              Slide 7
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div style={{ background: "#555", minHeight: "15rem" }}>
-              Slide 8
-            </div>
-          </SwiperSlide>
+          {roadmapData.map((roadmap, index) => (
+            <SwiperSlide key={index}>
+              <article>
+                <h4>{roadmap.year}</h4>
+                <ul>
+                  {roadmap.milestones.map((milestone, index) => (
+                    <li key={index}>{milestone}</li>
+                  ))}
+                </ul>
+              </article>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>
