@@ -22,16 +22,16 @@ function Characters() {
       <DecorSquare />
       <h6>CHARACTERS</h6>
       <button
-        ref={swiperPrevButtonRef}
         className={`${styles.arrow} ${styles.arrowLeft}`}
+        ref={swiperPrevButtonRef}
       >
-        <button
-          ref={swiperNextButtonRef}
-          className={`${styles.arrow} ${styles.arrowRight}`}
-        >
-          <HiOutlineArrowNarrowRight />
-        </button>
         <HiOutlineArrowNarrowLeft />
+      </button>
+      <button
+        className={`${styles.arrow} ${styles.arrowRight}`}
+        ref={swiperNextButtonRef}
+      >
+        <HiOutlineArrowNarrowRight />
       </button>
       <div className={styles.characterContainer}>
         <Swiper
