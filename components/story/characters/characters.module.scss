@@ -47,6 +47,7 @@
   }
   .characterContainer {
     position: relative;
+    max-width: 300px;
   }
 
   .Character {
@@ -68,8 +69,20 @@
   }
 }
 
+@media (min-width: 767px) {
+  .Characters {
+    .characterContainer {
+      max-width: 500px;
+    }
+  }
+}
+
 @media (min-width: 1024px) {
   .Characters {
     max-width: 500px;
+
+    .characterContainer {
+      max-width: 700px;
+    }
   }
 }

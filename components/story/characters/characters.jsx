@@ -11,6 +11,7 @@ import styles from './characters.module.scss';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { characterData } from './character-data';
 
 function Characters() {
   const swiperPrevButtonRef = useRef(null);
@@ -24,16 +25,20 @@ function Characters() {
         ref={swiperPrevButtonRef}
         className={`${styles.arrow} ${styles.arrowLeft}`}
       >
+        <button
+          ref={swiperNextButtonRef}
+          className={`${styles.arrow} ${styles.arrowRight}`}
+        >
+          <HiOutlineArrowNarrowRight />
+        </button>
         <HiOutlineArrowNarrowLeft />
-      </button>
-      <button className={`${styles.arrow} ${styles.arrowRight}`}>
-        <HiOutlineArrowNarrowRight />
       </button>
       <div className={styles.characterContainer}>
         <Swiper
           // install Swiper modules
           modules={[Navigation]}
           slidesPerView={1}
+          spaceBetween={0}
           grabCursor={true}
           navigation={{
             prevEl: swiperPrevButtonRef.current,
@@ -47,12 +52,17 @@ function Characters() {
             swiper.navigation.init();
             swiper.navigation.update();
           }}
-        ></Swiper>
-        <Character
-          image="/images/characters/ai.png"
-          characterName="AI"
-          description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis expedita hic aliquid odio necessitatibus!"
-        />
+        >
+          {characterData.map((character) => (
+            <SwiperSlide key={character.name}>
+              <Character
+                image={character.image}
+                characterName={character.name}
+                description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis expedita hic aliquid odio necessitatibus!"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
