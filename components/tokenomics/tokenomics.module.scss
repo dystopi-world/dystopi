@@ -114,6 +114,42 @@ rose - #ee4492
       }
     }
   }
+
+  .mobilePercentages {
+    color: #fff;
+    p {
+      position: absolute;
+      font-size: 1.1rem;
+    }
+    .percentageIndigo {
+      top: 11%;
+      right: 25%;
+    }
+    .percentageAqua {
+      top: 35%;
+      right: 7%;
+    }
+    .percentageTurquoise {
+      top: 77%;
+      right: 18%;
+    }
+    .percentagePurple {
+      top: 86%;
+      left: 38%;
+    }
+    .percentageRose {
+      top: 65%;
+      left: 10%;
+    }
+    .percentageTeal {
+      top: 32%;
+      left: 8%;
+    }
+    .percentageEggplant {
+      top: 10%;
+      left: 30%;
+    }
+  }
 }
 
 @media (min-width: 1024px) {
@@ -121,6 +157,16 @@ rose - #ee4492
     width: 450px;
     height: 450px;
     transform-origin: center;
+    transform: scale(0.75);
+
+    .mobilePercentages {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1130px) {
+  .Diagram {
     transform: scale(0.9);
   }
 }

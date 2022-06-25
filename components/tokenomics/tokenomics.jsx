@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Diagram from './diagram';
 import DiagramInfoMobile from './diagram-info-mobile';
 import { diagramData } from './diagramData';
+import MobileInfosContainer from './mobile-infos-container';
 import styles from './tokenomics.module.scss';
 
 function Tokenomics() {
@@ -22,13 +23,7 @@ function Tokenomics() {
         velit esse cillum.
       </p>
       <Diagram />
-      {isMobile && (
-        <div>
-          {diagramData.map((data, index) => (
-            <DiagramInfoMobile infos={data.infos} key={index} />
-          ))}
-        </div>
-      )}
+      <MobileInfosContainer />
     </section>
   );
 }

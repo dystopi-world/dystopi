@@ -1,8 +1,8 @@
 export const diagramData = [
   {
     aligment: 'left',
-    color: 'indigo',
     infos: {
+      color: 'indigo',
       percentage: '18%',
       intro: 'Lorem ipsum dolor',
       subInfo: '0% TGE 5% unlocked each month after',
@@ -12,8 +12,8 @@ export const diagramData = [
   },
   {
     aligment: 'left',
-    color: 'aqua',
     infos: {
+      color: 'aqua',
       percentage: '13%',
       intro: 'Lorem ipsum dolor',
       subInfo: '0% TGE 5% unlocked each month after',
@@ -23,8 +23,8 @@ export const diagramData = [
   },
   {
     aligment: 'left',
-    color: 'turquoise',
     infos: {
+      color: 'turquoise',
       percentage: '19%',
       intro: 'Lorem ipsum dolor',
       subInfo: '0% TGE 5% unlocked each month after',
@@ -34,8 +34,8 @@ export const diagramData = [
   },
   {
     aligment: 'right',
-    color: 'purple',
     infos: {
+      color: 'purple',
       percentage: '9%',
       intro: 'Lorem ipsum dolor',
       subInfo: '0% TGE 5% unlocked each month after',
@@ -45,8 +45,8 @@ export const diagramData = [
   },
   {
     aligment: 'right',
-    color: 'rose',
     infos: {
+      color: 'rose',
       percentage: '16%',
       intro: 'Lorem ipsum dolor',
       subInfo: '0% TGE 5% unlocked each month after',
@@ -56,8 +56,8 @@ export const diagramData = [
   },
   {
     aligment: 'right',
-    color: 'teal',
     infos: {
+      color: 'teal',
       percentage: '14%',
       intro: 'Lorem ipsum dolor',
       subInfo: '0% TGE 5% unlocked each month after',
@@ -67,8 +67,8 @@ export const diagramData = [
   },
   {
     aligment: 'right',
-    color: 'eggplant',
     infos: {
+      color: 'eggplant',
       percentage: '11%',
       intro: 'Lorem ipsum dolor',
       subInfo: '0% TGE 5% unlocked each month after',

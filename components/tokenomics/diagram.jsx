@@ -181,6 +181,15 @@ function Diagram() {
           <p>100.000.000 tokens</p>
         </div>
       </div>
+      <div className={styles.mobilePercentages}>
+        <p className={styles.percentageIndigo}>18%</p>
+        <p className={styles.percentageAqua}>13%</p>
+        <p className={styles.percentageTurquoise}>19%</p>
+        <p className={styles.percentagePurple}>9%</p>
+        <p className={styles.percentageRose}>16%</p>
+        <p className={styles.percentageTeal}>14%</p>
+        <p className={styles.percentageEggplant}>11%</p>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,23 @@
+.MobileInfosContainer {
+  button {
+    padding: 0.75rem;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    font-size: 1.25rem;
+    color: #fff;
+    transition: 300ms;
+  }
+
+  .moreInfosContainer {
+    overflow: hidden;
+    max-height: 0;
+  }
+}
+
+@media (min-width: 800px) {
+  .MobileInfosContainer {
+    display: none;
+  }
+}
