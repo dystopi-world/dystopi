@@ -1,5 +1,5 @@
-@import "/styles/variables";
-@import "/styles/mixins";
+@import '/styles/variables';
+@import '/styles/mixins';
 
 .Header {
   width: 100%;
@@ -14,6 +14,8 @@
   top: 0;
   left: 0;
   z-index: 1000;
+  opacity: 0;
+  animation: fadeDown 1400ms 600ms ease forwards;
   .imageContainer {
     position: relative;
     width: 50px;
@@ -29,7 +31,7 @@
 
       a {
         color: #ffffff;
-        font-family: "Gambetta";
+        font-family: 'Gambetta';
         font-size: 0.8rem;
         font-style: normal;
         font-weight: 500;
@@ -39,7 +41,7 @@
 
         &::before,
         &::after {
-          content: "";
+          content: '';
           width: 0;
           height: 2px;
           background-color: $purple-primary;
@@ -62,6 +64,17 @@
         }
       }
     }
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 

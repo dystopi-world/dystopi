@@ -1,5 +1,5 @@
-import styles from "./landing.module.scss";
-import Image from "next/image";
+import styles from './landing.module.scss';
+import Image from 'next/image';
 
 function Landing() {
   return (
@@ -16,7 +16,7 @@ function Landing() {
           width={420}
           height={210}
           objectFit="cover"
-          alt="Dystopi"
+          alt="Dystopi title"
         />
       </div>
       <p>SCROLL FOR MORE</p>
