@@ -1,5 +1,5 @@
-@import "/styles/mixins";
-@import "/styles/variables";
+@import '/styles/mixins';
+@import '/styles/variables';
 
 .Footer {
   width: 90%;
@@ -16,7 +16,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 1rem;
+    gap: 3rem;
     font-size: 0.8rem;
     color: $text-secondary;
 
@@ -41,6 +41,17 @@
     height: 40px;
     position: relative;
   }
+
+  .mobileSocials {
+    width: 100%;
+    padding: 2rem 0;
+    border-top: 1px solid $purple-primary;
+    border-bottom: 1px solid $purple-primary;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -49,6 +60,7 @@
     gap: 0;
     nav {
       align-items: center;
+      gap: 1rem;
       div {
         flex-direction: row;
         align-items: center;
@@ -57,5 +69,8 @@
         display: block;
       }
     }
+  }
+  .mobileSocials {
+    display: none;
   }
 }
