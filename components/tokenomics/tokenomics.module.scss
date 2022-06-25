@@ -1,5 +1,5 @@
-@import "/styles/mixins";
-@import "/styles/variables";
+@import '/styles/mixins';
+@import '/styles/variables';
 
 .Tokenomics {
   padding: 2rem 0 5rem;
@@ -9,21 +9,76 @@
     text-align: center;
   }
 
-  p {
+  & > p {
     max-width: 70ch;
     text-align: center;
     margin: 2rem auto 5rem;
   }
 }
 
+/*
+DIAGRAM COLORS
+--------------
+teal - #6998ff
+eggplant - #a967ff
+indigo - #6a00f4
+aqua - #007afd
+turquise - #6ee3c0
+purple - #df1dff
+rose - #ee4492
+
+*/
+
 .Diagram {
   width: 320px;
   height: 320px;
   margin: 0 auto;
   border-radius: 50%;
-  border: 3px solid red;
+  border: 3px solid transparent;
   position: relative;
   @include flexCenter(row);
+
+  .coloredBorderBox {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    box-shadow: 0 0 0 0 transparent;
+  }
+
+  .coloredBorderBoxTeal {
+    top: 30%;
+    left: 5%;
+  }
+
+  .coloredBorderBoxEggplant {
+    top: 8%;
+    left: 28%;
+  }
+
+  .coloredBorderBoxIndigo {
+    top: 8%;
+    right: 25%;
+  }
+
+  .coloredBorderBoxAqua {
+    top: 35%;
+    right: 5%;
+  }
+
+  .coloredBorderBoxTurquoise {
+    top: 64%;
+    right: 18%;
+  }
+
+  .coloredBorderBoxPurple {
+    top: 77%;
+    left: 32%;
+  }
+
+  .coloredBorderBoxRose {
+    top: 57%;
+    left: 12%;
+  }
 
   .dashedCircle {
     width: 65%;
@@ -63,8 +118,22 @@
 
 @media (min-width: 1024px) {
   .Diagram {
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
+    transform-origin: center;
+    transform: scale(0.9);
+  }
+}
+
+@media (min-width: 1440px) {
+  .Diagram {
+    width: 650px;
+    height: 650px;
+
+    .infoIndigo {
+      p {
+      }
+    }
   }
 }
 
