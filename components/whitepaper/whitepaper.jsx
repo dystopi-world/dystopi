@@ -1,9 +1,42 @@
+import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import Link from 'next/link';
 import SectionSeparator from '../section-separator/section-separator';
 import styles from './whitepaper.module.scss';
 
 function Whitepaper() {
+  const [titleRef, titleInView] = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+  const [subTitleRef, subTitleInView] = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
+  const [buttonRef, buttonInView] = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
+  const titleStyle = {
+    transition: '600ms',
+    position: 'relative',
+    top: titleInView ? 0 : '3rem',
+    opacity: titleInView ? 1 : 0,
+  };
+  const subTitleStyle = {
+    transition: '600ms',
+    position: 'relative',
+    top: subTitleInView ? 0 : '3rem',
+    opacity: subTitleInView ? 1 : 0,
+  };
+  const buttonStyle = {
+    transition: '600ms',
+    position: 'relative',
+    top: buttonInView ? 0 : '3rem',
+    opacity: buttonInView ? 1 : 0,
+  };
+
   return (
     <section className={styles.Whitepaper} id="whitepaper">
       <div className={styles.whitepaperCard}>
@@ -17,10 +50,16 @@ function Whitepaper() {
           <SectionSeparator />
         </div>
         <div className={styles.contentContainer}>
-          <h2>WHITEPAPER</h2>
-          <p>Check our Whitepaper to learn more about project Dystopi!</p>
+          <h2 ref={titleRef} style={titleStyle}>
+            WHITEPAPER
+          </h2>
+          <p ref={subTitleRef} style={subTitleStyle}>
+            Check our Whitepaper to learn more about project Dystopi!
+          </p>
           <Link href="https://bence-vereb.gitbook.io/whitepaper/">
-            <a target="blank">CHECK WHITEPAPER</a>
+            <a ref={buttonRef} style={buttonStyle} target="blank">
+              CHECK WHITEPAPER
+            </a>
           </Link>
         </div>
       </div>
