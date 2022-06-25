@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import SectionSeparator from '../section-separator/section-separator';
 import styles from './roadmap.module.scss';
 // Import Swiper React components
@@ -10,9 +10,20 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 import { roadmapData } from './roadmap-data';
+
 function Roadmap() {
   const swiperPrevButtonRef = useRef(null);
   const swiperNextButtonRef = useRef(null);
+
+  const [sliderPerView, setSliderPerView] = useState(4);
+  useEffect(() => {
+    if (window.innerWidth < 1024) {
+      setSliderPerView(3);
+    }
+    if (window.innerWidth < 760) {
+      setSliderPerView(1);
+    }
+  }, []);
 
   return (
     <section className={styles.Roadmap}>
@@ -41,7 +52,7 @@ function Roadmap() {
           // install Swiper modules
           modules={[Navigation, EffectFade]}
           spaceBetween={50}
-          slidesPerView={4}
+          slidesPerView={sliderPerView}
           grabCursor={true}
           navigation={{
             prevEl: swiperPrevButtonRef.current,

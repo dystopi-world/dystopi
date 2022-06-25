@@ -9,4 +9,16 @@
     margin: 1rem auto 3rem;
     max-width: 70ch;
   }
+
+  .sliderContainer {
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 720px) {
+  .Nfts {
+    .sliderContainer {
+      padding: 0;
+    }
+  }
 }

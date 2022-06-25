@@ -1,53 +1,65 @@
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow } from 'swiper';
 
 // Import Swiper styles
-import "swiper/css";
+import 'swiper/css';
+import { useState } from 'react';
+import { useEffect } from 'react';
+// import 'swiper/css/effect-coverflow.min.css';
 
 function Slider() {
+  const [sliderPerView, setSlidesPerView] = useState(3);
+  useEffect(() => {
+    if (window.innerWidth < 720) {
+      setSlidesPerView(1);
+    }
+  }, []);
+
   return (
     <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log("slide change")}
+      modules={[EffectCoverflow]}
+      spaceBetween={100}
+      slidesPerView={sliderPerView}
+      onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
       effect="coverflow"
       navigation={{
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       }}
       coverflowEffect={{
-        rotate: 50,
-        stretch: 0,
+        rotate: 15,
+        stretch: 70,
         depth: 100,
         modifier: 1,
-        loop: true,
         slideShadows: true,
       }}
+      loop={true}
     >
       <SwiperSlide>
-        <div style={{ background: "#bbb", minHeight: "15rem" }}>Slide 1</div>
+        <div style={{ background: '#bbb', minHeight: '15rem' }}>Slide 1</div>
       </SwiperSlide>
       <SwiperSlide>
-        <div style={{ background: "#bbb", minHeight: "15rem" }}>Slide 2</div>
+        <div style={{ background: '#bbb', minHeight: '15rem' }}>Slide 2</div>
       </SwiperSlide>
       <SwiperSlide>
-        <div style={{ background: "#bbb", minHeight: "15rem" }}>Slide 3</div>
+        <div style={{ background: '#bbb', minHeight: '15rem' }}>Slide 3</div>
       </SwiperSlide>
       <SwiperSlide>
-        <div style={{ background: "#bbb", minHeight: "15rem" }}>Slide 4</div>
+        <div style={{ background: '#bbb', minHeight: '15rem' }}>Slide 4</div>
       </SwiperSlide>
       <SwiperSlide>
-        <div style={{ background: "#bbb", minHeight: "15rem" }}>Slide 5</div>
+        <div style={{ background: '#bbb', minHeight: '15rem' }}>Slide 5</div>
       </SwiperSlide>
       <SwiperSlide>
-        <div style={{ background: "#bbb", minHeight: "15rem" }}>Slide 6</div>
+        <div style={{ background: '#bbb', minHeight: '15rem' }}>Slide 6</div>
       </SwiperSlide>
       <SwiperSlide>
-        <div style={{ background: "#bbb", minHeight: "15rem" }}>Slide 7</div>
+        <div style={{ background: '#bbb', minHeight: '15rem' }}>Slide 7</div>
       </SwiperSlide>
       <SwiperSlide>
-        <div style={{ background: "#bbb", minHeight: "15rem" }}>Slide 8</div>
+        <div style={{ background: '#bbb', minHeight: '15rem' }}>Slide 8</div>
       </SwiperSlide>
       <div className="swiper-button-next"></div>
       <div className="swiper-button-prev"></div>

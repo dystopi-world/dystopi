@@ -1,0 +1,71 @@
+.DiagramInfoMobile {
+  padding: 1rem 1.5rem 1rem 2.5rem;
+  margin: 1.5rem 1.25rem;
+  background-color: #140d19;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+  }
+
+  &:nth-of-type(1)::before {
+    background-color: #6a00f4;
+  }
+  &:nth-of-type(2)::before {
+    background-color: #007afd;
+  }
+  &:nth-of-type(3)::before {
+    background-color: #6ee3c0;
+  }
+  &:nth-of-type(4)::before {
+    background-color: #df1dff;
+  }
+  &:nth-of-type(5)::before {
+    background-color: #ee4492;
+  }
+  &:nth-of-type(6)::before {
+    background-color: #6998ff;
+  }
+  &:nth-of-type(7)::before {
+    background-color: #a967ff;
+  }
+}
+
+@media (min-width: 800px) {
+  .DiagramInfoMobile {
+    display: none;
+  }
+}
+
+.infoIndigo::before {
+  background-color: #6a00f4;
+}
+.infoAqua::before {
+  background-color: #007afd;
+}
+.infoTurquoise::before {
+  background-color: #6ee3c0;
+}
+.infoPurple::before {
+  background-color: #df1dff;
+}
+.infoRose::before {
+  background-color: #ee4492;
+}
+.infoTeal::before {
+  background-color: #6998ff;
+}
+.infoEggplant::before {
+  background-color: #a967ff;
+}

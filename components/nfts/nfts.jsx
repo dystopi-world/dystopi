@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./nfts.module.scss";
-import Slider from "./slider";
+import React from 'react';
+import styles from './nfts.module.scss';
+import Slider from './slider';
 
 function Nfts() {
   return (
@@ -15,7 +15,9 @@ function Nfts() {
         armor. The reward you get at the end of the day depends a lot on what
         your hero wears!
       </p>
-      <Slider />
+      <div className={styles.sliderContainer}>
+        <Slider />
+      </div>
     </section>
   );
 }

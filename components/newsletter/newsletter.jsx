@@ -1,6 +1,6 @@
-import React from "react";
-import Button from "../button/button";
-import styles from "./newsletter.module.scss";
+import React from 'react';
+import Button from '../button/button';
+import styles from './newsletter.module.scss';
 
 function Newsletter() {
   return (
@@ -12,7 +12,9 @@ function Newsletter() {
       </p>
       <form>
         <input type="text" placeholder="john.doe@gmail.com" />
-        <Button>SIGN UP</Button>
+        <Button style={{ width: window.innerWidth < 768 ? '100%' : 'auto' }}>
+          SIGN UP
+        </Button>
       </form>
     </section>
   );

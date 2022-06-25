@@ -43,7 +43,7 @@ function Diagram() {
   const purpleStyle = {
     transition: '250ms',
     boxShadow: purpleHovered
-      ? '-5px 3px 85px 4px #df1dff'
+      ? '-5px 3px 120px 10px #df1dff'
       : '0 0 0 0 transparent',
   };
   const [roseHovered, setRoseHovered] = useState(false);
