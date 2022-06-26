@@ -1,3 +1,6 @@
+@import '/styles/mixins';
+@import '/styles/variables';
+
 .Nfts {
   min-height: 70vh;
 
@@ -12,6 +15,31 @@
 
   .sliderContainer {
     padding: 0 1rem;
+    position: relative;
+    width: 100%;
+    margin-bottom: 10rem;
+
+    .swiperButtonPrev,
+    .swiperButtonNext {
+      position: absolute;
+      top: 115%;
+      transform: translateY(-50%);
+      z-index: 10;
+      color: $text-secondary;
+      border: none;
+      background-color: transparent;
+      font-size: 2.5rem;
+      width: 5rem;
+      @include flexCenter(row);
+      cursor: pointer;
+      color: $text-primary;
+    }
+    .swiperButtonPrev {
+      left: 1rem;
+    }
+    .swiperButtonNext {
+      right: 1rem;
+    }
   }
 }
 
@@ -19,6 +47,25 @@
   .Nfts {
     .sliderContainer {
       padding: 0;
+      margin-bottom: 6rem;
+
+      .swiperButtonPrev,
+      .swiperButtonNext {
+        transition: 200ms;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &:hover {
+          color: $text-primary;
+        }
+      }
+
+      .swiperButtonPrev {
+        left: 1rem;
+      }
+      .swiperButtonNext {
+        right: 1rem;
+      }
     }
   }
 }

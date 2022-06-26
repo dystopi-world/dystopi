@@ -12,6 +12,22 @@ function GameMechanism() {
     threshold: 0.4,
     triggerOnce: true,
   });
+  const [gearTextRef, gearTextInView] = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
+  const [fightTextRef, fightTextInView] = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
+  const [earnTextRef, earnTextInView] = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
+  const [repeatTextRef, repeatTextInView] = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
 
   const titleStyle = {
     transition: '600ms',
@@ -24,6 +40,30 @@ function GameMechanism() {
     position: 'relative',
     top: subTitleInView ? 0 : '3rem',
     opacity: subTitleInView ? 1 : 0,
+  };
+  const gearTextStyle = {
+    transition: '600ms',
+    position: 'relative',
+    top: gearTextInView ? 0 : '3rem',
+    opacity: gearTextInView ? 1 : 0,
+  };
+  const fightTextStyle = {
+    transition: '600ms',
+    position: 'relative',
+    top: fightTextInView ? 0 : '3rem',
+    opacity: fightTextInView ? 1 : 0,
+  };
+  const earnTextStyle = {
+    transition: '600ms',
+    position: 'relative',
+    top: earnTextInView ? 0 : '3rem',
+    opacity: earnTextInView ? 1 : 0,
+  };
+  const repeatTextStyle = {
+    transition: '600ms',
+    position: 'relative',
+    top: repeatTextInView ? 0 : '3rem',
+    opacity: repeatTextInView ? 1 : 0,
   };
 
   return (
@@ -45,19 +85,27 @@ function GameMechanism() {
         <div className={styles.cards}>
           <div className={styles.card}>
             <DecorSquare />
-            <h3>GEAR</h3>
+            <h3 ref={gearTextRef} style={gearTextStyle}>
+              GEAR
+            </h3>
           </div>
           <div className={styles.card}>
             <DecorSquare />
-            <h3>FIGHT</h3>
+            <h3 ref={fightTextRef} style={fightTextStyle}>
+              FIGHT
+            </h3>
           </div>
           <div className={styles.card}>
             <DecorSquare />
-            <h3>EARN</h3>
+            <h3 ref={earnTextRef} style={earnTextStyle}>
+              EARN
+            </h3>
           </div>
           <div className={styles.card}>
             <DecorSquare />
-            <h3>REPEAT</h3>
+            <h3 ref={repeatTextRef} style={repeatTextStyle}>
+              REPEAT
+            </h3>
           </div>
         </div>
       </div>

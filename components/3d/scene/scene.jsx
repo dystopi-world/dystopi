@@ -1,11 +1,11 @@
-import { Canvas, useThree } from "@react-three/fiber";
-import React, { useEffect, useRef, Suspense, useState } from "react";
-import { useGLTF, OrbitControls } from "@react-three/drei";
-import styles from "./scene.module.scss";
+import { Canvas, useThree } from '@react-three/fiber';
+import React, { useEffect, useRef, Suspense, useState } from 'react';
+import { useGLTF, OrbitControls } from '@react-three/drei';
+import styles from './scene.module.scss';
 
 function Model({ ...props }) {
   const group = useRef();
-  const { nodes, materials } = useGLTF("/3d/coin/scene.gltf");
+  const { nodes, materials } = useGLTF('/3d/coin/scene.gltf');
   return (
     <group ref={group} {...props} dispose={null}>
       <group position={[0, 0.45, 0]} rotation={[0, props.mouseX, -0.04]}>
@@ -22,7 +22,7 @@ function Model({ ...props }) {
   );
 }
 
-useGLTF.preload("/scene.gltf");
+useGLTF.preload('/scene.gltf');
 
 function Camera(props) {
   const cameraRef = useRef();
@@ -42,7 +42,7 @@ function Scene() {
 
   const [isGrabbing, setIsGrabbing] = useState(false);
   const cursorStyle = {
-    cursor: isGrabbing ? "grabbing" : "grab",
+    cursor: isGrabbing ? 'grabbing' : 'grab',
   };
 
   return (

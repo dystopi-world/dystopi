@@ -1,6 +1,11 @@
+import { useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import styles from './nfts.module.scss';
 import Slider from './slider';
+import {
+  HiOutlineArrowNarrowLeft,
+  HiOutlineArrowNarrowRight,
+} from 'react-icons/hi';
 
 function Nfts() {
   const [titleRef, titleInView] = useInView({
@@ -24,6 +29,9 @@ function Nfts() {
     top: subTitleInView ? 0 : '3rem',
     opacity: subTitleInView ? 1 : 0,
   };
+
+  const swiperPrevButtonRef = useRef(null);
+  const swiperNextButtonRef = useRef(null);
   return (
     <section className={styles.Nfts} id="nfts">
       <h2 ref={titleRef} style={titleStyle}>
@@ -39,7 +47,16 @@ function Nfts() {
         your hero wears!
       </p>
       <div className={styles.sliderContainer}>
-        <Slider />
+        <Slider
+          swiperPrevButtonRef={swiperPrevButtonRef}
+          swiperNextButtonRef={swiperNextButtonRef}
+        />
+        <button ref={swiperPrevButtonRef} className={styles.swiperButtonPrev}>
+          <HiOutlineArrowNarrowLeft />
+        </button>
+        <button ref={swiperNextButtonRef} className={styles.swiperButtonNext}>
+          <HiOutlineArrowNarrowRight />
+        </button>
       </div>
     </section>
   );
