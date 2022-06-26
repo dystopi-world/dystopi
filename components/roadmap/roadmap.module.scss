@@ -2,6 +2,7 @@
 @import '/styles/variables';
 
 .Roadmap {
+  margin-bottom: 5rem;
   h2 {
     text-align: center;
   }
@@ -56,6 +57,7 @@
         border-radius: 50%;
         position: absolute;
         top: -2px;
+        box-shadow: 0 0 16px 3px $purple-secondary;
         // transform: translateX(-10vw);
 
         &:nth-of-type(1) {
@@ -101,5 +103,11 @@
         }
       }
     }
+  }
+}
+
+@media (min-width: 1024px) {
+  .Roadmap {
+    margin-bottom: 10rem;
   }
 }

@@ -37,30 +37,77 @@ function Whitepaper() {
     opacity: buttonInView ? 1 : 0,
   };
 
+  const decorBorderHorizontalStyle = {
+    width: titleInView ? '100%' : 0,
+  };
+  const decorBorderVerticalStyle = {
+    height: titleInView ? '100%' : 0,
+  };
+
+  const imageStyle = {
+    transition: '600ms',
+    opacity: titleInView ? 1 : 0,
+  };
+
   return (
     <section className={styles.Whitepaper} id="whitepaper">
       <div className={styles.whitepaperCard}>
-        <Image
-          src={'/images/game-mechanism.png'}
-          layout="fill"
-          alt="Dystopi city"
-          objectFit="cover"
-        />
-        <div className={styles.decorContainer}>
-          <SectionSeparator />
-        </div>
-        <div className={styles.contentContainer}>
-          <h2 ref={titleRef} style={titleStyle}>
-            WHITEPAPER
-          </h2>
-          <p ref={subTitleRef} style={subTitleStyle}>
-            Check our Whitepaper to learn more about project Dystopi!
-          </p>
-          <Link href="https://bence-vereb.gitbook.io/whitepaper/">
-            <a ref={buttonRef} style={buttonStyle} target="blank">
-              CHECK WHITEPAPER
-            </a>
-          </Link>
+        <div
+          className={`${styles.decorBorder} ${styles.decorBorderTop}`}
+          style={decorBorderHorizontalStyle}
+        ></div>
+        <div
+          className={`${styles.decorBorder} ${styles.decorBorderLeft}`}
+          style={decorBorderVerticalStyle}
+        ></div>
+        <div
+          className={`${styles.decorBorder} ${styles.decorBorderBottom}`}
+          style={decorBorderHorizontalStyle}
+        ></div>
+        <div
+          className={`${styles.decorBorder} ${styles.decorBorderRight}`}
+          style={decorBorderVerticalStyle}
+        ></div>
+        <div className={styles.decorCard}>
+          <div
+            className={`${styles.decorBorder} ${styles.decorBorderTop}`}
+            style={decorBorderHorizontalStyle}
+          ></div>
+          <div
+            className={`${styles.decorBorder} ${styles.decorBorderLeft}`}
+            style={decorBorderVerticalStyle}
+          ></div>
+          <div
+            className={`${styles.decorBorder} ${styles.decorBorderBottom}`}
+            style={decorBorderHorizontalStyle}
+          ></div>
+          <div
+            className={`${styles.decorBorder} ${styles.decorBorderRight}`}
+            style={decorBorderVerticalStyle}
+          ></div>
+          <Image
+            src={'/images/game-mechanism.png'}
+            layout="fill"
+            alt="Dystopi city"
+            objectFit="cover"
+            style={imageStyle}
+          />
+          <div className={styles.decorContainer}>
+            <SectionSeparator />
+          </div>
+          <div className={styles.contentContainer}>
+            <h2 ref={titleRef} style={titleStyle}>
+              WHITEPAPER
+            </h2>
+            <p ref={subTitleRef} style={subTitleStyle}>
+              Check our Whitepaper to learn more about project Dystopi!
+            </p>
+            <Link href="https://bence-vereb.gitbook.io/whitepaper/">
+              <a ref={buttonRef} style={buttonStyle} target="blank">
+                CHECK WHITEPAPER
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

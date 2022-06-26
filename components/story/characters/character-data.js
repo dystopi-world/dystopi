@@ -1,25 +1,25 @@
 export const characterData = [
   {
     image: '/images/characters/ai.png',
-    characterName: 'AI',
+    name: 'AI',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis expedita hic aliquid odio necessitatibus!',
   },
   {
     image: '/images/characters/human.png',
-    characterName: 'HUMAN',
+    name: 'HUMAN',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis expedita hic aliquid odio necessitatibus!',
   },
   {
     image: '/images/characters/rootman.png',
-    characterName: 'DUNNO',
+    name: 'DUNNO',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis expedita hic aliquid odio necessitatibus!',
   },
   {
     image: '/images/characters/alien.png',
-    characterName: 'ALIEN',
+    name: 'ALIEN',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis expedita hic aliquid odio necessitatibus!',
   },

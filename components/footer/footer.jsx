@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import {
   FaDiscord,
   FaFacebook,
@@ -16,6 +17,18 @@ function Footer() {
       setIsMobile(true);
     }
   }, []);
+
+  const [socialsRef, socialsInView] = useInView({
+    threshold: 0.4,
+    // triggerOnce: true
+  });
+  const socialStyle = (delay) => ({
+    transition: '300ms',
+    transitionDelay: delay,
+    position: 'relative',
+    top: socialsInView ? 0 : '2.5rem',
+    opacity: socialsInView ? 1 : 0,
+  });
 
   return (
     <footer className={styles.Footer}>
@@ -57,24 +70,24 @@ function Footer() {
         </div>
       </nav>
       {isMobile && (
-        <div className={styles.mobileSocials}>
+        <div ref={socialsRef} className={styles.mobileSocials}>
           <Link href="#">
-            <a>
+            <a style={socialStyle(0)}>
               <FaDiscord />
             </a>
           </Link>
           <Link href="#">
-            <a>
+            <a style={socialStyle('100ms')}>
               <FaFacebook />
             </a>
           </Link>
           <Link href="#">
-            <a>
+            <a style={socialStyle('200ms')}>
               <FaTelegramPlane />
             </a>
           </Link>
           <Link href="#">
-            <a>
+            <a style={socialStyle('300ms')}>
               <FaTwitter />
             </a>
           </Link>

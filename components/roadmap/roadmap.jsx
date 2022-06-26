@@ -34,6 +34,10 @@ function Roadmap() {
     threshold: 0.4,
     triggerOnce: true,
   });
+  const [sliderRef, sliderInView] = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
 
   const titleStyle = {
     transition: '600ms',
@@ -46,6 +50,24 @@ function Roadmap() {
     position: 'relative',
     top: subTitleInView ? 0 : '3rem',
     opacity: subTitleInView ? 1 : 0,
+  };
+
+  const decorLineStyle = {
+    transition: '800ms',
+    width: sliderInView ? '100%' : 0,
+  };
+
+  const decorLineDotStyle = (delay) => ({
+    opacity: sliderInView ? 1 : 0,
+    transitionDelay: delay,
+    transition: '600ms',
+  });
+
+  const sliderStyle = {
+    transition: '600ms',
+    position: 'relative',
+    top: sliderInView ? 0 : '4rem',
+    opacity: sliderInView ? 1 : 0,
   };
 
   return (
@@ -65,16 +87,33 @@ function Roadmap() {
         <button ref={swiperPrevButtonRef}>{'<-'}</button>
         <button ref={swiperNextButtonRef}>{'->'}</button>
       </div>
-      <div className={styles.sliderContainer}>
-        <div className={styles.decorLine}>
-          <div className={styles.decorLineDot}></div>
-          <div className={styles.decorLineDot}></div>
-          <div className={styles.decorLineDot}></div>
-          <div className={styles.decorLineDot}></div>
+      <div ref={sliderRef} className={styles.sliderContainer}>
+        <div className={styles.decorLine} style={decorLineStyle}>
+          <div
+            className={styles.decorLineDot}
+            style={decorLineDotStyle(0)}
+          ></div>
+          {sliderPerView === 4 && (
+            <>
+              <div
+                className={styles.decorLineDot}
+                style={decorLineDotStyle('400ms')}
+              ></div>
+              <div
+                className={styles.decorLineDot}
+                style={decorLineDotStyle('800ms')}
+              ></div>
+              <div
+                className={styles.decorLineDot}
+                style={decorLineDotStyle('1200ms')}
+              ></div>
+            </>
+          )}
         </div>
 
         <Swiper
           // install Swiper modules
+          style={sliderStyle}
           modules={[Navigation, EffectFade]}
           spaceBetween={50}
           slidesPerView={sliderPerView}
