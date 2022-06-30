@@ -96,7 +96,7 @@ rose - #ee4492
     border: 3px dashed $purple-primary;
     border-radius: 50%;
     position: relative;
-    animation: rotateToLeft 30s linear infinite;
+    animation: rotateToLeft 60s linear infinite;
     @include flexCenter(row);
 
     .content {
@@ -104,7 +104,7 @@ rose - #ee4492
       height: 75%;
       border-radius: 50%;
       background-color: #332441;
-      animation: rotateToRight 30s linear infinite;
+      animation: rotateToRight 60s linear infinite;
       @include flexCenter(column);
 
       h6,
