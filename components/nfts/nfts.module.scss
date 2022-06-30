@@ -4,6 +4,15 @@
 .Nfts {
   min-height: 70vh;
 
+  .title,
+  .sectionInfo {
+    transition: $text-transition;
+  }
+
+  .sectionInfo {
+    transition-delay: $text-transition-delay;
+  }
+
   h2 {
     text-align: center;
   }

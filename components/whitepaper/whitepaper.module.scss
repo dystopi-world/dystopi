@@ -5,8 +5,18 @@
   min-height: 50vh;
   margin: 8rem 0;
 
+  .title,
+  .sectionInfo {
+    position: relative;
+    transition: $text-transition;
+  }
+
+  .sectionInfo {
+    transition-delay: $text-transition-delay;
+  }
+
   .decorBorder {
-    transition: 1500ms;
+    transition: $decor-border-transition;
     position: absolute;
     background-color: $purple-primary;
   }

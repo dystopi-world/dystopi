@@ -19,19 +19,19 @@ function Whitepaper() {
   });
 
   const titleStyle = {
-    transition: '600ms',
+    transition: '2000ms',
     position: 'relative',
     top: titleInView ? 0 : '3rem',
     opacity: titleInView ? 1 : 0,
   };
   const subTitleStyle = {
-    transition: '600ms',
+    transition: '2000ms',
     position: 'relative',
     top: subTitleInView ? 0 : '3rem',
     opacity: subTitleInView ? 1 : 0,
   };
   const buttonStyle = {
-    transition: '600ms',
+    transition: '2000ms',
     position: 'relative',
     top: buttonInView ? 0 : '3rem',
     opacity: buttonInView ? 1 : 0,
@@ -45,7 +45,7 @@ function Whitepaper() {
   };
 
   const imageStyle = {
-    transition: '600ms',
+    transition: '2000ms',
     opacity: titleInView ? 1 : 0,
   };
 
@@ -96,10 +96,14 @@ function Whitepaper() {
             <SectionSeparator />
           </div>
           <div className={styles.contentContainer}>
-            <h2 ref={titleRef} style={titleStyle}>
+            <h2 ref={titleRef} style={titleStyle} className={styles.title}>
               WHITEPAPER
             </h2>
-            <p ref={subTitleRef} style={subTitleStyle}>
+            <p
+              ref={subTitleRef}
+              style={subTitleStyle}
+              className={styles.sectionInfo}
+            >
               Check our Whitepaper to learn more about project Dystopi!
             </p>
             <Link href="https://bence-vereb.gitbook.io/whitepaper/">

@@ -43,38 +43,26 @@ function GameMechanism() {
   }, []);
 
   const titleStyle = {
-    transition: '600ms',
-    position: 'relative',
     top: titleInView ? 0 : '3rem',
     opacity: titleInView ? 1 : 0,
   };
   const subTitleStyle = {
-    transition: '600ms',
-    position: 'relative',
     top: subTitleInView ? 0 : '3rem',
     opacity: subTitleInView ? 1 : 0,
   };
   const gearTextStyle = {
-    transition: '600ms',
-    position: 'relative',
     top: gearTextInView ? 0 : '3rem',
     opacity: gearTextInView ? 1 : 0,
   };
   const fightTextStyle = {
-    transition: '600ms',
-    position: 'relative',
     top: fightTextInView ? 0 : '3rem',
     opacity: fightTextInView ? 1 : 0,
   };
   const earnTextStyle = {
-    transition: '600ms',
-    position: 'relative',
     top: earnTextInView ? 0 : '3rem',
     opacity: earnTextInView ? 1 : 0,
   };
   const repeatTextStyle = {
-    transition: '600ms',
-    position: 'relative',
     top: repeatTextInView ? 0 : '3rem',
     opacity: repeatTextInView ? 1 : 0,
   };
@@ -95,10 +83,14 @@ function GameMechanism() {
         objectFit="cover"
       />
       <div className={styles.container}>
-        <h2 ref={titleRef} style={titleStyle}>
+        <h2 ref={titleRef} style={titleStyle} className={styles.sectionTitle}>
           GAME MECHANISM
         </h2>
-        <p ref={subTitleRef} style={subTitleStyle}>
+        <p
+          ref={subTitleRef}
+          style={subTitleStyle}
+          className={styles.sectionInfo}
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum vel
           minus laborum, quasi repellendus similique.
         </p>
@@ -148,7 +140,11 @@ function GameMechanism() {
                 }
               ></div>
               <DecorSquare />
-              <h3 ref={gearTextRef} style={gearTextStyle}>
+              <h3
+                ref={gearTextRef}
+                style={gearTextStyle}
+                className={styles.cardInfo}
+              >
                 GEAR
               </h3>
             </div>
@@ -164,7 +160,11 @@ function GameMechanism() {
                 }
               ></div>
               <DecorSquare />
-              <h3 ref={fightTextRef} style={fightTextStyle}>
+              <h3
+                ref={fightTextRef}
+                style={fightTextStyle}
+                className={styles.cardInfo}
+              >
                 FIGHT
               </h3>
             </div>
@@ -180,13 +180,21 @@ function GameMechanism() {
                 }
               ></div>
               <DecorSquare />
-              <h3 ref={earnTextRef} style={earnTextStyle}>
+              <h3
+                ref={earnTextRef}
+                style={earnTextStyle}
+                className={styles.cardInfo}
+              >
                 EARN
               </h3>
             </div>
             <div className={styles.card}>
               <DecorSquare />
-              <h3 ref={repeatTextRef} style={repeatTextStyle}>
+              <h3
+                ref={repeatTextRef}
+                style={repeatTextStyle}
+                className={styles.cardInfo}
+              >
                 REPEAT
               </h3>
             </div>

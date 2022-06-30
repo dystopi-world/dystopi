@@ -5,6 +5,16 @@
   padding: 2rem 0 5rem;
   background: linear-gradient(to bottom, transparent, #1e1625);
 
+  .title,
+  .sectionInfo {
+    position: relative;
+    transition: $text-transition;
+  }
+
+  .sectionInfo {
+    transition-delay: $text-transition-delay;
+  }
+
   h2 {
     text-align: center;
   }

@@ -50,7 +50,7 @@
   }
 
   .decorBorder {
-    transition: 1500ms;
+    transition: $decor-border-transition;
     position: absolute;
     background-color: $purple-primary-faded;
   }

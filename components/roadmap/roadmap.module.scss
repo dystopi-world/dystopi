@@ -3,6 +3,17 @@
 
 .Roadmap {
   margin-bottom: 5rem;
+
+  .title,
+  .sectionInfo {
+    position: relative;
+    transition: $text-transition;
+  }
+
+  .sectionInfo {
+    transition-delay: $text-transition-delay;
+  }
+
   h2 {
     text-align: center;
   }

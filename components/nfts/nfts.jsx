@@ -18,13 +18,14 @@ function Nfts() {
   });
 
   const titleStyle = {
-    transition: '600ms',
+    transition: '2000ms',
     position: 'relative',
     top: titleInView ? 0 : '3rem',
     opacity: titleInView ? 1 : 0,
   };
   const subTitleStyle = {
-    transition: '600ms',
+    transition: '2000ms',
+    transitionDelay: '200ms',
     position: 'relative',
     top: subTitleInView ? 0 : '3rem',
     opacity: subTitleInView ? 1 : 0,

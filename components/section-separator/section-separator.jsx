@@ -8,7 +8,7 @@ function SectionSeparator() {
     triggerOnce: true,
   });
   const separatorStyle = {
-    transition: '800ms',
+    transition: '2500ms',
     transform: separatorInView
       ? 'translateY(-0.75rem) scaleX(1)'
       : 'translateY(-0.75rem) scaleX(0)',
