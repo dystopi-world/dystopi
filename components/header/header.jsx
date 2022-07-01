@@ -1,8 +1,11 @@
-import styles from "./header.module.scss";
-import Image from "next/image";
-import Button from "../button/button";
+import { useContext } from 'react';
+import Image from 'next/image';
+import Button from '../button/button';
+import PresaleContext from '../../contexts/presale-context';
+import styles from './header.module.scss';
 
 function Header() {
+  const { setIsVisible } = useContext(PresaleContext);
   return (
     <header className={styles.Header}>
       <div className={styles.imageContainer}>
@@ -30,7 +33,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <Button>JOIN PRESALE</Button>
+      <Button onClick={() => setIsVisible(true)}>JOIN PRESALE</Button>
     </header>
   );
 }

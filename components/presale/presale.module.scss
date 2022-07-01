@@ -1,0 +1,161 @@
+@import '/styles/mixins';
+@import '/styles/variables';
+.Presale {
+  width: 100%;
+  height: 100%;
+  background-color: #000000aa;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  animation: fadeIn 300ms ease forwards;
+
+  form {
+    @include flexCenter(column);
+    transition-delay: 300ms;
+    background-color: $background-primary;
+    padding: 3rem 4rem;
+    border: 2px solid $purple-secondary;
+    position: relative;
+    opacity: 0;
+    transform: translateY(1.5rem);
+    animation: fadeUp 500ms 100ms ease forwards;
+
+    &::before {
+      content: '';
+      width: calc(100% + 12px);
+      height: calc(100% + 12px);
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      z-index: -1;
+      border: 2px solid $purple-secondary;
+    }
+
+    .closeButton {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: transparent;
+      border: none;
+      font-size: 2rem;
+      color: $purple-primary;
+      cursor: pointer;
+    }
+
+    div {
+      @include flexCenter(row);
+      gap: 1rem;
+    }
+
+    .sectionInfo {
+      transition-delay: $text-transition-delay;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: $text-secondary;
+      margin: 0.75rem 0 3rem;
+      text-align: center;
+    }
+  }
+
+  .errorMessage {
+    position: relative;
+    top: 1.5rem;
+    color: rgb(250, 33, 33);
+    text-shadow: 0 0 1px rgb(255, 118, 118);
+  }
+  .successMessage {
+    position: relative;
+    top: 1.5rem;
+    color: rgb(69, 219, 0);
+    text-shadow: 0 0 1px rgb(69, 219, 0);
+  }
+
+  label {
+    position: relative;
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-top: 1px solid $purple-primary;
+      border-right: 1px solid $purple-primary;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      animation: inputAnimation 1200ms 300ms ease forwards;
+    }
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      border-bottom: 1px solid $purple-primary;
+      border-left: 1px solid $purple-primary;
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      animation: inputAnimation 1200ms 300ms ease forwards;
+    }
+  }
+
+  input {
+    min-width: 300px;
+    max-width: 400px;
+    padding: 0.75rem 0.5rem;
+    background-color: transparent;
+    border: none;
+    color: $text-primary;
+    position: relative;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes inputAnimation {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  70% {
+    width: 100%;
+    height: 0;
+    opacity: 0.7;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+}

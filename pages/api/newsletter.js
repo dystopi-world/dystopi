@@ -2,12 +2,12 @@ import axios from 'axios';
 
 function getRequestParams(email) {
   // get env variables
-  const API_KEY = process.env.MAILCHIMP_API_KEY;
-  const LIST_ID = process.env.MAILCHIMP_LIST_ID;
+  const API_KEY = process.env.MAIL_API_KEY;
+  const LIST_ID = process.env.MAIL_LIST_ID;
   // mailchimp datacenter - mailchimp api keys always look like this:
   // fe4f064432e4684878063s83121e4971-us6
   // We need the us6 part
-  const DATACENTER = process.env.MAILCHIMP_API_KEY.split('-')[1];
+  const DATACENTER = process.env.MAIL_API_KEY.split('-')[1];
 
   const url = `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;
 
@@ -50,7 +50,8 @@ export default async (req, res) => {
     return res.status(201).json({ error: null });
   } catch (error) {
     return res.status(400).json({
-      error: `Oops, something went wrong... Send us an email at service@dystopi.com and we'll add you to the list. ${error}`,
+      error:
+        "Oops, something went wrong... Send us an email at service@dystopi.com and we'll add you to the list.",
     });
 
     // Report error to Sentry or whatever

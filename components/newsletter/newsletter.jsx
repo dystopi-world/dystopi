@@ -83,7 +83,6 @@ function Newsletter() {
         />
         <Button style={{ width: isMobile ? '100%' : 'auto' }}>SIGN UP</Button>
       </form>
-      {email}
       {state === 'ERROR' && (
         <p className={styles.errorMessage}>{errorMessage}</p>
       )}

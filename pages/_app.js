@@ -1,11 +1,14 @@
-import Layout from "../components/layout";
-import "../styles/globals.scss";
+import Layout from '../components/layout';
+import PresaleWrapper from '../contexts/presale-wrapper';
+import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <PresaleWrapper>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </PresaleWrapper>
   );
 }
 
