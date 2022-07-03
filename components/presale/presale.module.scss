@@ -15,6 +15,7 @@
   animation: fadeIn 300ms ease forwards;
 
   form {
+    max-width: 350px;
     @include flexCenter(column);
     transition-delay: 300ms;
     background-color: $background-primary;
@@ -48,7 +49,7 @@
     }
 
     div {
-      @include flexCenter(row);
+      @include flexCenter(column);
       gap: 1rem;
     }
 
@@ -119,6 +120,24 @@
     border: none;
     color: $text-primary;
     position: relative;
+  }
+
+  form div > button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .Presale {
+    form {
+      div {
+        @include flexCenter(row);
+
+        & > button {
+          width: auto;
+        }
+      }
+    }
   }
 }
 
