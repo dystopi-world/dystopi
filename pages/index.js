@@ -24,7 +24,7 @@ export default function Home() {
       <Landing />
       <SocialMedias />
       <Story />
-      <SectionSeparator />
+      {/* <SectionSeparator /> */}
       <GameMechanism />
       <SectionSeparator />
       <Nfts />

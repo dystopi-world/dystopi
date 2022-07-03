@@ -3,6 +3,11 @@
 .GameMechanism {
   min-height: 80vh;
 
+  .imageContainer {
+    position: relative;
+    padding-top: 1rem;
+  }
+
   .sectionTitle,
   .sectionInfo,
   .cardInfo {
@@ -52,13 +57,13 @@
     width: 1px;
     height: calc(100% + 2px);
     bottom: -1px;
-    right: -1px;
+    right: 0px;
   }
 
   .decorBorderBottom {
     width: 100%;
     height: 1px;
-    bottom: -1px;
+    bottom: 0;
     right: 0;
   }
 
@@ -73,15 +78,29 @@
     @include flexCenter(column);
     width: 100%;
     position: relative;
-  }
 
-  .card {
-    width: 100%;
-    height: 25%;
-    @include flexCenter(column);
-    min-height: 50vh;
-    cursor: pointer;
-    position: relative;
+    .card {
+      width: 100%;
+      height: 25%;
+      @include flexCenter(column);
+      min-height: 50vh;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hiddenImage {
+      width: 100vw;
+      position: absolute;
+      bottom: -3px;
+      opacity: 0;
+      transition: 500ms;
+      object-fit: cover;
+    }
+
+    .card:hover img {
+      opacity: 1;
+    }
   }
 }
 
