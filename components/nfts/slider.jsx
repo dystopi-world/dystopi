@@ -1,17 +1,17 @@
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
+import styles from './nfts.module.scss';
 // Import Swiper styles
 import 'swiper/css';
-import { useState } from 'react';
-import { useEffect } from 'react';
-// import 'swiper/css/effect-coverflow.min.css';
 
 function Slider({ swiperPrevButtonRef, swiperNextButtonRef }) {
   const [sliderPerView, setSlidesPerView] = useState(3);
   useEffect(() => {
-    if (window.innerWidth < 720) {
+    if (window.innerWidth < 900) {
       setSlidesPerView(1);
     }
   }, []);
@@ -19,10 +19,8 @@ function Slider({ swiperPrevButtonRef, swiperNextButtonRef }) {
   return (
     <Swiper
       modules={[EffectCoverflow, Navigation]}
-      spaceBetween={100}
+      spaceBetween={150}
       slidesPerView={sliderPerView}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
       effect="coverflow"
       navigation={{
         nextEl: '.swiper-button-next',
@@ -44,28 +42,76 @@ function Slider({ swiperPrevButtonRef, swiperNextButtonRef }) {
       }}
     >
       <SwiperSlide>
-        <div style={{ background: '#444', minHeight: '15rem' }}>Slide 1</div>
+        <div className={styles.nftImageContainer}>
+          <Image
+            src="/images/nfts/nft-armor.jpg"
+            layout="fill"
+            alt="Dystopi NFT"
+          />
+        </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div style={{ background: '#444', minHeight: '15rem' }}>Slide 2</div>
+        <div className={styles.nftImageContainer}>
+          <Image
+            src="/images/nfts/nft-armor.jpg"
+            layout="fill"
+            alt="Dystopi NFT"
+          />
+        </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div style={{ background: '#444', minHeight: '15rem' }}>Slide 3</div>
+        <div className={styles.nftImageContainer}>
+          <Image
+            src="/images/nfts/nft-armor.jpg"
+            layout="fill"
+            alt="Dystopi NFT"
+          />
+        </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div style={{ background: '#444', minHeight: '15rem' }}>Slide 4</div>
+        <div className={styles.nftImageContainer}>
+          <Image
+            src="/images/nfts/nft-armor.jpg"
+            layout="fill"
+            alt="Dystopi NFT"
+          />
+        </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div style={{ background: '#444', minHeight: '15rem' }}>Slide 5</div>
+        <div className={styles.nftImageContainer}>
+          <Image
+            src="/images/nfts/nft-armor.jpg"
+            layout="fill"
+            alt="Dystopi NFT"
+          />
+        </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div style={{ background: '#444', minHeight: '15rem' }}>Slide 6</div>
+        <div className={styles.nftImageContainer}>
+          <Image
+            src="/images/nfts/nft-armor.jpg"
+            layout="fill"
+            alt="Dystopi NFT"
+          />
+        </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div style={{ background: '#444', minHeight: '15rem' }}>Slide 7</div>
+        <div className={styles.nftImageContainer}>
+          <Image
+            src="/images/nfts/nft-armor.jpg"
+            layout="fill"
+            alt="Dystopi NFT"
+          />
+        </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div style={{ background: '#444', minHeight: '15rem' }}>Slide 8</div>
+        <div className={styles.nftImageContainer}>
+          <Image
+            src="/images/nfts/nft-armor.jpg"
+            layout="fill"
+            alt="Dystopi NFT"
+          />
+        </div>
       </SwiperSlide>
     </Swiper>
   );

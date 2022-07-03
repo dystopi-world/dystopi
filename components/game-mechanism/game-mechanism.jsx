@@ -197,6 +197,7 @@ function GameMechanism() {
                   >
                     GEAR
                   </h3>
+                  <p>Gear up your hero, restock with supply</p>
                 </div>
                 <div className={styles.card}>
                   <img
@@ -225,6 +226,7 @@ function GameMechanism() {
                   >
                     FIGHT
                   </h3>
+                  <p>Gear up your hero, restock with supply</p>
                 </div>
                 <div className={styles.card}>
                   <img
@@ -253,6 +255,7 @@ function GameMechanism() {
                   >
                     EARN
                   </h3>
+                  <p>Gear up your hero, restock with supply</p>
                 </div>
                 <div className={styles.card}>
                   <img
@@ -269,6 +272,7 @@ function GameMechanism() {
                   >
                     REPEAT
                   </h3>
+                  <p>Gear up your hero, restock with supply</p>
                 </div>
               </div>
             </div>

@@ -58,7 +58,7 @@ function Characters() {
               <Character
                 image={character.image}
                 characterName={character.name}
-                description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis expedita hic aliquid odio necessitatibus!"
+                description={character.description}
               />
             </SwiperSlide>
           ))}

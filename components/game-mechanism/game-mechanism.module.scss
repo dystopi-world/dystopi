@@ -87,6 +87,24 @@
       cursor: pointer;
       position: relative;
       overflow: hidden;
+
+      p {
+        width: 20ch;
+        color: $text-primary;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        opacity: 0;
+        transition: 700ms;
+      }
+
+      &:hover {
+        p {
+          opacity: 1;
+          top: 50%;
+        }
+      }
     }
 
     .hiddenImage {
