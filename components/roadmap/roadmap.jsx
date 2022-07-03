@@ -1,10 +1,12 @@
 import { useRef, useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import SectionSeparator from '../section-separator/section-separator';
-import styles from './roadmap.module.scss';
 // Import Swiper React components
 import { Navigation, EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import styles from './roadmap.module.scss';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -34,6 +36,10 @@ function Roadmap() {
     threshold: 0.4,
     triggerOnce: true,
   });
+  const [buttonGroupRef, buttonGroupInView] = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
   const [sliderRef, sliderInView] = useInView({
     threshold: 0.4,
     triggerOnce: true,
@@ -46,6 +52,10 @@ function Roadmap() {
   const subTitleStyle = {
     top: subTitleInView ? 0 : '3rem',
     opacity: subTitleInView ? 1 : 0,
+  };
+  const buttonGroupStyle = {
+    top: buttonGroupInView ? '50%' : '55%',
+    opacity: buttonGroupInView ? 1 : 0,
   };
 
   const decorLineStyle = {
@@ -79,9 +89,17 @@ function Roadmap() {
         commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
         velit esse cillum.
       </p>
-      <div className={styles.buttonGroup}>
-        <button ref={swiperPrevButtonRef}>{'<-'}</button>
-        <button ref={swiperNextButtonRef}>{'->'}</button>
+      <div
+        ref={buttonGroupRef}
+        className={styles.buttonGroup}
+        style={buttonGroupStyle}
+      >
+        <button ref={swiperPrevButtonRef}>
+          <BsArrowLeft />
+        </button>
+        <button ref={swiperNextButtonRef}>
+          <BsArrowRight />
+        </button>
       </div>
       <div ref={sliderRef} className={styles.sliderContainer}>
         <div className={styles.decorLine} style={decorLineStyle}>

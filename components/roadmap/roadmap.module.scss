@@ -26,6 +26,8 @@
   }
 
   .buttonGroup {
+    transition: $text-transition;
+    transition-delay: $text-transition-delay;
     position: absolute;
     right: 8rem;
     top: 50%;

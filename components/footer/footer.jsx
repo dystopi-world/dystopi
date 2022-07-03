@@ -23,7 +23,7 @@ function Footer() {
     // triggerOnce: true
   });
   const socialStyle = (delay) => ({
-    transition: '300ms',
+    transition: '900ms',
     transitionDelay: delay,
     position: 'relative',
     top: socialsInView ? 0 : '2.5rem',
@@ -77,17 +77,17 @@ function Footer() {
             </a>
           </Link>
           <Link href="#">
-            <a style={socialStyle('100ms')}>
+            <a style={socialStyle('200ms')}>
               <FaFacebook />
             </a>
           </Link>
           <Link href="#">
-            <a style={socialStyle('200ms')}>
+            <a style={socialStyle('400ms')}>
               <FaTelegramPlane />
             </a>
           </Link>
           <Link href="#">
-            <a style={socialStyle('300ms')}>
+            <a style={socialStyle('600ms')}>
               <FaTwitter />
             </a>
           </Link>
