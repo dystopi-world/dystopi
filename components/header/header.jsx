@@ -23,7 +23,7 @@ function Header() {
             <a href="#game-mechanism">GAME MECHANISM</a>
           </li>
           <li>
-            <a href="#nfts">NFTS</a>
+            <a href="#nfts">NFT</a>
           </li>
           <li>
             <a href="#tokenomics">TOKEMONICS</a>

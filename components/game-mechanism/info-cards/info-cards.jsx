@@ -29,10 +29,10 @@ function InfoCards() {
         cardInView={secondCardInView}
         title={'SHORT STORY'}
         paragraph_1={
-          "In the 314th year of the New Age an alien symbiotic species is coming to Earth: the mighty plant-like giants, the friendly Meer, have travelled across the galaxy to warn man of the arrival of the ruthless conquerors: Gata'aga! Perceiving a greater danger than ever before, human leaders put aside their pride and visited the HOME, built on the other side of the planet to ask for the help of AI."
+          'Dyseum is a currency that is mutually accepted by all four members of the alliance. Financing of the war, production and distribution of weapons and equipment, and the distribution of rewards happen in this currency. Dyseum is made up of a special alloy of whish the total quantity existing has been used to create an unforgeable and non-replicable value in a material. A total of 300,000,000 of it was made, 60% of which was deposited to finance the costs of the war. If you take part in the fight, you can also benefit from the prize!'
         }
         paragraph_2={
-          'At the noise of the preparations for war, the Atlanteans, who have long been considered a legend, are finally emerging from their 12,000-year-old voluntary exile. The alliance of the four races is ready: join them and take part in the war for Dyseum tokens'
+          'The alliance divided the war budget into pre-determined periods of two years. In the first two years, 246575 Dyseum will be distributed every day among the brave warriors. In the next two-year period, the daily reward is exactly half, similarly, in the following two-year period halving happens and so on.'
         }
       />
     </div>

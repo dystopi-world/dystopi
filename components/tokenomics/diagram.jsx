@@ -89,11 +89,11 @@ function Diagram() {
         aligment="left"
         color="indigo"
         infos={{
-          percentage: '18%',
-          intro: 'Lorem ipsum dolor',
-          subInfo: '0% TGE 5% unlocked each month after',
+          percentage: '1%',
+          intro: 'Seed Sale',
+          subInfo: '10% TGE + 15%/month',
           tokens: 'TOKENS',
-          amount: '15.000.000.000',
+          amount: '3,000,000',
         }}
       />
       <DiagramInfo
@@ -102,11 +102,11 @@ function Diagram() {
         aligment="left"
         color="aqua"
         infos={{
-          percentage: '13%',
-          intro: 'Lorem ipsum dolor',
-          subInfo: '0% TGE 5% unlocked each month after',
+          percentage: '1%',
+          intro: 'Private Sale',
+          subInfo: '20% TGE + 20%/month',
           tokens: 'TOKENS',
-          amount: '15.000.000.000',
+          amount: '3,000,000',
         }}
       />
       <DiagramInfo
@@ -115,11 +115,11 @@ function Diagram() {
         aligment="left"
         color="turquoise"
         infos={{
-          percentage: '19%',
-          intro: 'Lorem ipsum dolor',
-          subInfo: '0% TGE 5% unlocked each month after',
+          percentage: '10%',
+          intro: 'PreSale',
+          subInfo: '20% TGE + 20%/month',
           tokens: 'TOKENS',
-          amount: '15.000.000.000',
+          amount: '30,000,000',
         }}
       />
       <DiagramInfo
@@ -128,11 +128,11 @@ function Diagram() {
         aligment="right"
         color="purple"
         infos={{
-          percentage: '9%',
-          intro: 'Lorem ipsum dolor',
-          subInfo: '0% TGE 5% unlocked each month after',
+          percentage: '1%',
+          intro: 'Airdrop',
+          subInfo: 'Released at TGE',
           tokens: 'TOKENS',
-          amount: '15.000.000.000',
+          amount: '3,000,000',
         }}
       />
       <DiagramInfo
@@ -141,11 +141,11 @@ function Diagram() {
         aligment="right"
         color="rose"
         infos={{
-          percentage: '16%',
-          intro: 'Lorem ipsum dolor',
-          subInfo: '0% TGE 5% unlocked each month after',
+          percentage: '5%',
+          intro: 'Liquidity',
+          subInfo: 'Released at TGE',
           tokens: 'TOKENS',
-          amount: '15.000.000.000',
+          amount: '15,000,000',
         }}
       />
       <DiagramInfo
@@ -154,11 +154,11 @@ function Diagram() {
         aligment="right"
         color="teal"
         infos={{
-          percentage: '14%',
-          intro: 'Lorem ipsum dolor',
-          subInfo: '0% TGE 5% unlocked each month after',
+          percentage: '9%',
+          intro: 'Dev/Marketing',
+          subInfo: '5% TGE + 5%/month',
           tokens: 'TOKENS',
-          amount: '15.000.000.000',
+          amount: '27,000,000',
         }}
       />
       <DiagramInfo
@@ -167,13 +167,44 @@ function Diagram() {
         aligment="right"
         color="eggplant"
         infos={{
-          percentage: '11%',
-          intro: 'Lorem ipsum dolor',
-          subInfo: '0% TGE 5% unlocked each month after',
+          percentage: '3%',
+          intro: 'Advisors',
+          subInfo: '365 day cliff, after 10% / month',
           tokens: 'TOKENS',
-          amount: '15.000.000.000',
+          amount: '9,000,000',
         }}
       />
+      {/*
+        <>
+          <DiagramInfo
+            onMouseEnter={() => setEggplantHovered(true)}
+            onMouseLeave={() => setEggplantHovered(false)}
+            aligment="right"
+            color="eggplant"
+            infos={{
+              percentage: '10%',
+              intro: 'Team',
+              subInfo: '365 day cliff, after 10% / month',
+              tokens: 'TOKENS',
+              amount: '30,000,000',
+            }}
+          />
+          <DiagramInfo
+            onMouseEnter={() => setEggplantHovered(true)}
+            onMouseLeave={() => setEggplantHovered(false)}
+            aligment="right"
+            color="eggplant"
+            infos={{
+              percentage: '60%',
+              intro: 'Reward/Quest',
+              subInfo:
+                'First 2 year 123 287 DYS token/day, (Halves every second year)',
+              tokens: 'TOKENS',
+              amount: '180,000,000',
+            }}
+          />
+        </>
+    */}
       <Image src={'/images/diagram.svg'} layout="fill" alt="dystopi diagram" />
       <div className={styles.dashedCircle}>
         <div className={styles.content}>

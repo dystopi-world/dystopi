@@ -64,7 +64,7 @@
     p {
       font-size: 0.9rem;
       color: $text-secondary;
-      margin: 0.75rem 0 3rem;
+      margin: 0.75rem 0 2rem;
       text-align: center;
     }
   }
@@ -130,6 +130,7 @@
 @media (min-width: 768px) {
   .Presale {
     form {
+      max-width: 650px;
       div {
         @include flexCenter(row);
 

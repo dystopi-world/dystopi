@@ -148,6 +148,14 @@ function Roadmap() {
           {roadmapData.map((roadmap, index) => (
             <SwiperSlide key={index}>
               <article>
+                <div
+                  className={styles.decorLineDot}
+                  style={decorLineDotStyle('1000ms')}
+                ></div>
+                <div
+                  className={styles.decorLineDot}
+                  style={decorLineDotStyle('1000ms')}
+                ></div>
                 <h4>{roadmap.year}</h4>
                 <ul>
                   {roadmap.milestones.map((milestone, index) => (

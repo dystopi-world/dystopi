@@ -81,7 +81,7 @@
 
     .card {
       width: 100%;
-      height: 25%;
+      height: 30rem;
       @include flexCenter(column);
       min-height: 50vh;
       cursor: pointer;
@@ -96,14 +96,7 @@
         left: 50%;
         transform: translate(-50%, 50%);
         opacity: 0;
-        transition: 700ms;
-      }
-
-      &:hover {
-        p {
-          opacity: 1;
-          top: 50%;
-        }
+        transition: 800ms;
       }
     }
 
@@ -112,12 +105,12 @@
       position: absolute;
       bottom: -3px;
       opacity: 0;
-      transition: 500ms;
+      transition: opacity 500ms, transform 10000ms;
       object-fit: cover;
     }
 
     .card:hover img {
-      opacity: 1;
+      opacity: 1 !important;
     }
   }
 }
@@ -134,13 +127,23 @@
     }
     .cards {
       @include flexCenter(row);
-    }
 
-    .card {
-      width: 25%;
-      height: 100%;
-      min-height: 60vh;
-      cursor: pointer;
+      .card {
+        width: 25%;
+        height: 100%;
+        min-height: 60vh;
+        cursor: pointer;
+
+        &:hover {
+          p {
+            opacity: 1;
+            top: 50%;
+          }
+          .hiddenImage {
+            transform: scale(1.1) !important;
+          }
+        }
+      }
     }
   }
 }

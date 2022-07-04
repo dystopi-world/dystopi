@@ -95,6 +95,13 @@
     .sliderContainer {
       max-width: 1050px;
 
+      .swiperButtonPrev {
+        left: 1rem;
+      }
+      .swiperButtonNext {
+        right: 1rem;
+      }
+
       .nftImageContainer {
         min-height: 20rem;
       }

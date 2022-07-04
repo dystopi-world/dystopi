@@ -106,7 +106,7 @@ function Whitepaper() {
             >
               Check our Whitepaper to learn more about project Dystopi!
             </p>
-            <Link href="https://bence-vereb.gitbook.io/whitepaper/">
+            <Link href="https://dystopi.gitbook.io/dystopi-whitepaper/">
               <a ref={buttonRef} style={buttonStyle} target="blank">
                 CHECK WHITEPAPER
               </a>

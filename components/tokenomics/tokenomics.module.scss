@@ -106,6 +106,8 @@ rose - #ee4492
       background-color: #332441;
       animation: rotateToRight 60s linear infinite;
       @include flexCenter(column);
+      transition: 500ms;
+      box-shadow: 0 0 0 #a967ffaa;
 
       h6,
       p {
@@ -117,10 +119,12 @@ rose - #ee4492
       h6 {
         font-size: 1rem;
         margin-bottom: 0.5rem;
+        transition: 400ms;
       }
 
       p {
         color: $text-secondary;
+        transition: 600ms;
       }
     }
   }
@@ -168,6 +172,24 @@ rose - #ee4492
     height: 450px;
     transform-origin: center;
     transform: scale(0.75);
+
+    .content {
+      transition: 400ms;
+      &:hover {
+        box-shadow: 0 0 20px #a967ffaa;
+
+        h6,
+        p {
+          transform-origin: center;
+          transform: scale(1.2);
+          letter-spacing: 1px;
+        }
+
+        p {
+          transform: scale(1.2) translateY(0.25rem);
+        }
+      }
+    }
 
     .mobilePercentages {
       display: none;
