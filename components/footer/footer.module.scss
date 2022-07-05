@@ -15,8 +15,7 @@
   nav {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
-    gap: 3rem;
+    justify-content: center;
     font-size: 0.8rem;
     color: $text-secondary;
 
@@ -26,6 +25,9 @@
       align-items: flex-start;
       justify-content: center;
       gap: 1rem;
+      flex-wrap: wrap;
+      height: 100px;
+      width: 250px;
     }
 
     .separatorDot {
@@ -62,9 +64,18 @@
     nav {
       align-items: center;
       gap: 1rem;
+
+      a {
+        transition: 200ms;
+        &:hover {
+          color: $text-primary;
+        }
+      }
+
       div {
         flex-direction: row;
         align-items: center;
+        width: auto;
       }
       .separatorDot {
         display: block;

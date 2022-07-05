@@ -16,6 +16,8 @@ function InfoCards() {
       <InfoCard
         cardRef={firstCardRef}
         cardInView={firstCardInView}
+        image="/images/game-mechanism/blindguy.png"
+        layout="fill"
         title={'SHORT STORY'}
         paragraph_1={
           "In the 314th year of the New Age an alien symbiotic species is coming to Earth: the mighty plant-like giants, the friendly Meer, have travelled across the galaxy to warn man of the arrival of the ruthless conquerors: Gata'aga! Perceiving a greater danger than ever before, human leaders put aside their pride and visited the HOME, built on the other side of the planet to ask for the help of AI."
@@ -27,7 +29,9 @@ function InfoCards() {
       <InfoCard
         cardRef={secondCardRef}
         cardInView={secondCardInView}
-        title={'SHORT STORY'}
+        image="/images/game-mechanism/token.png"
+        layout="fixed"
+        title={'DYSEUM'}
         paragraph_1={
           'Dyseum is a currency that is mutually accepted by all four members of the alliance. Financing of the war, production and distribution of weapons and equipment, and the distribution of rewards happen in this currency. Dyseum is made up of a special alloy of whish the total quantity existing has been used to create an unforgeable and non-replicable value in a material. A total of 300,000,000 of it was made, 60% of which was deposited to finance the costs of the war. If you take part in the fight, you can also benefit from the prize!'
         }

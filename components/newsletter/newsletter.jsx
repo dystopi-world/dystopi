@@ -48,7 +48,10 @@ function Newsletter() {
     setState('LOADING');
     setErrorMessage(null);
     try {
-      const response = await axios.post('/api/newsletter', { email });
+      const response = await axios.post('/api/newsletter', {
+        email,
+        subscribedTo: 'Newsletter',
+      });
       setState('SUCCESS');
       setEmail('');
       setTimeout(() => {

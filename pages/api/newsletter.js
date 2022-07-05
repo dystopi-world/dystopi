@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-function getRequestParams(email) {
+function getRequestParams(email, subscribedTo) {
   // get env variables
   const API_KEY = process.env.MAIL_API_KEY;
   const LIST_ID = process.env.MAIL_LIST_ID;
@@ -16,6 +16,9 @@ function getRequestParams(email) {
   const data = {
     email_address: email,
     status: 'subscribed',
+    merge_fields: {
+      SUBTO: subscribedTo,
+    },
   };
 
   // Api key needs to be encoded in base 64 format
@@ -33,7 +36,7 @@ function getRequestParams(email) {
 }
 
 export default async (req, res) => {
-  const { email } = req.body;
+  const { email, subscribedTo } = req.body;
 
   if (!email || !email.length) {
     return res.status(400).json({
@@ -42,7 +45,7 @@ export default async (req, res) => {
   }
 
   try {
-    const { url, data, headers } = getRequestParams(email);
+    const { url, data, headers } = getRequestParams(email, subscribedTo);
 
     const response = await axios.post(url, data, { headers });
 

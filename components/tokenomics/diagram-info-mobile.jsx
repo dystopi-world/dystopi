@@ -10,6 +10,8 @@ function DiagramInfoMobile({ infos }) {
     if (infos.color == 'rose') return styles.infoRose;
     if (infos.color == 'teal') return styles.infoTeal;
     if (infos.color == 'eggplant') return styles.infoEggplant;
+    if (infos.color == 'kingBlue') return styles.infoKingBlue;
+    if (infos.color == 'iceBlue') return styles.infoIceBlue;
   };
   return (
     <article className={`${styles.DiagramInfoMobile} ${getColor()}`}>

@@ -10,6 +10,8 @@ function DiagramInfo({ aligment, color, infos, onMouseEnter, onMouseLeave }) {
     if (color == 'rose') return styles.infoRose;
     if (color == 'teal') return styles.infoTeal;
     if (color == 'eggplant') return styles.infoEggplant;
+    if (color == 'kingBlue') return styles.infoKingBlue;
+    if (color == 'iceBlue') return styles.infoIceBlue;
   };
   return (
     <div

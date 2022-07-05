@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import DiagramInfo from './diagram-info';
+import { diagramData } from './diagramData';
 import styles from './tokenomics.module.scss';
 
 function Diagram() {
@@ -22,35 +23,49 @@ function Diagram() {
   const indigoStyle = {
     transition: '250ms',
     boxShadow: indigoHovered
-      ? '5px -5px 120px 15px #6a00f4'
+      ? '15px -5px 80px 15px #6a00f4'
       : '0 0 0 0 transparent',
   };
   const [aquaHovered, setAquaHovered] = useState(false);
   const aquaStyle = {
     transition: '250ms',
     boxShadow: aquaHovered
-      ? '5px -15px 120px 15px #007afd'
+      ? '5px -2px 100px 10px #007afd'
       : '0 0 0 0 transparent',
   };
   const [turquoiseHovered, setTurquoiseHovered] = useState(false);
   const turquoiseStyle = {
     transition: '250ms',
     boxShadow: turquoiseHovered
-      ? '1px 20px 140px 20px #6ee3c0'
+      ? '20px 100px 200px 40px #6ee3c0'
       : '0 0 0 0 transparent',
   };
   const [purpleHovered, setPurpleHovered] = useState(false);
   const purpleStyle = {
     transition: '250ms',
     boxShadow: purpleHovered
-      ? '-5px 3px 120px 10px #df1dff'
+      ? '-8px -3px 70px 10px #df1dff'
+      : '0 0 0 0 transparent',
+  };
+  const [kingBlueHovered, setKingBlueHovered] = useState(false);
+  const kingBlueStyle = {
+    transition: '250ms',
+    boxShadow: kingBlueHovered
+      ? '4px -3px 60px 8px #2323ff'
+      : '0 0 0 0 transparent',
+  };
+  const [iceBlueHovered, setIceBlueHovered] = useState(false);
+  const iceBlueStyle = {
+    transition: '250ms',
+    boxShadow: iceBlueHovered
+      ? '4px -2px 80px 12px #aee9ff'
       : '0 0 0 0 transparent',
   };
   const [roseHovered, setRoseHovered] = useState(false);
   const roseStyle = {
     transition: '250ms',
     boxShadow: roseHovered
-      ? '-10px 10px 135px 14px #ee4492'
+      ? '-10px 10px 100px 10px #ee4492'
       : '0 0 0 0 transparent',
   };
   return (
@@ -80,20 +95,28 @@ function Diagram() {
         className={`${styles.coloredBorderBox} ${styles.coloredBorderBoxPurple}`}
       ></div>
       <div
+        style={kingBlueStyle}
+        className={`${styles.coloredBorderBox} ${styles.coloredBorderBoxKingBlue}`}
+      ></div>
+      <div
+        style={iceBlueStyle}
+        className={`${styles.coloredBorderBox} ${styles.coloredBorderBoxIceBlue}`}
+      ></div>
+      <div
         style={roseStyle}
         className={`${styles.coloredBorderBox} ${styles.coloredBorderBoxRose}`}
       ></div>
       <DiagramInfo
         onMouseEnter={() => setIndigoHovered(true)}
         onMouseLeave={() => setIndigoHovered(false)}
-        aligment="left"
+        aligment="right"
         color="indigo"
         infos={{
-          percentage: '1%',
-          intro: 'Seed Sale',
-          subInfo: '10% TGE + 15%/month',
+          percentage: '5%',
+          intro: 'Liquidity',
+          subInfo: 'Released at TGE',
           tokens: 'TOKENS',
-          amount: '3,000,000',
+          amount: '15,000,000',
         }}
       />
       <DiagramInfo
@@ -112,20 +135,20 @@ function Diagram() {
       <DiagramInfo
         onMouseEnter={() => setTurquoiseHovered(true)}
         onMouseLeave={() => setTurquoiseHovered(false)}
-        aligment="left"
+        aligment="right"
         color="turquoise"
         infos={{
-          percentage: '10%',
-          intro: 'PreSale',
-          subInfo: '20% TGE + 20%/month',
+          percentage: '60%',
+          intro: 'Reward/Quest',
+          subInfo: 'First 2 year 123 287 DYS token/day',
           tokens: 'TOKENS',
-          amount: '30,000,000',
+          amount: '180,000,000',
         }}
       />
       <DiagramInfo
         onMouseEnter={() => setPurpleHovered(true)}
         onMouseLeave={() => setPurpleHovered(false)}
-        aligment="right"
+        aligment="left"
         color="purple"
         infos={{
           percentage: '1%',
@@ -136,16 +159,42 @@ function Diagram() {
         }}
       />
       <DiagramInfo
+        onMouseEnter={() => setKingBlueHovered(true)}
+        onMouseLeave={() => setKingBlueHovered(false)}
+        aligment="left"
+        color="kingBlue"
+        infos={{
+          percentage: '1%',
+          intro: 'Seed Sale',
+          subInfo: '10% TGE + 15%/month',
+          tokens: 'TOKENS',
+          amount: '3,000,000',
+        }}
+      />
+      <DiagramInfo
+        onMouseEnter={() => setIceBlueHovered(true)}
+        onMouseLeave={() => setIceBlueHovered(false)}
+        aligment="left"
+        color="iceBlue"
+        infos={{
+          percentage: '10%',
+          intro: 'Team',
+          subInfo: '365 day cliff, after 10% / month',
+          tokens: 'TOKENS',
+          amount: '30,000,000',
+        }}
+      />
+      <DiagramInfo
         onMouseEnter={() => setRoseHovered(true)}
         onMouseLeave={() => setRoseHovered(false)}
-        aligment="right"
+        aligment="left"
         color="rose"
         infos={{
-          percentage: '5%',
-          intro: 'Liquidity',
-          subInfo: 'Released at TGE',
+          percentage: '3%',
+          intro: 'Advisors',
+          subInfo: '365 day cliff, after 10% / month',
           tokens: 'TOKENS',
-          amount: '15,000,000',
+          amount: '9,000,000',
         }}
       />
       <DiagramInfo
@@ -154,11 +203,11 @@ function Diagram() {
         aligment="right"
         color="teal"
         infos={{
-          percentage: '9%',
-          intro: 'Dev/Marketing',
-          subInfo: '5% TGE + 5%/month',
+          percentage: '10%',
+          intro: 'PreSale',
+          subInfo: '20% TGE + 20%/month',
           tokens: 'TOKENS',
-          amount: '27,000,000',
+          amount: '30,000,000',
         }}
       />
       <DiagramInfo
@@ -167,11 +216,11 @@ function Diagram() {
         aligment="right"
         color="eggplant"
         infos={{
-          percentage: '3%',
-          intro: 'Advisors',
-          subInfo: '365 day cliff, after 10% / month',
+          percentage: '9%',
+          intro: 'Dev/Marketing',
+          subInfo: '5% TGE + 5%/month',
           tokens: 'TOKENS',
-          amount: '9,000,000',
+          amount: '27,000,000',
         }}
       />
       {/*
@@ -205,7 +254,12 @@ function Diagram() {
           />
         </>
     */}
-      <Image src={'/images/diagram.svg'} layout="fill" alt="dystopi diagram" />
+      <Image
+        src={'/images/diagram.svg'}
+        className={styles.diagramImage}
+        layout="fill"
+        alt="dystopi diagram"
+      />
       <div className={styles.dashedCircle}>
         <div className={styles.content}>
           <h6>TOTAL SUPPLY</h6>
@@ -213,13 +267,33 @@ function Diagram() {
         </div>
       </div>
       <div className={styles.mobilePercentages}>
-        <p className={styles.percentageIndigo}>18%</p>
-        <p className={styles.percentageAqua}>13%</p>
-        <p className={styles.percentageTurquoise}>19%</p>
-        <p className={styles.percentagePurple}>9%</p>
-        <p className={styles.percentageRose}>16%</p>
-        <p className={styles.percentageTeal}>14%</p>
-        <p className={styles.percentageEggplant}>11%</p>
+        <p className={styles.percentageKingBlue}>
+          {diagramData[0].infos.percentage}
+        </p>
+        <p className={styles.percentageAqua}>
+          {diagramData[1].infos.percentage}
+        </p>
+        <p className={styles.percentageTeal}>
+          {diagramData[2].infos.percentage}
+        </p>
+        <p className={styles.percentagePurple}>
+          {diagramData[3].infos.percentage}
+        </p>
+        <p className={styles.percentageIndigo}>
+          {diagramData[4].infos.percentage}
+        </p>
+        <p className={styles.percentageEggplant}>
+          {diagramData[5].infos.percentage}
+        </p>
+        <p className={styles.percentageRose}>
+          {diagramData[6].infos.percentage}
+        </p>
+        <p className={styles.percentageIceBlue}>
+          {diagramData[7].infos.percentage}
+        </p>
+        <p className={styles.percentageTurquoise}>
+          {diagramData[8].infos.percentage}
+        </p>
       </div>
     </div>
   );

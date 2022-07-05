@@ -108,10 +108,6 @@
       transition: opacity 500ms, transform 10000ms;
       object-fit: cover;
     }
-
-    .card:hover img {
-      opacity: 1 !important;
-    }
   }
 }
 
@@ -136,11 +132,12 @@
 
         &:hover {
           p {
-            opacity: 1;
-            top: 50%;
+            opacity: 1 !important;
+            top: 50% !important;
           }
           .hiddenImage {
             transform: scale(1.1) !important;
+            opacity: 1 !important;
           }
         }
       }

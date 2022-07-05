@@ -34,20 +34,6 @@ function Footer() {
     <footer className={styles.Footer}>
       <nav>
         <div>
-          <Link href="!#">
-            <a>FAQ</a>
-          </Link>
-          <Link href="#whitepaper">
-            <a>WHITEPAPER</a>
-          </Link>
-          <Link href="!#">
-            <a>PRIVACY POLICY</a>
-          </Link>
-          <Link href="!#">
-            <a>TERMS OF USE</a>
-          </Link>
-        </div>
-        <div>
           <div className={styles.separatorDot}></div>
           <Link href="#home">
             <a>HOME</a>

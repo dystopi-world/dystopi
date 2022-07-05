@@ -17,11 +17,14 @@ function Presale() {
     setState('LOADING');
     setErrorMessage(null);
     try {
-      const response = await axios.post('/api/newsletter', { email });
+      const response = await axios.post('/api/newsletter', {
+        email,
+        subscribedTo: 'Presale',
+      });
       setState('SUCCESS');
       setEmail('');
       setTimeout(() => {
-        setState('IDLE');
+        setIsVisible(false);
       }, 2500);
     } catch (e) {
       setErrorMessage(e.response.data.error);

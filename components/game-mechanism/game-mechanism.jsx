@@ -161,7 +161,7 @@ function GameMechanism() {
       <div ref={containerRef} className={styles.imageContainer}>
         <Image
           //src={'/images/game-mechanism.png'}
-          src={'/images/game-mechanism.png'}
+          src={'/images/city-init.png'}
           layout="fill"
           alt="Dystopi city"
           objectFit="cover"
@@ -217,7 +217,7 @@ function GameMechanism() {
                 <div ref={gearCardRef} id="gear-card" className={styles.card}>
                   <img
                     className={styles.hiddenImage}
-                    src={'/images/bg-dark-temp.png'}
+                    src={'/images/city-end.png'}
                     alt="fill"
                     style={gearImageStyle}
                   />
@@ -248,7 +248,7 @@ function GameMechanism() {
                 <div ref={fightCardRef} className={styles.card}>
                   <img
                     className={styles.hiddenImage}
-                    src={'/images/bg-dark-temp.png'}
+                    src={'/images/city-end.png'}
                     alt="fill"
                     style={fightImageStyle}
                   />
@@ -279,7 +279,7 @@ function GameMechanism() {
                 <div ref={earnCardRef} className={styles.card}>
                   <img
                     className={styles.hiddenImage}
-                    src={'/images/bg-dark-temp.png'}
+                    src={'/images/city-end.png'}
                     alt="fill"
                     style={earnImageStyle}
                   />
@@ -310,7 +310,7 @@ function GameMechanism() {
                 <div ref={repeatCardRef} className={styles.card}>
                   <img
                     className={styles.hiddenImage}
-                    src={'/images/bg-dark-temp.png'}
+                    src={'/images/city-end.png'}
                     alt="fill"
                     style={repeatImageStyle}
                   />

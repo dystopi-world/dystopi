@@ -32,10 +32,12 @@ DIAGRAM COLORS
 teal - #6998ff
 eggplant - #a967ff
 indigo - #6a00f4
-aqua - #007afd
-turquise - #6ee3c0
+aqua - #148eff
+turquise - #6ee388
 purple - #df1dff
-rose - #ee4492
+rose - #ff6484
+king blue - #2323ff
+ice blue - #aee9ff
 
 */
 
@@ -48,6 +50,11 @@ rose - #ee4492
   position: relative;
   @include flexCenter(row);
 
+  .diagramImage {
+    transform-origin: center;
+    transform: scale(1.4);
+  }
+
   .coloredBorderBox {
     width: 75px;
     height: 75px;
@@ -56,18 +63,18 @@ rose - #ee4492
   }
 
   .coloredBorderBoxTeal {
-    top: 30%;
-    left: 5%;
+    top: 29%;
+    left: 4%;
   }
 
   .coloredBorderBoxEggplant {
-    top: 8%;
-    left: 28%;
+    top: 15%;
+    left: 15%;
   }
 
   .coloredBorderBoxIndigo {
-    top: 8%;
-    right: 25%;
+    top: 4%;
+    left: 30%;
   }
 
   .coloredBorderBoxAqua {
@@ -76,18 +83,28 @@ rose - #ee4492
   }
 
   .coloredBorderBoxTurquoise {
-    top: 64%;
-    right: 18%;
+    top: 40%;
+    right: 51%;
   }
 
   .coloredBorderBoxPurple {
-    top: 72%;
-    left: 32%;
+    top: 5%;
+    left: 48%;
   }
 
   .coloredBorderBoxRose {
-    top: 57%;
-    left: 12%;
+    top: 27%;
+    left: 75%;
+  }
+
+  .coloredBorderBoxKingBlue {
+    top: 5%;
+    left: 55%;
+  }
+
+  .coloredBorderBoxIceBlue {
+    top: 17%;
+    left: 62%;
   }
 
   .dashedCircle {
@@ -136,42 +153,59 @@ rose - #ee4492
       font-size: 1.1rem;
     }
     .percentageIndigo {
-      top: 11%;
-      right: 25%;
-    }
-    .percentageAqua {
-      top: 35%;
-      right: 7%;
-    }
-    .percentageTurquoise {
-      top: 77%;
-      right: 18%;
-    }
-    .percentagePurple {
-      top: 86%;
+      top: 7%;
       left: 38%;
     }
+    .percentageAqua {
+      top: 42%;
+      right: 5%;
+    }
+    .percentageTurquoise {
+      top: 88%;
+      right: 45%;
+    }
+    .percentagePurple {
+      top: 6%;
+      left: 52%;
+    }
     .percentageRose {
-      top: 65%;
-      left: 10%;
+      top: 30%;
+      left: 85%;
     }
     .percentageTeal {
       top: 32%;
       left: 8%;
     }
     .percentageEggplant {
-      top: 10%;
-      left: 30%;
+      top: 14%;
+      left: 21%;
+    }
+    .percentageKingBlue {
+      top: 8%;
+      left: 62%;
+    }
+    .percentageIceBlue {
+      top: 16%;
+      left: 73%;
     }
   }
 }
 
+@media (min-width: 768px) {
+  .Diagram {
+    width: 425px;
+    height: 425px;
+  }
+}
 @media (min-width: 1024px) {
+  .Tokenomics > p {
+    margin-bottom: 10rem;
+  }
   .Diagram {
     width: 450px;
     height: 450px;
     transform-origin: center;
-    transform: scale(0.75);
+    transform: scale(0.85);
 
     .content {
       transition: 400ms;

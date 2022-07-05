@@ -46,7 +46,7 @@ function Whitepaper() {
 
   const imageStyle = {
     transition: '2000ms',
-    opacity: titleInView ? 1 : 0,
+    opacity: titleInView ? 0.5 : 0,
   };
 
   return (
@@ -86,7 +86,7 @@ function Whitepaper() {
             style={decorBorderVerticalStyle}
           ></div>
           <Image
-            src={'/images/game-mechanism.png'}
+            src={'/images/whitepaper-bg.png'}
             layout="fill"
             alt="Dystopi city"
             objectFit="cover"

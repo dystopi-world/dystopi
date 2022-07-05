@@ -40,45 +40,55 @@
 }
 
 .infoIndigo {
-  top: -3rem;
-  left: 78%;
+  top: -4rem;
+  right: 73%;
 }
 
 .infoAqua {
-  top: 35%;
+  top: 40%;
   left: 103%;
 }
 
 .infoTurquoise {
-  top: 85%;
-  left: 90%;
-}
-
-.infoPurple {
-  top: 101%;
-  right: 60%;
-}
-
-.infoRose {
-  top: 70%;
+  top: 64%;
   right: 100%;
 }
 
+.infoPurple {
+  top: -7rem;
+  left: 44%;
+}
+
+.infoRose {
+  top: 20%;
+  left: 100%;
+}
+
 .infoTeal {
-  top: 25%;
+  top: 33%;
   right: 102%;
 }
 
 .infoEggplant {
-  top: -2rem;
-  right: 85%;
+  top: 6%;
+  right: 92%;
+}
+
+.infoKingBlue {
+  top: -11%;
+  left: 75%;
+}
+
+.infoIceBlue {
+  top: 5%;
+  left: 92%;
 }
 
 @media (min-width: 1024px) {
   .DiagramInfo {
     display: flex;
-    width: 420px;
-    height: 80px;
+    width: 360px;
+    height: 66px;
     p {
       min-width: 33%;
       // border: 1px solid red;
@@ -127,10 +137,11 @@
       text-align: right;
     }
   }
-
-  .infoIndigo,
+  .infoPurple,
   .infoAqua,
-  .infoTurquoise {
+  .infoKingBlue,
+  .infoIceBlue,
+  .infoRose {
     &:hover {
       background-color: #140d19;
 
@@ -151,10 +162,10 @@
     }
   }
 
-  .infoPurple,
-  .infoRose,
   .infoTeal,
-  .infoEggplant {
+  .infoEggplant,
+  .infoTurquoise,
+  .infoIndigo {
     &::before {
       right: 1rem;
       left: auto;
@@ -204,7 +215,10 @@
   .infoPurple,
   .infoRose,
   .infoTeal,
-  .infoEggplant {
+  .infoEggplant,
+  .infoTurquoise,
+  .infoIndigo,
+  .infoRose {
     &:hover {
       background-color: #140d19;
 
@@ -245,5 +259,11 @@
   }
   .infoEggplant:hover::before {
     background-color: #a967ff;
+  }
+  .infoKingBlue:hover::before {
+    background-color: #2323ff;
+  }
+  .infoIceBlue:hover::before {
+    background-color: #aee9ff;
   }
 }

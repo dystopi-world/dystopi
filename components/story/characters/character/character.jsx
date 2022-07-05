@@ -11,8 +11,8 @@ function Character({ image, characterName, description }) {
           objectFit="contain"
           alt={`Dystopi's playable ${characterName} character`}
   /> */}
-        <video autoPlay muted loop width={300}>
-          <source src="/animations/ai-animation.m4v" type="video/mp4" />
+        <video autoPlay muted loop className={styles.characterImage}>
+          <source src={image} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>

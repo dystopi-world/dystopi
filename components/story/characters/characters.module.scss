@@ -11,9 +11,10 @@
     position: absolute;
     top: -40%;
     width: 2px;
-    height: 160%;
+    height: 145%;
     background: linear-gradient(to bottom, #a967ff18, #a967ff98, #a967ff18);
     border-radius: 5px;
+    z-index: 100;
   }
   &::before {
     left: -0.5rem;
@@ -59,9 +60,18 @@
       min-height: 300px;
     }
 
+    .characterImage {
+      width: 350px;
+      position: absolute;
+      top: -20px;
+      left: -25px;
+    }
+
     h5 {
-      margin: 1rem 0 0.5rem;
+      margin: 10px 0 8px;
       font-size: 2rem;
+      position: relative;
+      z-index: 10;
     }
 
     p {
@@ -77,15 +87,45 @@
     .characterContainer {
       max-width: 500px;
     }
+
+    .Character {
+      .characterImage {
+        width: 600px;
+        position: absolute;
+        top: -50px;
+        left: -50px;
+      }
+
+      h5 {
+        margin-top: 210px;
+        position: relative;
+        z-index: 10;
+      }
+    }
   }
 }
 
 @media (min-width: 1024px) {
   .Characters {
     max-width: 500px;
+    margin: auto;
+    transform: translateX(20px);
 
     .characterContainer {
       max-width: 700px;
+    }
+
+    .Character {
+      .characterImage {
+        width: 500px;
+        position: absolute;
+        top: -50px;
+        left: 80px;
+      }
+
+      h5 {
+        margin-top: 120px;
+      }
     }
   }
 }

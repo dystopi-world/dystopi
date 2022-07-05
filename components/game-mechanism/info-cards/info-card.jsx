@@ -1,7 +1,16 @@
+import Image from 'next/image';
 import Scene from '../../3d/scene/scene';
 import styles from './info-cards.module.scss';
 
-function InfoCard({ cardRef, cardInView, title, paragraph_1, paragraph_2 }) {
+function InfoCard({
+  cardRef,
+  cardInView,
+  image,
+  layout,
+  title,
+  paragraph_1,
+  paragraph_2,
+}) {
   const cardStyle = (inView) => ({});
 
   const decorBorderHorizontalStyle = {
@@ -13,7 +22,8 @@ function InfoCard({ cardRef, cardInView, title, paragraph_1, paragraph_2 }) {
 
   return (
     <article className={styles.InfoCard} ref={cardRef}>
-      <Scene />
+      {/* <Scene /> */}
+      <Image src={image} objectFit="contain" layout="fill" />
       <div className={styles.contentContainer}>
         <h3>{title}</h3>
         <p>{paragraph_1}</p>
