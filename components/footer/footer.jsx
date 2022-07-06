@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import {
@@ -20,7 +21,7 @@ function Footer() {
 
   const [socialsRef, socialsInView] = useInView({
     threshold: 0.4,
-    // triggerOnce: true
+    triggerOnce: true,
   });
   const socialStyle = (delay) => ({
     transition: '900ms',
@@ -30,28 +31,43 @@ function Footer() {
     opacity: socialsInView ? 1 : 0,
   });
 
+  const router = useRouter();
+  const handleClick = (event, url) => {
+    event.preventDefault();
+    router.push(url);
+  };
+
   return (
     <footer className={styles.Footer}>
       <nav>
         <div>
           <div className={styles.separatorDot}></div>
           <Link href="#home">
-            <a>HOME</a>
+            <a onClick={(event) => handleClick(event, '/#home')}>HOME</a>
           </Link>
           <Link href="#story">
-            <a>STORY</a>
+            <a onClick={(event) => handleClick(event, '/#story')}>STORY</a>
           </Link>
           <Link href="#game-mechanism">
-            <a>GAME MECHANISM</a>
+            <a onClick={(event) => handleClick(event, '/#game-mechanism')}>
+              GAME MECHANISM
+            </a>
           </Link>
           <Link href="#nfts">
-            <a>NFTS</a>
+            <a onClick={(event) => handleClick(event, '/#nfts')}>NFTS</a>
           </Link>
           <Link href="#tokenomics">
-            <a>TOKENOMICS</a>
+            <a onClick={(event) => handleClick(event, '/#tokenomics')}>
+              TOKENOMICS
+            </a>
           </Link>
           <Link href="#whitepaper">
-            <a>WHITEPAPER</a>
+            <a onClick={(event) => handleClick(event, '/#whitepaper')}>
+              WHITEPAPER
+            </a>
+          </Link>
+          <Link href="/gallery">
+            <a>GALLERY</a>
           </Link>
         </div>
       </nav>
@@ -80,7 +96,10 @@ function Footer() {
         </div>
       )}
       <Link href="#home">
-        <a className={styles.logo}>
+        <a
+          className={styles.logo}
+          onClick={(event) => handleClick(event, '/#home')}
+        >
           <Image src="/images/logo.svg" alt="Dystopi logo" layout="fill" />
         </a>
       </Link>

@@ -8,6 +8,7 @@ import Roadmap from '../components/roadmap/roadmap';
 import SectionSeparator from '../components/section-separator/section-separator';
 import SocialMedias from '../components/social-medias/social-medias';
 import Story from '../components/story/story';
+import ToGallery from '../components/to-gallery/to-gallery';
 import Tokenomics from '../components/tokenomics/tokenomics';
 import Whitepaper from '../components/whitepaper/whitepaper';
 
@@ -31,6 +32,7 @@ export default function Home() {
       <Tokenomics />
       <Roadmap />
       <Whitepaper />
+      <ToGallery />
       <Newsletter />
     </div>
   );

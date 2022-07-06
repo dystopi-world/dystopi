@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '../button/button';
@@ -7,6 +8,11 @@ import styles from './header.module.scss';
 
 function Header() {
   const { setIsVisible } = useContext(PresaleContext);
+  const router = useRouter();
+  const handleClick = (event, url) => {
+    event.preventDefault();
+    router.push(url);
+  };
   return (
     <header className={styles.Header}>
       <div className={styles.imageContainer}>
@@ -15,22 +21,40 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <a href="#home">HOME</a>
+            <Link href="/#home">
+              <a onClick={(event) => handleClick(event, '/#home')}>HOME</a>
+            </Link>
           </li>
           <li>
-            <a href="#story">STORY</a>
+            <Link href="/#story">
+              <a onClick={(event) => handleClick(event, '/#story')}>STORY</a>
+            </Link>
           </li>
           <li>
-            <a href="#game-mechanism">GAME MECHANISM</a>
+            <Link href="/#game-mechanism">
+              <a onClick={(event) => handleClick(event, '/#game-mechanism')}>
+                GAME MECHANISM
+              </a>
+            </Link>
           </li>
           <li>
-            <a href="#nfts">NFT</a>
+            <Link href="/#nfts">
+              <a onClick={(event) => handleClick(event, '/#nfts')}>NFT</a>
+            </Link>
           </li>
           <li>
-            <a href="#tokenomics">TOKEMONICS</a>
+            <Link href="/#tokenomics">
+              <a onClick={(event) => handleClick(event, '/#tokenomics')}>
+                TOKEMONICS
+              </a>
+            </Link>
           </li>
           <li>
-            <a href="#whitepaper">WHITEPAPER</a>
+            <Link href="/#whitepaper">
+              <a onClick={(event) => handleClick(event, '/#whitepaper')}>
+                WHITEPAPER
+              </a>
+            </Link>
           </li>
           <li>
             <Link href="/gallery">

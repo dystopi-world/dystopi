@@ -1,0 +1,58 @@
+@import '/styles/mixins';
+@import '/styles/variables';
+
+.ToGallery {
+  width: 100%;
+  height: 60vh;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  article {
+    width: 80%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // background-color: #999;
+    position: relative;
+
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .decorBorder {
+      transition: 1600ms;
+      transition-delay: 0, 1200ms;
+      transition-property: width, height;
+      position: absolute;
+
+      &:nth-of-type(1),
+      &:nth-of-type(3) {
+        top: 0;
+        left: 0;
+        border-top: 2px solid $purple-secondary;
+        border-left: 2px solid $purple-secondary;
+      }
+      &:nth-of-type(2),
+      &:nth-of-type(4) {
+        bottom: 0;
+        right: 0;
+        border-bottom: 2px solid $purple-secondary;
+        border-right: 2px solid $purple-secondary;
+      }
+
+      &:nth-of-type(3) {
+        top: -6px;
+        left: -6px;
+      }
+      &:nth-of-type(4) {
+        bottom: -6px;
+        right: -6px;
+      }
+    }
+  }
+}
