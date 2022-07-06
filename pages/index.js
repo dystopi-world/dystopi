@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Footer from '../components/footer/footer';
 import GameMechanism from '../components/game-mechanism/game-mechanism';
 import Landing from '../components/landing/landing';
 import Newsletter from '../components/newsletter/newsletter';
@@ -33,7 +32,6 @@ export default function Home() {
       <Roadmap />
       <Whitepaper />
       <Newsletter />
-      <Footer />
     </div>
   );
 }

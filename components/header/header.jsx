@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import Button from '../button/button';
 import PresaleContext from '../../contexts/presale-context';
@@ -30,6 +31,11 @@ function Header() {
           </li>
           <li>
             <a href="#whitepaper">WHITEPAPER</a>
+          </li>
+          <li>
+            <Link href="/gallery">
+              <a>GALLERY</a>
+            </Link>
           </li>
         </ul>
       </nav>
