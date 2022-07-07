@@ -17,12 +17,11 @@ export const characterData = [
   {
     image: '/animations/atlanti-animation.m4v',
     name: 'ATLANTEAN',
-    description: 'Friendly giants from a far away planet of symbiots',
+    description: 'Ancient wizards from the forgotten realms of Atlantis',
   },
   {
     image: '/animations/gata-animation.m4v',
     name: "GATA'AGA",
-    description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis expedita hic aliquid odio necessitatibus!',
+    description: 'Genetically diverse species ruthlessly conquering the galaxy',
   },
 ];

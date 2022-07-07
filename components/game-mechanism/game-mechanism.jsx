@@ -176,8 +176,8 @@ function GameMechanism() {
             style={subTitleStyle}
             className={styles.sectionInfo}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum vel
-            minus laborum, quasi repellendus similique.
+            Gear up your hero with the best NFTs to fight against Gata’aga and
+            collect daily reward in Dyseum!
           </p>
           <div className={styles.cardsDecorContainer} ref={cardContainerRef}>
             <div ref={contentRef}>
@@ -242,7 +242,8 @@ function GameMechanism() {
                     GEAR
                   </h3>
                   <p style={gearHiddenTextStyle}>
-                    Gear up your hero, restock with supply
+                    Gear up your hero with NFT wearables, restock with supply
+                    and repair your items!
                   </p>
                 </div>
                 <div ref={fightCardRef} className={styles.card}>
@@ -273,7 +274,8 @@ function GameMechanism() {
                     FIGHT
                   </h3>
                   <p style={fightHiddenTextStyle}>
-                    Gear up your hero, restock with supply
+                    Fight and slain Gata’aga using your skills and abilities, or
+                    send your character to Legion mode!
                   </p>
                 </div>
                 <div ref={earnCardRef} className={styles.card}>
@@ -304,7 +306,8 @@ function GameMechanism() {
                     EARN
                   </h3>
                   <p style={earnHiddenTextStyle}>
-                    Gear up your hero, restock with supply
+                    Collect the daily reward in Dyseum based on your NFTs and
+                    performance!
                   </p>
                 </div>
                 <div ref={repeatCardRef} className={styles.card}>
@@ -322,9 +325,7 @@ function GameMechanism() {
                   >
                     REPEAT
                   </h3>
-                  <p style={repeatHiddenTextStyle}>
-                    Gear up your hero, restock with supply
-                  </p>
+                  <p style={repeatHiddenTextStyle}>Start over next day!</p>
                 </div>
               </div>
             </div>
