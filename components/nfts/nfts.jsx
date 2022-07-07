@@ -57,110 +57,12 @@ function Nfts() {
         armor. The reward you get at the end of the day depends a lot on what
         your hero wears!
       </p>
-      <div className={styles.sliderContainer}>
-        <Swiper
-          modules={[EffectCoverflow, Navigation]}
-          spaceBetween={150}
-          slidesPerView={sliderPerView}
-          effect="coverflow"
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
-          coverflowEffect={{
-            rotate: 15,
-            stretch: 70,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-          }}
-          loop={true}
-          onInit={(swiper) => {
-            swiper.params.navigation.prevEl = swiperPrevButtonRef.current;
-            swiper.params.navigation.nextEl = swiperNextButtonRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
-        >
-          <SwiperSlide>
-            <div className={styles.nftImageContainer}>
-              <Image
-                src="/images/nfts/nft-armor.jpg"
-                layout="fill"
-                alt="Dystopi NFT"
-              />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={styles.nftImageContainer}>
-              <Image
-                src="/images/nfts/nft-armor.jpg"
-                layout="fill"
-                alt="Dystopi NFT"
-              />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={styles.nftImageContainer}>
-              <Image
-                src="/images/nfts/nft-armor.jpg"
-                layout="fill"
-                alt="Dystopi NFT"
-              />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={styles.nftImageContainer}>
-              <Image
-                src="/images/nfts/nft-armor.jpg"
-                layout="fill"
-                alt="Dystopi NFT"
-              />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={styles.nftImageContainer}>
-              <Image
-                src="/images/nfts/nft-armor.jpg"
-                layout="fill"
-                alt="Dystopi NFT"
-              />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={styles.nftImageContainer}>
-              <Image
-                src="/images/nfts/nft-armor.jpg"
-                layout="fill"
-                alt="Dystopi NFT"
-              />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={styles.nftImageContainer}>
-              <Image
-                src="/images/nfts/nft-armor.jpg"
-                layout="fill"
-                alt="Dystopi NFT"
-              />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={styles.nftImageContainer}>
-              <Image
-                src="/images/nfts/nft-armor.jpg"
-                layout="fill"
-                alt="Dystopi NFT"
-              />
-            </div>
-          </SwiperSlide>
-        </Swiper>
-        <button ref={swiperPrevButtonRef} className={styles.swiperButtonPrev}>
-          <HiOutlineArrowNarrowLeft />
-        </button>
-        <button ref={swiperNextButtonRef} className={styles.swiperButtonNext}>
-          <HiOutlineArrowNarrowRight />
-        </button>
+      <div className={styles.imageContainer}>
+        <Image
+          src="/images/nfts/nft-armor.jpg"
+          layout="fill"
+          alt="Dystopi NFT"
+        />
       </div>
     </section>
   );

@@ -9,6 +9,7 @@ function Landing() {
         layout="fill"
         objectFit="cover"
         alt="Dystopi city"
+        priority
       />
 
       <p>SCROLL FOR MORE</p>

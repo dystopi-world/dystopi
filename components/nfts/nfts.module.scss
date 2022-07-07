@@ -27,6 +27,13 @@
     max-width: 70ch;
   }
 
+  .imageContainer {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    margin: 2rem auto;
+  }
+
   .sliderContainer {
     padding: 0 1rem;
     position: relative;
@@ -60,6 +67,11 @@
 
 @media (min-width: 760px) {
   .Nfts {
+    .imageContainer {
+      width: 400px;
+      height: 550px;
+    }
+
     .nftImageContainer {
       min-height: 30rem;
     }
@@ -92,6 +104,10 @@
 
 @media (min-width: 1024px) {
   .Nfts {
+    .imageContainer {
+      width: 300px;
+      height: 400px;
+    }
     .sliderContainer {
       max-width: 1050px;
 
