@@ -29,7 +29,10 @@ function Header() {
   }, []);
   return (
     <header className={styles.Header}>
-      <div className={styles.imageContainer}>
+      <div
+        className={styles.imageContainer}
+        onClick={(event) => handleClick(event, '/')}
+      >
         <Image
           src="/images/logo.png"
           style={{ transform: 'scale(0.7)' }}
