@@ -84,7 +84,9 @@ function Newsletter() {
           onChange={(event) => setEmail(event.target.value)}
           placeholder="john.doe@gmail.com"
         />
-        <Button style={{ width: isMobile ? '100%' : 'auto' }}>SIGN UP</Button>
+        <Button type="submit" style={{ width: isMobile ? '100%' : 'auto' }}>
+          SIGN UP
+        </Button>
       </form>
       {state === 'ERROR' && (
         <p className={styles.errorMessage}>{errorMessage}</p>
