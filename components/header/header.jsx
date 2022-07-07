@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -13,11 +13,26 @@ function Header() {
     event.preventDefault();
     router.push(url);
   };
+
+  const videoEl = useRef(null);
+
+  const attemptPlay = () => {
+    videoEl &&
+      videoEl.current &&
+      videoEl.current.play().catch((error) => {
+        console.error('Error attempting to play', error);
+      });
+  };
+
+  useEffect(() => {
+    attemptPlay();
+  }, []);
   return (
     <header className={styles.Header}>
-      <div className={styles.imageContainer}>
+      {/*<div className={styles.imageContainer}>
         <Image src="/images/logo.svg" alt="Dystopi logo" layout="fill" />
-      </div>
+      </div> */}
+      <video src="/animations/logo-anim.m4v" muted ref={videoEl}></video>
       <nav>
         <ul>
           <li>
