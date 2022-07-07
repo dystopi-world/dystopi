@@ -100,7 +100,12 @@ function Footer() {
           className={styles.logo}
           onClick={(event) => handleClick(event, '/#home')}
         >
-          <Image src="/images/logo.svg" alt="Dystopi logo" layout="fill" />
+          <Image
+            src="/images/logo.png"
+            style={{ transform: 'scale(0.7)' }}
+            alt="Dystopi logo"
+            layout="fill"
+          />
         </a>
       </Link>
     </footer>

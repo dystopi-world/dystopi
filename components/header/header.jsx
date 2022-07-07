@@ -29,10 +29,15 @@ function Header() {
   }, []);
   return (
     <header className={styles.Header}>
-      {/*<div className={styles.imageContainer}>
-        <Image src="/images/logo.svg" alt="Dystopi logo" layout="fill" />
-      </div> */}
-      <video src="/animations/logo-anim.m4v" muted ref={videoEl}></video>
+      <div className={styles.imageContainer}>
+        <Image
+          src="/images/logo.png"
+          style={{ transform: 'scale(0.7)' }}
+          alt="Dystopi logo"
+          layout="fill"
+        />
+      </div>
+      {/* <video src="/animations/logo-anim.m4v" muted ref={videoEl}></video>*/}
       <nav>
         <ul>
           <li>

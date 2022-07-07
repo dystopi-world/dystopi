@@ -10,15 +10,7 @@ function Landing() {
         objectFit="cover"
         alt="Dystopi city"
       />
-      <div className={styles.landingTextContainer}>
-        <Image
-          src="/images/landing-text.svg"
-          width={420}
-          height={210}
-          objectFit="cover"
-          alt="Dystopi title"
-        />
-      </div>
+
       <p>SCROLL FOR MORE</p>
     </section>
   );
