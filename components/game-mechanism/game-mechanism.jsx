@@ -141,6 +141,7 @@ function GameMechanism() {
     bottom: isMobile ? `-${cardHeight * 2}px` : '-3px',
     opacity: fightCardInView && isMobile ? 1 : 0,
     transform: isMobile && fightCardInView ? 'scale(1.1)' : 'scale(1)',
+    transformOrigin: isMobile ? 'bottom right' : 'center',
   };
   const earnImageStyle = {
     height: `${containerheight}px`,
@@ -154,6 +155,7 @@ function GameMechanism() {
     left: isMobile ? `-${xCoord}px` : `-${xCoord + cardWidth * 3 + 8}px`,
     opacity: repeatCardInView && isMobile ? 1 : 0,
     transform: isMobile && repeatCardInView ? 'scale(1.1)' : 'scale(1)',
+    transformOrigin: isMobile ? 'top left' : 'center',
   };
 
   return (
