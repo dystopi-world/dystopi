@@ -17,9 +17,9 @@ function Presale() {
     setState('LOADING');
     setErrorMessage(null);
     try {
-      const response = await axios.post('/api/newsletter', {
+      const response = await axios.put('/api/test', {
         email,
-        subscribedTo: 'Presale',
+        type: 'presale',
       });
       setState('SUCCESS');
       setEmail('');

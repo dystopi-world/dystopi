@@ -48,9 +48,9 @@ function Newsletter() {
     setState('LOADING');
     setErrorMessage(null);
     try {
-      const response = await axios.post('/api/newsletter', {
+      const response = await axios.put('/api/test', {
         email,
-        subscribedTo: 'Newsletter',
+        type: 'newsletter',
       });
       setState('SUCCESS');
       setEmail('');
@@ -61,12 +61,6 @@ function Newsletter() {
       setErrorMessage(e.response.data.error);
       setState('ERROR');
     }
-  };
-
-  const handleTestClick = async () => {
-    const response = await fetch('/api/test');
-    const data = await response.json();
-    console.log('listMembers: ', data);
   };
 
   return (
@@ -93,9 +87,6 @@ function Newsletter() {
         <Button type="submit" style={{ width: isMobile ? '100%' : 'auto' }}>
           SIGN UP
         </Button>
-        <button type="button" onClick={handleTestClick}>
-          Test Signup
-        </button>
       </form>
       {state === 'ERROR' && (
         <p className={styles.errorMessage}>{errorMessage}</p>

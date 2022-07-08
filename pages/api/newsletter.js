@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import axios from 'axios';
-
+const client = require('mailchimp-marketing');
 function getRequestParams(email, subscribedTo) {
   // get env variables
   const API_KEY = process.env.MAIL_API_KEY;
@@ -11,6 +11,11 @@ function getRequestParams(email, subscribedTo) {
   const DATACENTER = process.env.MAIL_API_KEY.split('-')[1];
 
   const url = `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`;
+
+  client.setConfig({
+    apiKey: process.env.MAIL_API_KEY,
+    server: process.env.MAIL_SERVER_PREFIX,
+  });
 
   // Add aditional params here. See full list of available params:
   // https://mailchimp.com/developer/reference/lists/list-members/

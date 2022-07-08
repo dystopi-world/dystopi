@@ -6,19 +6,41 @@ client.setConfig({
 });
 
 export default async function handler(req, res) {
-  if (req.method === 'GET') {
-    const response = await client.lists.getListMembersInfo(
-      process.env.MAIL_LIST_ID
-    );
-    res.status(200).json({ listMembers: response });
+  const { email } = req.body;
+
+  if (!email || !email.length) {
+    return res.status(400).json({
+      error: 'Forgot to add your email?',
+    });
   }
   if (req.method === 'PUT') {
-    const response = await client.lists.setListMember(
-      process.env.MAIL_LIST_ID,
-      'subscriber_hash',
-      { email_address: 'Marcel81@gmail.com', status_if_new: 'pending' }
-    );
-    console.log(response);
+    try {
+      const response = await client.lists.setListMember(
+        process.env.MAIL_LIST_ID,
+        req.body.email,
+        req.body.type === 'newsletter'
+          ? {
+              email_address: req.body.email,
+              status: 'subscribed',
+              merge_fields: {
+                NEWSLETTER: 'subscribed',
+              },
+            }
+          : {
+              email_address: req.body.email,
+              status: 'subscribed',
+              merge_fields: {
+                PRESALE: 'subscribed',
+              },
+            }
+      );
+      return res.status(201).json({ error: null });
+    } catch (error) {
+      return res.status(400).json({
+        error:
+          "Oops, something went wrong... Send us an email at service@dystopi.com and we'll add you to the list.",
+      });
+    }
   }
 }
 
