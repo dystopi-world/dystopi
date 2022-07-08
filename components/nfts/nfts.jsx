@@ -46,7 +46,7 @@ function Nfts() {
   return (
     <section className={styles.Nfts} id="nfts">
       <h2 ref={titleRef} style={titleStyle}>
-        NFTs
+        NFT
       </h2>
       <p ref={subTitleRef} style={subTitleStyle}>
         Design your strategy and collect NFT armor sets and weapons for your

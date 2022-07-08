@@ -5,7 +5,7 @@ const CMS_API = process.env.NEXT_PUBLIC_CMS_ENDPOINT;
 export const getImages = async () => {
   const query = gql`
     query GetImages {
-      imagesConnection {
+      imagesConnection(first: 100) {
         edges {
           node {
             image {

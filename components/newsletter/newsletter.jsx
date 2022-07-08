@@ -63,6 +63,12 @@ function Newsletter() {
     }
   };
 
+  const handleTestClick = async () => {
+    const response = await fetch('/api/test');
+    const data = await response.json();
+    console.log('listMembers: ', data);
+  };
+
   return (
     <section className={styles.Newsletter}>
       <h3 ref={titleRef} style={titleStyle} className={styles.title}>
@@ -87,6 +93,9 @@ function Newsletter() {
         <Button type="submit" style={{ width: isMobile ? '100%' : 'auto' }}>
           SIGN UP
         </Button>
+        <button type="button" onClick={handleTestClick}>
+          Test Signup
+        </button>
       </form>
       {state === 'ERROR' && (
         <p className={styles.errorMessage}>{errorMessage}</p>

@@ -3,12 +3,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import {
-  FaDiscord,
-  FaFacebook,
-  FaTelegramPlane,
-  FaTwitter,
-} from 'react-icons/fa';
 import styles from './footer.module.scss';
 
 function Footer() {
@@ -54,7 +48,7 @@ function Footer() {
             </a>
           </Link>
           <Link href="#nfts">
-            <a onClick={(event) => handleClick(event, '/#nfts')}>NFTS</a>
+            <a onClick={(event) => handleClick(event, '/#nfts')}>NFT</a>
           </Link>
           <Link href="#tokenomics">
             <a onClick={(event) => handleClick(event, '/#tokenomics')}>
@@ -71,7 +65,7 @@ function Footer() {
           </Link>
         </div>
       </nav>
-      {isMobile && (
+      {/* isMobile && (
         <div ref={socialsRef} className={styles.mobileSocials}>
           <Link href="#">
             <a style={socialStyle(0)}>
@@ -94,7 +88,7 @@ function Footer() {
             </a>
           </Link>
         </div>
-      )}
+      ) */}
       <Link href="#home">
         <a
           className={styles.logo}

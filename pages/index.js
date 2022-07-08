@@ -22,7 +22,7 @@ export default function Home() {
       </Head>
       <Presale />
       <Landing />
-      <SocialMedias />
+      {/* <SocialMedias /> */}
       <Story />
       {/* <SectionSeparator /> */}
       <GameMechanism />

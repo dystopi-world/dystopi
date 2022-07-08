@@ -14,6 +14,7 @@
     "axios": "^0.27.2",
     "graphql": "^16.5.0",
     "graphql-request": "^4.3.0",
+    "mailchimp-marketing": "^5.0.0",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",

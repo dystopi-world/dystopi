@@ -8,7 +8,7 @@
 
   h1 {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     font-size: 1.75rem;
   }
 
@@ -27,6 +27,7 @@
     .galleryImageContainer {
       min-height: 22rem;
       width: auto;
+      background-color: transparent;
     }
 
     &:last-of-type {
@@ -57,6 +58,18 @@
       right: 1rem;
     }
   }
+
+  .videoContainer {
+    width: 90%;
+    height: auto;
+    position: relative;
+    margin: auto;
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 @media (min-width: 760px) {
@@ -78,6 +91,10 @@
       }
       .swiperButtonNext {
         left: 51%;
+      }
+
+      .videoContainer {
+        width: 80%;
       }
     }
   }

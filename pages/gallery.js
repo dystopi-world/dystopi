@@ -29,7 +29,6 @@ function Gallery({ videos, images }) {
     <section className={styles.Gallery}>
       <h1>GALLERY</h1>
       <div className={styles.sliderContainer}>
-        <h2>IMAGES</h2>
         <button ref={swiperPrevButtonRef} className={styles.swiperButtonPrev}>
           <HiOutlineArrowNarrowLeft />
         </button>
@@ -50,7 +49,7 @@ function Gallery({ videos, images }) {
             stretch: 70,
             depth: 100,
             modifier: 1,
-            slideShadows: true,
+            // slideShadows: true,
           }}
           grabCursor={true}
           loop={true}
@@ -67,7 +66,7 @@ function Gallery({ videos, images }) {
                 <Image
                   src={image.node.image.url}
                   layout="fill"
-                  objectFit="cover"
+                  objectFit="contain"
                   alt="dystopi gallery image"
                 />
               </div>
@@ -77,51 +76,14 @@ function Gallery({ videos, images }) {
       </div>
       {/* ************************************************ */}
       <div className={styles.sliderContainer}>
-        <h2>VIDEOS</h2>
-        <button ref={swiperPrevButtonRef} className={styles.swiperButtonPrev}>
-          <HiOutlineArrowNarrowLeft />
-        </button>
-        <button ref={swiperNextButtonRef} className={styles.swiperButtonNext}>
-          <HiOutlineArrowNarrowRight />
-        </button>
-        <Swiper
-          modules={[EffectCoverflow, Navigation]}
-          spaceBetween={70}
-          slidesPerView={sliderPerView}
-          effect="coverflow"
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
-          coverflowEffect={{
-            rotate: 15,
-            stretch: 70,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-          }}
-          grabCursor={true}
-          loop={true}
-          onInit={(swiper) => {
-            swiper.params.navigation.prevEl = swiperPrevButtonRef.current;
-            swiper.params.navigation.nextEl = swiperNextButtonRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
-        >
-          {videos.map((video, index) => (
-            <SwiperSlide key={index}>
-              <div className={styles.galleryImageContainer}>
-                <video
-                  width={sliderPerView == 3 ? 375 : '100%'}
-                  src={video.video.url}
-                  type={video.video.mimeType}
-                  controls
-                ></video>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <div className={styles.videoContainer}>
+          <video
+            width={sliderPerView == 3 ? 375 : '100%'}
+            src={videos[0].video.url}
+            type={videos[0].video.mimeType}
+            controls
+          ></video>
+        </div>
       </div>
     </section>
   );
