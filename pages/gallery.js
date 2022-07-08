@@ -12,9 +12,6 @@ import styles from '../styles/gallery.module.scss';
 import Image from 'next/image';
 
 function Gallery({ videos, images }) {
-  console.log('images: ', images);
-  console.log('videos: ', videos);
-
   const [sliderPerView, setSlidesPerView] = useState(3);
   useEffect(() => {
     if (window.innerWidth < 900) {
