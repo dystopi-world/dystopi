@@ -10,6 +10,7 @@ import { getImages, getVideos } from '../cms-service';
 import 'swiper/css';
 import styles from '../styles/gallery.module.scss';
 import Image from 'next/image';
+import Presale from '../components/presale/presale';
 
 function Gallery({ videos, images }) {
   const [sliderPerView, setSlidesPerView] = useState(3);
@@ -24,6 +25,7 @@ function Gallery({ videos, images }) {
 
   return (
     <section className={styles.Gallery}>
+      <Presale />
       <h1>GALLERY</h1>
       <div className={styles.sliderContainer}>
         <button ref={swiperPrevButtonRef} className={styles.swiperButtonPrev}>
