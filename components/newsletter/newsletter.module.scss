@@ -1,0 +1,67 @@
+@import '/styles/mixins';
+@import '/styles/variables';
+
+.Newsletter {
+  min-height: 30vh;
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, #1e1625, transparent);
+  @include flexCenter(column);
+
+  .title,
+  .sectionInfo,
+  .form {
+    position: relative;
+    transition: $text-transition;
+  }
+
+  .sectionInfo {
+    transition-delay: $text-transition-delay;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $text-secondary;
+    margin: 0.75rem 0 3rem;
+    text-align: center;
+  }
+
+  form {
+    @include flexCenter(column);
+    gap: 1rem;
+    transition-delay: 300ms;
+  }
+
+  .errorMessage {
+    position: relative;
+    top: 1.5rem;
+    color: rgb(250, 33, 33);
+    text-shadow: 0 0 1px rgb(255, 118, 118);
+  }
+  .successMessage {
+    position: relative;
+    top: 1.5rem;
+    color: rgb(69, 219, 0);
+    text-shadow: 0 0 1px rgb(69, 219, 0);
+  }
+
+  input {
+    min-width: 300px;
+    max-width: 400px;
+    padding: 0.75rem 0.5rem;
+    background-color: transparent;
+    border: 1px solid $purple-primary;
+    color: $text-primary;
+  }
+}
+
+@media (min-width: 767px) {
+  .Newsletter {
+    form {
+      flex-direction: row;
+    }
+  }
+}

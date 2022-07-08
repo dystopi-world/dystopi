@@ -1,0 +1,63 @@
+@import '/styles/variables';
+@import '/styles/mixins';
+
+.Story {
+  min-height: 100vh;
+  padding: 5rem;
+
+  h2 {
+    text-align: center;
+    max-width: 30ch;
+    margin: 5rem auto;
+  }
+
+  .outerContainer {
+    @include flexCenter(column);
+  }
+
+  .innerContainer {
+    @include flexCenter(column-reverse);
+    gap: 3rem;
+
+    h4 {
+      font-size: 4rem;
+      transform: translate(-4rem, 2rem);
+    }
+  }
+  .instructions {
+    font-size: 1.75rem;
+    transform: translate(2.5rem, 4rem);
+
+    h5 {
+      margin: 0.25rem 0;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .Story {
+    .outerContainer {
+      @include flexCenter(row);
+      gap: 5rem;
+
+      .instructions {
+        align-self: flex-end;
+        transform: translateY(-4rem);
+
+        h5 {
+          margin: 0.25rem 0;
+        }
+      }
+    }
+    .innerContainer {
+      @include flexCenter(row);
+      gap: 5rem;
+
+      h4 {
+        align-self: flex-start;
+        font-size: 3rem;
+        transform: translateY(4rem);
+      }
+    }
+  }
+}
