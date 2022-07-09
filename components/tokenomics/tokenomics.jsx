@@ -34,7 +34,7 @@ function Tokenomics() {
   return (
     <section className={styles.Tokenomics} id="tokenomics">
       <h2 ref={titleRef} style={titleStyle} className={styles.title}>
-        TOKENOICS
+        TOKENOMICS
       </h2>
       <p ref={subTitleRef} style={subTitleStyle} className={styles.sectionInfo}>
         Distribution and vesting of Dyseum tokens.

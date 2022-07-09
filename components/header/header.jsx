@@ -68,7 +68,7 @@ function Header() {
           <li>
             <Link href="/#tokenomics">
               <a onClick={(event) => handleClick(event, '/#tokenomics')}>
-                TOKEMONICS
+                TOKENOMICS
               </a>
             </Link>
           </li>
