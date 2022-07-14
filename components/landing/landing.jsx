@@ -11,7 +11,6 @@ function Landing() {
         alt="Dystopi city"
         priority
       />
-
       <p>SCROLL FOR MORE</p>
     </section>
   );
