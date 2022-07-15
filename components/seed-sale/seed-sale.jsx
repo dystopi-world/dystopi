@@ -3,6 +3,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import PDFViewer from './pdf-viewer';
 import PresaleContext from '../../contexts/presale-context';
 import styles from './seed-sale.module.scss';
+import Button from '../button/button';
 
 function SeedSale() {
   const {
@@ -68,6 +69,20 @@ function SeedSale() {
       : setFile('/pdf-s/dystopi-seed-sale-hu.pdf');
   }, [pdfLanguage]);
 
+  const [isCopied, setIsCopied] = useState(false);
+  const copyAddressToClipboard = () => {
+    setIsCopied(true);
+    navigator.clipboard.writeText('0xBc7245864B47Fe4CB2138A7058786B38B4a8084d');
+  };
+
+  const copyButtonStyle = {
+    position: 'relative',
+    top: '3.5rem',
+    transform: 'translateX(0)',
+    zIndex: 1000,
+    fontSize: '0.75rem',
+  };
+
   return (
     temporaryModalIsVisible && (
       <section className={styles.SeedSale}>
@@ -82,6 +97,11 @@ function SeedSale() {
           <button onClick={() => setPdfLanguage('HU')}>Hungarian</button>
           <div className={styles.decorLine} style={decorLineStyle} />
         </div>
+        <Button style={copyButtonStyle} onClick={copyAddressToClipboard}>
+          {isCopied
+            ? 'copied: 0xBc7245864B47Fe4CB2138A7058786B38B4a8084d'
+            : 'Click here to copy USDT address'}
+        </Button>
         <PDFViewer file={file} pdfWidth={pdfWidth} />
       </section>
     )
