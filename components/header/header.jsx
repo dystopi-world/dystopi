@@ -7,7 +7,7 @@ import PresaleContext from '../../contexts/presale-context';
 import styles from './header.module.scss';
 
 function Header() {
-  const { setIsVisible } = useContext(PresaleContext);
+  const { setTemporaryModalIsVisible } = useContext(PresaleContext);
   const router = useRouter();
   const handleClick = (event, url) => {
     event.preventDefault();
@@ -86,7 +86,9 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <Button onClick={() => setIsVisible(true)}>JOIN PRESALE</Button>
+      <Button onClick={() => setTemporaryModalIsVisible(true)}>
+        JOIN PRESALE
+      </Button>
     </header>
   );
 }

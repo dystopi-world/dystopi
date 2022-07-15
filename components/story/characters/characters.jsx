@@ -19,8 +19,10 @@ function Characters() {
 
   return (
     <div className={styles.Characters}>
-      <DecorSquare />
-      <h6>CHARACTERS</h6>
+      <div className={styles.decorContainer}>
+        <DecorSquare />
+        <h6>CHARACTERS</h6>
+      </div>
       <button
         className={`${styles.arrow} ${styles.arrowLeft}`}
         ref={swiperPrevButtonRef}
@@ -38,7 +40,7 @@ function Characters() {
           // install Swiper modules
           modules={[Navigation]}
           slidesPerView={1}
-          spaceBetween={0}
+          spaceBetween={150}
           grabCursor={true}
           navigation={{
             prevEl: swiperPrevButtonRef.current,
