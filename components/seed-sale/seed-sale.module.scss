@@ -1,7 +1,7 @@
 @import '/styles/mixins';
 @import '/styles/variables';
 
-.TemporaryPresale {
+.SeedSale {
   position: fixed;
   top: 0;
   left: 0;
@@ -15,8 +15,10 @@
   align-items: center;
   justify-content: flex-start;
   padding: 2rem;
+  //padding-top: 5rem;
   opacity: 0;
   animation: fadeIn 500ms ease forwards;
+  backdrop-filter: blur(30px);
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -26,10 +28,12 @@
   }
 
   .closeButton {
-    position: fixed;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
     z-index: 10;
-    top: 6rem;
-    right: 8%;
+    top: 5rem;
+    // right: 8%;
+    margin: 0 0.5rem 0 auto;
     background-color: $purple-secondary;
     color: $text-primary;
     @include flexCenter(row);
@@ -41,21 +45,13 @@
     cursor: pointer;
   }
 
-  h2 {
-    margin-bottom: 1.5rem;
-  }
-
   .pdfContainer {
     max-width: 100vw;
     position: relative;
-
-    /*canvas {
-      width: 100vw !important;
-    }*/
   }
 
   .languageSelectorContainer {
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
     width: 120px;
     display: flex;
     align-items: center;
@@ -85,7 +81,39 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
+  .SeedSale {
+    .closeButton {
+      right: 10%;
+    }
+    .languageSelectorContainer {
+      gap: 1.5rem;
+      button {
+        font-size: 1.25rem;
+      }
+
+      .decorLine {
+        width: 48px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1800px) {
+  .SeedSale {
+    .closeButton {
+      right: 20%;
+    }
+  }
+}
+
+@media (min-width: 2500px) {
+  .SeedSale {
+    .closeButton {
+      right: 26%;
+      font-size: 2rem;
+    }
+  }
 }
 
 @keyframes fadeIn {

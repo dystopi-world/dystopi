@@ -23,6 +23,11 @@
     right: -0.5rem;
   }
 
+  .decorContainer {
+    @include flexCenter(column);
+    transform: translateY(-2rem);
+  }
+
   h6 {
     font-size: 1rem;
     letter-spacing: 0.15em;
@@ -48,12 +53,18 @@
   }
   .characterContainer {
     position: relative;
-    max-width: 300px;
+    width: 100%;
+
+    //.swiper
+    & > div:first-of-type {
+      max-width: 300px;
+    }
   }
 
   .Character {
     text-align: center;
     padding: 0.5rem;
+
     .imageContainer {
       position: relative;
       min-width: 300px;
@@ -86,6 +97,10 @@
   .Characters {
     .characterContainer {
       max-width: 500px;
+      //.swiper
+      & > div:first-of-type {
+        max-width: 500px;
+      }
     }
 
     .Character {
@@ -112,19 +127,95 @@
     transform: translateX(20px);
 
     .characterContainer {
-      max-width: 700px;
+      max-width: 500px;
     }
 
     .Character {
       .characterImage {
-        width: 500px;
+        width: 450px;
         position: absolute;
         top: -50px;
-        left: 80px;
+        left: 25px;
       }
 
       h5 {
-        margin-top: 120px;
+        margin-top: 60px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .Characters {
+    max-width: 600px;
+
+    .arrowLeft {
+      font-size: 3rem;
+    }
+
+    .arrowRight {
+      font-size: 3rem;
+    }
+
+    .characterContainer {
+      width: 100%;
+
+      .Character {
+        height: 600px;
+        h5,
+        p {
+          transform: translateY(5rem);
+        }
+      }
+
+      .characterImage {
+        width: 550px;
+        left: -25px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1500px) {
+  .Characters {
+    min-width: 700px;
+    padding: 5rem 0;
+    position: relative;
+
+    .decorContainer {
+      transform: translateY(-8rem);
+    }
+    .arrow {
+      font-size: 5rem;
+      top: 30%;
+    }
+
+    .characterContainer {
+      .Character {
+        width: 100%;
+
+        h5,
+        p {
+          transform: translateY(16rem);
+        }
+      }
+    }
+
+    .characterContainer {
+      min-height: 400px;
+      min-width: 900px;
+      width: 900px;
+
+      & > div {
+        overflow-y: visible !important;
+        height: 750px;
+        transform: translateY(-8rem);
+      }
+
+      .characterImage {
+        width: 750px;
+        top: -4rem;
+        left: -125px;
       }
     }
   }

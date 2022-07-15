@@ -11,7 +11,7 @@ import Story from '../components/story/story';
 import ToGallery from '../components/to-gallery/to-gallery';
 import Tokenomics from '../components/tokenomics/tokenomics';
 import Whitepaper from '../components/whitepaper/whitepaper';
-import TemporaryPresale from '../components/temporary-presale/temporary-presale';
+import SeedSale from '../components/seed-sale/seed-sale';
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
       </Head>
       <main style={{ position: 'relative' }}>
         <Presale />
-        <TemporaryPresale />
+        <SeedSale />
         <Landing />
         {/* <SocialMedias /> */}
         <Story />

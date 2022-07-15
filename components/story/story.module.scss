@@ -2,8 +2,8 @@
 @import '/styles/mixins';
 
 .Story {
-  min-height: 100vh;
-  padding: 5rem;
+  // min-height: 100vh;
+  padding: 5rem 1rem;
 
   h2 {
     text-align: center;
@@ -18,10 +18,12 @@
   .innerContainer {
     @include flexCenter(column-reverse);
     gap: 3rem;
-
     h4 {
       font-size: 4rem;
-      transform: translate(-4rem, 2rem);
+      // transform: translate(-4rem, 2rem);
+      position: relative;
+      top: 8rem;
+      left: -4rem;
     }
   }
   .instructions {
@@ -34,11 +36,22 @@
   }
 }
 
+@media (min-width: 500px) {
+  .Story {
+    .innerContainer {
+      h4 {
+        font-size: 6rem;
+      }
+    }
+  }
+}
+
 @media (min-width: 1024px) {
   .Story {
+    padding-top: 10rem;
     .outerContainer {
       @include flexCenter(row);
-      gap: 5rem;
+      gap: 4rem;
 
       .instructions {
         align-self: flex-end;
@@ -51,12 +64,52 @@
     }
     .innerContainer {
       @include flexCenter(row);
-      gap: 5rem;
+      gap: 2rem;
 
       h4 {
         align-self: flex-start;
-        font-size: 3rem;
-        transform: translateY(4rem);
+        font-size: 5rem;
+        left: 0;
+        width: 160px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .Story {
+    h2 {
+      transform: translateY(-3rem);
+    }
+    .innerContainer {
+      h4 {
+        width: 150px;
+        font-size: 5rem;
+        left: -13%;
+      }
+    }
+  }
+}
+
+@media (min-width: 1500px) {
+  .Story {
+    padding-top: 25rem;
+
+    h2 {
+      transform: translateY(-17rem);
+    }
+
+    .outerContainer {
+      max-height: 500px;
+      .instructions {
+        font-size: 2.25rem;
+      }
+    }
+    .innerContainer {
+      h4 {
+        width: 150px;
+        font-size: 7rem;
+        left: -13%;
       }
     }
   }

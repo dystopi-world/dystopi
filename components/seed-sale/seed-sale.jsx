@@ -1,0 +1,91 @@
+import { useContext, useEffect, useState } from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
+import PDFViewer from './pdf-viewer';
+import PresaleContext from '../../contexts/presale-context';
+import styles from './seed-sale.module.scss';
+
+function SeedSale() {
+  const {
+    temporaryModalLoadedOnce,
+    setTemporaryModalLoadedOnce,
+    temporaryModalIsVisible,
+    setTemporaryModalIsVisible,
+  } = useContext(PresaleContext);
+
+  useEffect(() => {
+    if (!temporaryModalLoadedOnce) {
+      setTimeout(() => {
+        setTemporaryModalIsVisible(true);
+        setTemporaryModalLoadedOnce(true);
+      }, 3000);
+    }
+  }, []);
+
+  const [device, setDevice] = useState('desktop');
+  const [file, setFile] = useState('/pdf-s/meghivas.pdf');
+  const [pdfLanguage, setPdfLanguage] = useState('HU');
+  const [pdfWidth, setPdfWidth] = useState(350);
+
+  const checkDevice = () => {
+    if (window.innerWidth < 3000) {
+      setDevice('monitor');
+      setPdfWidth(1100);
+    }
+    if (window.innerWidth < 1200) {
+      setDevice('desktop');
+      setPdfWidth(900);
+    }
+    if (window.innerWidth < 1024) {
+      setDevice('tablet');
+      setPdfWidth(700);
+    }
+    if (window.innerWidth < 768) {
+      setDevice('mobile-large');
+      setPdfWidth(400);
+    }
+    if (window.innerWidth < 510) {
+      setDevice('mobile-small');
+      setPdfWidth(340);
+    }
+  };
+
+  useEffect(() => {
+    checkDevice();
+  }, []);
+  const getDecorLinePosition = (device) => {
+    if (device === 'monitor') {
+      return pdfLanguage === 'EN' ? '8px' : '108px';
+    }
+    return pdfLanguage === 'EN' ? '4px' : '68px';
+  };
+  const decorLineStyle = {
+    left: getDecorLinePosition(device),
+  };
+
+  useEffect(() => {
+    pdfLanguage === 'EN'
+      ? setFile('/pdf-s/dystopi-seed-sale-en.pdf')
+      : setFile('/pdf-s/dystopi-seed-sale-hu.pdf');
+  }, [pdfLanguage]);
+
+  return (
+    temporaryModalIsVisible && (
+      <section className={styles.SeedSale}>
+        <button
+          className={styles.closeButton}
+          onClick={() => setTemporaryModalIsVisible(false)}
+        >
+          <AiOutlineClose />
+        </button>
+        <div className={styles.languageSelectorContainer}>
+          <button onClick={() => setPdfLanguage('EN')}>English</button>
+          <button onClick={() => setPdfLanguage('HU')}>Hungarian</button>
+          <div className={styles.decorLine} style={decorLineStyle} />
+        </div>
+        <PDFViewer file={file} pdfWidth={pdfWidth} />
+      </section>
+    )
+  );
+}
+
+export default SeedSale;
