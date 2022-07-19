@@ -57,7 +57,7 @@ function Presale() {
                 placeholder="john.doe@gmail.com"
               />
             </label>
-            <Button type="submit">SIGN UP</Button>
+            <Button type="submit">SUBSCRIBE</Button>
           </div>
         </form>
         {state === 'ERROR' && (
