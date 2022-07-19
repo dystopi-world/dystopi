@@ -85,7 +85,7 @@ function Newsletter() {
           placeholder="john.doe@gmail.com"
         />
         <Button type="submit" style={{ width: isMobile ? '100%' : 'auto' }}>
-          SIGN UP
+          SUBSCRIBE
         </Button>
       </form>
       {state === 'ERROR' && (

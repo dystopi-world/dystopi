@@ -23,7 +23,7 @@ export default function Home() {
       </Head>
       <main style={{ position: 'relative' }}>
         <Presale />
-        <SeedSale />
+        {/* <SeedSale /> */}
         <Landing />
         {/* <SocialMedias /> */}
         <Story />
