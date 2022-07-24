@@ -53,14 +53,25 @@
   }
   .sliderContainer {
     margin: 8rem 0 2rem;
-    padding: 0 2rem;
+    padding: 0 3rem;
+    position: relative;
 
     .decorLine {
       height: 2px;
-      background-color: $purple-secondary;
+      background: $purple-secondary;
       margin-bottom: 1.5rem;
       position: relative;
       top: 44px;
+
+      &::after {
+        content: '';
+        width: 20%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.75), transparent);
+      }
     }
 
     article {
@@ -108,5 +119,11 @@
 @media (min-width: 1024px) {
   .Roadmap {
     margin-bottom: 10rem;
+  }
+}
+
+@media (min-width: 2300px) {
+  .Roadmap {
+    padding: 0 10%;
   }
 }

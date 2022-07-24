@@ -99,6 +99,7 @@ function Footer() {
             style={{ transform: 'scale(0.7)' }}
             alt="Dystopi logo"
             layout="fill"
+            objectFit="contain"
           />
         </a>
       </Link>

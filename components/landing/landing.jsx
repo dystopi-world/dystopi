@@ -1,5 +1,6 @@
 import styles from './landing.module.scss';
 import Image from 'next/image';
+import ScrollForMore from './scroll-for-more/scroll-for-more';
 
 function Landing() {
   return (
@@ -11,7 +12,7 @@ function Landing() {
         alt="Dystopi city"
         priority
       />
-      <p>SCROLL FOR MORE</p>
+      <ScrollForMore />
     </section>
   );
 }

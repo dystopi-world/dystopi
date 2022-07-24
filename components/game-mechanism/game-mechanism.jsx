@@ -121,38 +121,44 @@ function GameMechanism() {
     setYCoord(contentRef.current.getBoundingClientRect().top);
     setContainerheight(containerRef.current.getBoundingClientRect().height);
     setCardWidth(
-      document.getElementById('gear-card').getBoundingClientRect().width
+      document.getElementById('gear-card').getBoundingClientRect().width,
     );
     setCardHeight(
-      document.getElementById('gear-card').getBoundingClientRect().height
+      document.getElementById('gear-card').getBoundingClientRect().height,
     );
   }, []);
 
   const gearImageStyle = {
     height: `${containerheight}px`,
-    left: isMobile ? `-${xCoord}px` : `-${xCoord + 8}px`,
-    bottom: isMobile ? `-${cardHeight * 3}px` : '-3px',
+    // left: isMobile ? `-${xCoord}px` : `-${xCoord + 8}px`,
+    // bottom: isMobile ? `-${cardHeight * 3}px` : '-3px',
+    left: isMobile ? `-700px` : `-${xCoord + 8}px`,
+    bottom: isMobile ? `-250px` : '-3px',
     opacity: gearCardInView && isMobile ? 1 : 0,
     transform: isMobile && gearCardInView ? 'scale(1.1)' : 'scale(1)',
   };
   const fightImageStyle = {
     height: `${containerheight}px`,
-    left: isMobile ? `-${xCoord}px` : `-${xCoord + cardWidth + 8}px`,
-    bottom: isMobile ? `-${cardHeight * 2}px` : '-3px',
+    // left: isMobile ? `-${xCoord}px` : `-${xCoord + cardWidth + 8}px`,
+    // bottom: isMobile ? `-${cardHeight * 2}px` : '-3px',
+    left: isMobile ? `-980px` : `-${xCoord + cardWidth + 8}px`,
+    bottom: isMobile ? `-770px` : '-3px',
     opacity: fightCardInView && isMobile ? 1 : 0,
     transform: isMobile && fightCardInView ? 'scale(1.1)' : 'scale(1)',
     transformOrigin: isMobile ? 'bottom right' : 'center',
   };
   const earnImageStyle = {
     height: `${containerheight}px`,
-    left: isMobile ? `-${xCoord}px` : `-${xCoord + cardWidth * 2 + 8}px`,
-    bottom: isMobile ? `-${cardHeight}px` : '-3px',
+    left: isMobile ? `-300px` : `-${xCoord + cardWidth * 2 + 8}px`,
+    bottom: isMobile ? `-450px` : '-3px',
     opacity: earnCardInView && isMobile ? 1 : 0,
     transform: isMobile && earnCardInView ? 'scale(1.1)' : 'scale(1)',
   };
   const repeatImageStyle = {
     height: `${containerheight}px`,
-    left: isMobile ? `-${xCoord}px` : `-${xCoord + cardWidth * 3 + 8}px`,
+    // left: isMobile ? `-${xCoord}px` : `-${xCoord + cardWidth * 3 + 8}px`,
+    left: isMobile ? `0` : `-${xCoord + cardWidth * 3 + 8}px`,
+    bottom: isMobile && '-140px',
     opacity: repeatCardInView && isMobile ? 1 : 0,
     transform: isMobile && repeatCardInView ? 'scale(1.1)' : 'scale(1)',
     transformOrigin: isMobile ? 'top left' : 'center',

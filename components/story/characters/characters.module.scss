@@ -35,7 +35,7 @@
 
   .arrow {
     position: absolute;
-    top: 40%;
+    top: 45%;
     font-size: 2rem;
     z-index: 10;
     cursor: pointer;
@@ -64,6 +64,7 @@
   .Character {
     text-align: center;
     padding: 0.5rem;
+    position: relative;
 
     .imageContainer {
       position: relative;
@@ -126,20 +127,32 @@
     margin: auto;
     transform: translateX(20px);
 
+    .decorContainer {
+      transform: translateY(-3rem);
+      h6 {
+        transform: translateY(-1rem);
+      }
+    }
+
     .characterContainer {
       max-width: 500px;
     }
 
     .Character {
       .characterImage {
-        width: 450px;
+        width: 420px;
         position: absolute;
         top: -50px;
-        left: 25px;
+        left: 40px;
       }
 
       h5 {
-        margin-top: 60px;
+        margin-top: 20px;
+      }
+      h5,
+      p {
+        position: relative;
+        z-index: 100;
       }
     }
   }
@@ -161,7 +174,7 @@
       width: 100%;
 
       .Character {
-        height: 600px;
+        height: 550px;
         h5,
         p {
           transform: translateY(5rem);
@@ -169,8 +182,8 @@
       }
 
       .characterImage {
-        width: 550px;
-        left: -25px;
+        width: 520px;
+        left: -10px;
       }
     }
   }

@@ -10,7 +10,7 @@ function DecorSquare() {
   const squareStyle = {
     transition: '1500ms',
     transform: squareInView
-      ? 'scale(1) rotate(135deg)'
+      ? 'scale(0.7) rotate(135deg)'
       : 'scale(0) rotate(-135deg)',
     opacity: squareInView ? 1 : 0,
   };

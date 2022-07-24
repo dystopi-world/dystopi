@@ -10,8 +10,8 @@ function SectionSeparator() {
   const separatorStyle = {
     transition: '2500ms',
     transform: separatorInView
-      ? 'translateY(-0.75rem) scaleX(1)'
-      : 'translateY(-0.75rem) scaleX(0)',
+      ? 'translateY(-1rem) scaleX(1)'
+      : 'translateY(-1rem) scaleX(0)',
     opacity: separatorInView ? 1 : 0,
   };
 

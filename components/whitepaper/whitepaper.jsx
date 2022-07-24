@@ -41,7 +41,7 @@ function Whitepaper() {
     width: titleInView ? '100%' : 0,
   };
   const decorBorderVerticalStyle = {
-    height: titleInView ? '100%' : 0,
+    height: titleInView ? 'calc(100% + 2px)' : 0,
   };
 
   const imageStyle = {
