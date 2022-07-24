@@ -61,7 +61,7 @@ function Header() {
   </div> */}
       <Link href="/#home">
         <a onClick={(event) => handleClick(event, '/#home')}>
-          <video src="/animations/logo2-anim.m4v" muted ref={videoEl}></video>
+          <video src="/animations/logo2-anim.mp4" muted ref={videoEl}></video>
         </a>
       </Link>
       <nav>
