@@ -58,6 +58,10 @@
     // border: 2px solid $purple-primary;
     gap: 1rem;
 
+    img {
+      filter: grayscale(50%);
+    }
+
     .decorCard {
       padding: 0 0 3rem;
       position: relative;
@@ -143,7 +147,7 @@
   .Whitepaper {
     .whitepaperCard {
       width: 70%;
-      height: 40vh;
+      height: 35vh;
 
       .contentContainer {
         gap: 1.5rem;

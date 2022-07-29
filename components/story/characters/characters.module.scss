@@ -130,7 +130,7 @@
     .decorContainer {
       transform: translateY(-3rem);
       h6 {
-        transform: translateY(-1rem);
+        transform: translateY(-1.5rem);
       }
     }
 
@@ -160,21 +160,23 @@
 
 @media (min-width: 1280px) {
   .Characters {
-    max-width: 600px;
+    max-width: 500px;
 
-    .arrowLeft {
+    .arrow {
       font-size: 3rem;
+      top: 25%;
     }
 
-    .arrowRight {
-      font-size: 3rem;
+    .decorContainer {
+      transform: translateY(-7.5rem);
     }
 
     .characterContainer {
       width: 100%;
+      transform: translateY(-8rem);
 
       .Character {
-        height: 550px;
+        height: 500px;
         h5,
         p {
           transform: translateY(5rem);
@@ -182,8 +184,8 @@
       }
 
       .characterImage {
-        width: 520px;
-        left: -10px;
+        width: 450px;
+        left: 25px;
       }
     }
   }

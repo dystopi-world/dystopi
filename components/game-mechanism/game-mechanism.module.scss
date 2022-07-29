@@ -88,7 +88,19 @@
       position: relative;
       overflow: hidden;
 
+      .decorSquareContainer {
+        transform: scale(0.85);
+      }
+
+      h3 {
+        font-weight: 100;
+        font-size: 3.75rem;
+        color: transparent;
+        -webkit-text-stroke: 0.5px $text-primary;
+      }
+
       p {
+        min-height: 4.5rem;
         width: 22ch;
         color: $text-primary;
         position: absolute;
@@ -130,6 +142,10 @@
         height: 100%;
         min-height: 60vh;
         cursor: pointer;
+
+        h3 {
+          font-size: 3.5rem;
+        }
 
         &:hover {
           p {

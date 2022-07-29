@@ -47,7 +47,7 @@ function Header() {
   };
   return (
     <header className={styles.Header}>
-      {/* <div
+      <div
         className={styles.imageContainer}
         onClick={(event) => handleClick(event, '/')}
       >
@@ -58,8 +58,8 @@ function Header() {
           layout="fill"
           objectFit="contain"
         />
-  </div> */}
-      <Link href="/#home">
+      </div>
+      {/*  <Link href="/#home">
         <a onClick={(event) => handleClick(event, '/#home')}>
           <video
             src="/animations/logo2-anim.mp4"
@@ -69,7 +69,7 @@ function Header() {
             ref={videoEl}
           ></video>
         </a>
-      </Link>
+  </Link> */}
       <nav>
         <ul>
           <li>

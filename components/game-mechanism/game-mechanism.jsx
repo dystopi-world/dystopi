@@ -241,7 +241,9 @@ function GameMechanism() {
                         : decorBorderVerticalStyle
                     }
                   ></div>
-                  <DecorSquare />
+                  <div className={styles.decorSquareContainer}>
+                    <DecorSquare />
+                  </div>
                   <h3
                     ref={gearTextRef}
                     style={gearTextStyle}
@@ -273,7 +275,9 @@ function GameMechanism() {
                         : decorBorderVerticalStyle
                     }
                   ></div>
-                  <DecorSquare />
+                  <div className={styles.decorSquareContainer}>
+                    <DecorSquare />
+                  </div>
                   <h3
                     ref={fightTextRef}
                     style={fightTextStyle}
@@ -305,7 +309,9 @@ function GameMechanism() {
                         : decorBorderVerticalStyle
                     }
                   ></div>
-                  <DecorSquare />
+                  <div className={styles.decorSquareContainer}>
+                    <DecorSquare />
+                  </div>
                   <h3
                     ref={earnTextRef}
                     style={earnTextStyle}
@@ -325,7 +331,9 @@ function GameMechanism() {
                     alt="fill"
                     style={repeatImageStyle}
                   />
-                  <DecorSquare />
+                  <div className={styles.decorSquareContainer}>
+                    <DecorSquare />
+                  </div>
                   <h3
                     ref={repeatTextRef}
                     style={repeatTextStyle}
