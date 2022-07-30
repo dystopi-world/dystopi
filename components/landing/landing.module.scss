@@ -6,6 +6,27 @@
   height: 100vh;
   max-height: 100vh;
 
+  .testData {
+    padding: 2rem;
+    width: 200px;
+    height: 120px;
+    background-color: red;
+    position: relative;
+    top: 45%;
+    left: 5%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    p {
+      position: relative;
+      top: 1rem;
+      left: -1rem;
+    }
+  }
+
   .landingTextContainer {
     @include absoluteCenter;
     transform: translate(-50%, 0%);
