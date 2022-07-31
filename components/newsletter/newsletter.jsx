@@ -69,8 +69,7 @@ function Newsletter() {
         DON&apos;T MISS THE NEWS
       </h3>
       <p ref={subTitleRef} style={subTitleStyle} className={styles.sectionInfo}>
-        Subscribe to our newsletter and we keep you up-to-date about world of
-        Dystopi
+        Subscribe to our newsletter to be kept up-to-date about world of Dystopi
       </p>
       <form
         onSubmit={(event) => subscribe(event)}

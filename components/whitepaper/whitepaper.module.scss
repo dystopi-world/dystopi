@@ -59,7 +59,8 @@
     gap: 1rem;
 
     img {
-      filter: grayscale(50%);
+      filter: grayscale(50%) brightness(75%);
+      transition: 400ms !important;
     }
 
     .decorCard {
@@ -137,6 +138,13 @@
 
 @media (min-width: 1024px) {
   .Whitepaper {
+    .whitepaperCard {
+      &:hover {
+        img {
+          filter: grayscale(0) brightness(150%);
+        }
+      }
+    }
     a:hover {
       box-shadow: 4px 4px 24px #653e99fb;
     }

@@ -7,7 +7,7 @@
 
   h2 {
     text-align: center;
-    max-width: 30ch;
+    max-width: 28ch;
     margin: 5rem auto;
   }
 
@@ -33,6 +33,13 @@
 
     h5 {
       margin: 0.25rem 0;
+      font-weight: lighter;
+
+      strong {
+        font-weight: bold;
+        -webkit-text-stroke: 0px #fff;
+        text-shadow: 0 0 2px #fff;
+      }
     }
   }
 }
@@ -57,7 +64,7 @@
 
       .instructions {
         align-self: flex-end;
-        transform: translateY(-4rem);
+        transform: translateY(-10rem);
 
         h5 {
           margin: 0.25rem 0;
@@ -85,13 +92,17 @@
     }
     .outerContainer {
       max-height: 400px;
+
+      .instructions {
+        transform: translateY(-14rem);
+      }
     }
     .innerContainer {
       h4 {
         width: 150px;
-        font-size: 6rem;
-        left: -13%;
-        transform: translateY(-8rem);
+        font-size: 7rem;
+        left: -15%;
+        transform: translateY(-7rem);
       }
     }
   }
@@ -129,15 +140,20 @@
 
     .outerContainer {
       max-height: 500px;
+      transform: translateX(85px);
+
       .instructions {
-        font-size: 2.25rem;
+        h5 {
+          font-size: 3rem;
+        }
       }
     }
     .innerContainer {
       h4 {
         width: 150px;
-        font-size: 9rem;
+        font-size: 11rem;
         left: -300px;
+        transform: translateY(0);
       }
     }
   }

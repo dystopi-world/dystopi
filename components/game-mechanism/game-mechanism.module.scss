@@ -145,9 +145,13 @@
 
         h3 {
           font-size: 3.5rem;
+          transition: 750ms;
         }
 
         &:hover {
+          h3 {
+            color: #fff !important;
+          }
           p {
             opacity: 1 !important;
             top: 50% !important;

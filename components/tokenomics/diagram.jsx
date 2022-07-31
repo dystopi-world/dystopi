@@ -37,7 +37,7 @@ function Diagram() {
   const turquoiseStyle = {
     transition: '250ms',
     boxShadow: turquoiseHovered
-      ? '20px 80px 150px 100px #6ee3c0'
+      ? '20px 80px 150px 100px #6EE3C0'
       : '0 0 0 0 transparent',
   };
   const [purpleHovered, setPurpleHovered] = useState(false);

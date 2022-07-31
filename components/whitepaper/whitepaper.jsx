@@ -104,7 +104,7 @@ function Whitepaper() {
               style={subTitleStyle}
               className={styles.sectionInfo}
             >
-              Check our Whitepaper to learn more about project Dystopi!
+              Check out our Whitepaper to learn more about project Dystopi!
             </p>
             <Link href="https://dystopi.gitbook.io/dystopi-whitepaper/">
               <a ref={buttonRef} style={buttonStyle} target="blank">
