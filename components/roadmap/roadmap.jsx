@@ -170,13 +170,18 @@ function Roadmap({ timelineItems }) {
                     (timelineListItem, index) => (
                       <li key={index}>
                         {timelineListItem.progressState === 'completed' && (
-                          <IoCheckmarkDone />
+                          <IoCheckmarkDone
+                            color="#00e676"
+                            className={styles.testTick}
+                          />
                         )}
                         {timelineListItem.progressState === 'in_progress' && (
-                          <BsClockHistory />
+                          <BsClockHistory color="#ffca28" />
                         )}
                         {timelineListItem.progressState === 'will_be_done' && (
-                          <BiCalendarExclamation />
+                          // <BiCalendarExclamation color="#d50000" />
+                          <BiCalendarExclamation color="#ef5350" />
+                          //<BiCalendarExclamation color="#f44336" />
                         )}
                         {timelineListItem.text}
                       </li>
