@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { getTimelineItems } from '../cms-service';
 import GameMechanism from '../components/game-mechanism/game-mechanism';
 import Landing from '../components/landing/landing';
 import Newsletter from '../components/newsletter/newsletter';
@@ -11,9 +12,18 @@ import Story from '../components/story/story';
 import ToGallery from '../components/to-gallery/to-gallery';
 import Tokenomics from '../components/tokenomics/tokenomics';
 import Whitepaper from '../components/whitepaper/whitepaper';
-import SeedSale from '../components/seed-sale/seed-sale';
 
-export default function Home() {
+export async function getStaticProps() {
+  const timelineItems = (await getTimelineItems()) || [];
+  return {
+    props: { timelineItems },
+  };
+}
+/**
+ * icons: double tick, clock / loading stuff, calendar
+ */
+
+export default function Home({ timelineItems }) {
   return (
     <div>
       <Head>
@@ -33,7 +43,7 @@ export default function Home() {
         <Nfts />
         <SectionSeparator />
         <Tokenomics />
-        <Roadmap />
+        <Roadmap timelineItems={timelineItems} />
         <Whitepaper />
         <ToGallery />
         <Newsletter />

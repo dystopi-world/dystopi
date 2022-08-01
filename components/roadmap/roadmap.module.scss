@@ -103,13 +103,19 @@
       }
 
       ul {
-        padding-left: 1.5rem;
-        list-style: disc;
-        list-style-position: outside;
+        padding-left: 0.5rem;
 
         li {
-          margin: 0.25rem 0;
+          margin: 0.5rem 0;
           color: $text-secondary;
+          display: flex;
+          justify-content: flex-start;
+          gap: 0.5rem;
+
+          svg {
+            min-width: 16px;
+            min-height: 16px;
+          }
         }
       }
     }
@@ -125,5 +131,18 @@
 @media (min-width: 2300px) {
   .Roadmap {
     padding: 0 10%;
+
+    .sliderContainer {
+      article {
+        ul {
+          li {
+            svg {
+              min-width: 24px;
+              min-height: 24px;
+            }
+          }
+        }
+      }
+    }
   }
 }
