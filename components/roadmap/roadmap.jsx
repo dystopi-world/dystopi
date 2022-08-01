@@ -17,7 +17,6 @@ import 'swiper/css/effect-fade';
 import { roadmapData } from './roadmap-data';
 
 function Roadmap({ timelineItems }) {
-  console.log(timelineItems);
   const swiperPrevButtonRef = useRef(null);
   const swiperNextButtonRef = useRef(null);
 
