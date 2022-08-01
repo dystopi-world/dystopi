@@ -41,7 +41,7 @@ function Whitepaper() {
     width: titleInView ? '100%' : 0,
   };
   const decorBorderVerticalStyle = {
-    height: titleInView ? '100%' : 0,
+    height: titleInView ? 'calc(100% + 2px)' : 0,
   };
 
   const imageStyle = {
@@ -104,7 +104,7 @@ function Whitepaper() {
               style={subTitleStyle}
               className={styles.sectionInfo}
             >
-              Check our Whitepaper to learn more about project Dystopi!
+              Check out our Whitepaper to learn more about project Dystopi!
             </p>
             <Link href="https://dystopi.gitbook.io/dystopi-whitepaper/">
               <a ref={buttonRef} style={buttonStyle} target="blank">

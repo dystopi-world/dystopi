@@ -117,3 +117,16 @@
     }
   }
 }
+
+@media (min-width: 2300px) {
+  .Gallery {
+    padding-top: 10rem;
+    .sliderContainer {
+      max-width: 1500px;
+
+      .galleryImageContainer {
+        min-height: 30rem;
+      }
+    }
+  }
+}

@@ -23,10 +23,28 @@ function Header() {
         console.error('Error attempting to play', error);
       });
   };
+  const attemptPlayRepeat = () => {
+    videoEl &&
+      videoEl.current &&
+      setInterval(() => {
+        videoEl.current.play().catch((error) => {
+          console.error('Error attempting to play', error);
+        });
+      }, 45000);
+  };
 
   useEffect(() => {
-    attemptPlay();
+    setTimeout(() => {
+      attemptPlay();
+      attemptPlayRepeat();
+    }, 1500);
   }, []);
+
+  const presaleButtonStyle = {
+    fontSize: '12px',
+    background: '#201d24bb',
+    transform: 'scale(0.9)',
+  };
   return (
     <header className={styles.Header}>
       <div
@@ -38,9 +56,20 @@ function Header() {
           style={{ transform: 'scale(0.7)' }}
           alt="Dystopi logo"
           layout="fill"
+          objectFit="contain"
         />
       </div>
-      {/* <video src="/animations/logo-anim.m4v" muted ref={videoEl}></video>*/}
+      {/*  <Link href="/#home">
+        <a onClick={(event) => handleClick(event, '/#home')}>
+          <video
+            src="/animations/logo2-anim.mp4"
+            autoPlay
+            playsInline
+            muted
+            ref={videoEl}
+          ></video>
+        </a>
+  </Link> */}
       <nav>
         <ul>
           <li>
@@ -86,7 +115,9 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <Button onClick={() => setIsVisible(true)}>JOIN PRESALE</Button>
+      <Button onClick={() => setIsVisible(true)} style={presaleButtonStyle}>
+        JOIN PRESALE
+      </Button>
     </header>
   );
 }

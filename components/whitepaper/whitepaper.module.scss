@@ -44,7 +44,7 @@
 
   .decorBorderLeft {
     width: 1px;
-    height: calc(100% + 2px);
+    height: calc(100% + 3px);
     top: -1px;
     left: -1px;
   }
@@ -57,6 +57,11 @@
     padding: 0.3rem;
     // border: 2px solid $purple-primary;
     gap: 1rem;
+
+    img {
+      filter: grayscale(50%) brightness(75%);
+      transition: 400ms !important;
+    }
 
     .decorCard {
       padding: 0 0 3rem;
@@ -79,7 +84,7 @@
     }
   }
   .decorContainer {
-    transform: scale(0.75) translateY(-5rem);
+    transform: scale(0.75) translateY(-6rem);
     max-height: 7rem;
   }
 
@@ -133,8 +138,28 @@
 
 @media (min-width: 1024px) {
   .Whitepaper {
+    .whitepaperCard {
+      &:hover {
+        img {
+          filter: grayscale(0) brightness(150%);
+        }
+      }
+    }
     a:hover {
       box-shadow: 4px 4px 24px #653e99fb;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .Whitepaper {
+    .whitepaperCard {
+      width: 70%;
+      height: 35vh;
+
+      .contentContainer {
+        gap: 1.5rem;
+      }
     }
   }
 }

@@ -8,8 +8,8 @@
 
   .decorLine {
     width: 30%;
-    height: 3px;
-    transform: translateY(-0.75rem);
+    max-width: 9rem;
+    height: 2px;
 
     &:first-of-type {
       background: linear-gradient(to left, #a967ff, #a967ff18);

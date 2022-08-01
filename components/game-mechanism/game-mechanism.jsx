@@ -70,6 +70,7 @@ function GameMechanism() {
   const gearTextStyle = {
     top: gearTextInView ? 0 : '3rem',
     opacity: gearTextInView ? 1 : 0,
+    color: isMobile && gearCardInView ? '#fff' : 'transparent',
   };
   const gearHiddenTextStyle = {
     top: isMobile && gearCardInView ? '50%' : '60%',
@@ -78,6 +79,7 @@ function GameMechanism() {
   const fightTextStyle = {
     top: fightTextInView ? 0 : '3rem',
     opacity: fightTextInView ? 1 : 0,
+    color: isMobile && fightCardInView ? '#fff' : 'transparent',
   };
   const fightHiddenTextStyle = {
     top: isMobile && fightCardInView ? '50%' : '60%',
@@ -86,6 +88,7 @@ function GameMechanism() {
   const earnTextStyle = {
     top: earnTextInView ? 0 : '3rem',
     opacity: earnTextInView ? 1 : 0,
+    color: isMobile && earnCardInView ? '#fff' : 'transparent',
   };
   const earnHiddenTextStyle = {
     top: isMobile && earnCardInView ? '50%' : '60%',
@@ -94,6 +97,7 @@ function GameMechanism() {
   const repeatTextStyle = {
     top: repeatTextInView ? 0 : '3rem',
     opacity: repeatTextInView ? 1 : 0,
+    color: isMobile && repeatCardInView ? '#fff' : 'transparent',
   };
   const repeatHiddenTextStyle = {
     top: isMobile && repeatCardInView ? '50%' : '60%',
@@ -121,38 +125,44 @@ function GameMechanism() {
     setYCoord(contentRef.current.getBoundingClientRect().top);
     setContainerheight(containerRef.current.getBoundingClientRect().height);
     setCardWidth(
-      document.getElementById('gear-card').getBoundingClientRect().width
+      document.getElementById('gear-card').getBoundingClientRect().width,
     );
     setCardHeight(
-      document.getElementById('gear-card').getBoundingClientRect().height
+      document.getElementById('gear-card').getBoundingClientRect().height,
     );
   }, []);
 
   const gearImageStyle = {
     height: `${containerheight}px`,
-    left: isMobile ? `-${xCoord}px` : `-${xCoord + 8}px`,
-    bottom: isMobile ? `-${cardHeight * 3}px` : '-3px',
+    // left: isMobile ? `-${xCoord}px` : `-${xCoord + 8}px`,
+    // bottom: isMobile ? `-${cardHeight * 3}px` : '-3px',
+    left: isMobile ? `-700px` : `-${xCoord + 8}px`,
+    bottom: isMobile ? `-250px` : '-3px',
     opacity: gearCardInView && isMobile ? 1 : 0,
     transform: isMobile && gearCardInView ? 'scale(1.1)' : 'scale(1)',
   };
   const fightImageStyle = {
     height: `${containerheight}px`,
-    left: isMobile ? `-${xCoord}px` : `-${xCoord + cardWidth + 8}px`,
-    bottom: isMobile ? `-${cardHeight * 2}px` : '-3px',
+    // left: isMobile ? `-${xCoord}px` : `-${xCoord + cardWidth + 8}px`,
+    // bottom: isMobile ? `-${cardHeight * 2}px` : '-3px',
+    left: isMobile ? `-980px` : `-${xCoord + cardWidth + 8}px`,
+    bottom: isMobile ? `-770px` : '-3px',
     opacity: fightCardInView && isMobile ? 1 : 0,
     transform: isMobile && fightCardInView ? 'scale(1.1)' : 'scale(1)',
     transformOrigin: isMobile ? 'bottom right' : 'center',
   };
   const earnImageStyle = {
     height: `${containerheight}px`,
-    left: isMobile ? `-${xCoord}px` : `-${xCoord + cardWidth * 2 + 8}px`,
-    bottom: isMobile ? `-${cardHeight}px` : '-3px',
+    left: isMobile ? `-300px` : `-${xCoord + cardWidth * 2 + 8}px`,
+    bottom: isMobile ? `-450px` : '-3px',
     opacity: earnCardInView && isMobile ? 1 : 0,
     transform: isMobile && earnCardInView ? 'scale(1.1)' : 'scale(1)',
   };
   const repeatImageStyle = {
     height: `${containerheight}px`,
-    left: isMobile ? `-${xCoord}px` : `-${xCoord + cardWidth * 3 + 8}px`,
+    // left: isMobile ? `-${xCoord}px` : `-${xCoord + cardWidth * 3 + 8}px`,
+    left: isMobile ? `0` : `-${xCoord + cardWidth * 3 + 8}px`,
+    bottom: isMobile && '-140px',
     opacity: repeatCardInView && isMobile ? 1 : 0,
     transform: isMobile && repeatCardInView ? 'scale(1.1)' : 'scale(1)',
     transformOrigin: isMobile ? 'top left' : 'center',
@@ -179,7 +189,7 @@ function GameMechanism() {
             className={styles.sectionInfo}
           >
             Gear up your hero with the best NFTs to fight against Gata’aga and
-            collect daily reward in Dyseum!
+            collect daily rewards in Dyseum!
           </p>
           <div className={styles.cardsDecorContainer} ref={cardContainerRef}>
             <div ref={contentRef}>
@@ -235,7 +245,9 @@ function GameMechanism() {
                         : decorBorderVerticalStyle
                     }
                   ></div>
-                  <DecorSquare />
+                  <div className={styles.decorSquareContainer}>
+                    <DecorSquare />
+                  </div>
                   <h3
                     ref={gearTextRef}
                     style={gearTextStyle}
@@ -267,7 +279,9 @@ function GameMechanism() {
                         : decorBorderVerticalStyle
                     }
                   ></div>
-                  <DecorSquare />
+                  <div className={styles.decorSquareContainer}>
+                    <DecorSquare />
+                  </div>
                   <h3
                     ref={fightTextRef}
                     style={fightTextStyle}
@@ -276,7 +290,7 @@ function GameMechanism() {
                     FIGHT
                   </h3>
                   <p style={fightHiddenTextStyle}>
-                    Fight and slain Gata’aga using your skills and abilities, or
+                    Fight and slay Gata’aga using your skills and abilities, or
                     send your character to Legion mode!
                   </p>
                 </div>
@@ -299,7 +313,9 @@ function GameMechanism() {
                         : decorBorderVerticalStyle
                     }
                   ></div>
-                  <DecorSquare />
+                  <div className={styles.decorSquareContainer}>
+                    <DecorSquare />
+                  </div>
                   <h3
                     ref={earnTextRef}
                     style={earnTextStyle}
@@ -319,7 +335,9 @@ function GameMechanism() {
                     alt="fill"
                     style={repeatImageStyle}
                   />
-                  <DecorSquare />
+                  <div className={styles.decorSquareContainer}>
+                    <DecorSquare />
+                  </div>
                   <h3
                     ref={repeatTextRef}
                     style={repeatTextStyle}
@@ -327,7 +345,7 @@ function GameMechanism() {
                   >
                     REPEAT
                   </h3>
-                  <p style={repeatHiddenTextStyle}>Start over next day!</p>
+                  <p style={repeatHiddenTextStyle}>Start over the next day!</p>
                 </div>
               </div>
             </div>

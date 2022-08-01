@@ -17,10 +17,10 @@
     z-index: 100;
   }
   &::before {
-    left: -0.5rem;
+    left: 0;
   }
   &::after {
-    right: -0.5rem;
+    right: 0;
   }
 
   .decorContainer {
@@ -35,7 +35,7 @@
 
   .arrow {
     position: absolute;
-    top: 40%;
+    top: 45%;
     font-size: 2rem;
     z-index: 10;
     cursor: pointer;
@@ -64,6 +64,7 @@
   .Character {
     text-align: center;
     padding: 0.5rem;
+    position: relative;
 
     .imageContainer {
       position: relative;
@@ -126,20 +127,33 @@
     margin: auto;
     transform: translateX(20px);
 
+    .decorContainer {
+      transform: translateY(-3rem);
+      h6 {
+        transform: translateY(-1.5rem);
+      }
+    }
+
     .characterContainer {
       max-width: 500px;
     }
 
     .Character {
       .characterImage {
-        width: 450px;
+        width: 420px;
         position: absolute;
-        top: -50px;
-        left: 25px;
+        top: -40px;
+        left: 40px;
       }
 
       h5 {
-        margin-top: 60px;
+        margin-top: 20px;
+      }
+      h5,
+      p {
+        position: relative;
+        top: -2rem;
+        z-index: 50;
       }
     }
   }
@@ -147,30 +161,33 @@
 
 @media (min-width: 1280px) {
   .Characters {
-    max-width: 600px;
+    max-width: 500px;
 
-    .arrowLeft {
+    .arrow {
       font-size: 3rem;
+      top: 25%;
     }
 
-    .arrowRight {
-      font-size: 3rem;
+    .decorContainer {
+      transform: translateY(-7.5rem);
     }
 
     .characterContainer {
       width: 100%;
+      transform: translateY(-8rem);
 
       .Character {
-        height: 600px;
+        height: 500px;
         h5,
         p {
           transform: translateY(5rem);
+          top: 0;
         }
       }
 
       .characterImage {
-        width: 550px;
-        left: -25px;
+        width: 450px;
+        left: 25px;
       }
     }
   }
@@ -216,6 +233,21 @@
         width: 750px;
         top: -4rem;
         left: -125px;
+      }
+    }
+  }
+}
+
+@media (min-width: 2300px) {
+  .Characters {
+    .characterContainer {
+      top: 8rem;
+
+      .Character {
+        h5,
+        p {
+          top: 2rem;
+        }
       }
     }
   }

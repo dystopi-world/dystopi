@@ -37,35 +37,35 @@ function Diagram() {
   const turquoiseStyle = {
     transition: '250ms',
     boxShadow: turquoiseHovered
-      ? '20px 100px 200px 40px #6ee3c0'
+      ? '20px 80px 150px 100px #6EE3C0'
       : '0 0 0 0 transparent',
   };
   const [purpleHovered, setPurpleHovered] = useState(false);
   const purpleStyle = {
     transition: '250ms',
     boxShadow: purpleHovered
-      ? '-8px -3px 70px 10px #df1dff'
+      ? '1px -6px 65px 15px #df1dff'
       : '0 0 0 0 transparent',
   };
   const [kingBlueHovered, setKingBlueHovered] = useState(false);
   const kingBlueStyle = {
     transition: '250ms',
     boxShadow: kingBlueHovered
-      ? '4px -3px 60px 8px #2323ff'
+      ? '10px -3px 65px 12px #2323ff'
       : '0 0 0 0 transparent',
   };
   const [iceBlueHovered, setIceBlueHovered] = useState(false);
   const iceBlueStyle = {
     transition: '250ms',
     boxShadow: iceBlueHovered
-      ? '4px -2px 80px 12px #aee9ff'
+      ? '30px 2px 80px 30px #aee9ff'
       : '0 0 0 0 transparent',
   };
   const [roseHovered, setRoseHovered] = useState(false);
   const roseStyle = {
     transition: '250ms',
     boxShadow: roseHovered
-      ? '-10px 10px 100px 10px #ee4492'
+      ? '30px -10px 100px 12px #ee4492'
       : '0 0 0 0 transparent',
   };
   return (

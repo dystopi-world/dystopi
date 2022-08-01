@@ -1,4 +1,4 @@
-@import "/styles/variables";
+@import '/styles/variables';
 .Button {
   padding: 0.75rem 1.5rem;
   background-color: $button-background;
@@ -6,7 +6,7 @@
   box-shadow: 4px 4px 24px #653e99af;
 
   color: $text-primary;
-  font-family: "Gambetta";
+  font-family: 'Gambetta';
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -21,7 +21,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 3px;
     left: 3px;

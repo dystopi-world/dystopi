@@ -65,7 +65,7 @@ function Gallery({ videos, images }) {
                 <Image
                   src={image.node.image.url}
                   layout="fill"
-                  objectFit="contain"
+                  objectFit="cover"
                   alt="dystopi gallery image"
                 />
               </div>

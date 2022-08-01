@@ -44,7 +44,7 @@ function Story() {
   return (
     <section className={styles.Story} id="story">
       <h2 ref={titleRef} style={titleStyle}>
-        A NEW GENERATION <strong>NFT GAME</strong> TO SAVE THE EARTH FROM ALIEN
+        A NEW GENERATION <strong>NFT GAME</strong> SAVE THE EARTH FROM ALIEN
         INVASION
       </h2>
       <div className={styles.outerContainer}>
@@ -66,7 +66,7 @@ function Story() {
             REACH <strong>RANKS</strong>
           </h5>
           <h5>
-            MAKE <strong>INCOME</strong>
+            EARN <strong>INCOME</strong>
           </h5>
         </div>
       </div>

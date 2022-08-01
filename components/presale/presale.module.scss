@@ -13,12 +13,13 @@
   left: 0;
   z-index: 1000;
   animation: fadeIn 300ms ease forwards;
+  backdrop-filter: blur(15px);
 
   form {
     max-width: 350px;
     @include flexCenter(column);
     transition-delay: 300ms;
-    background-color: $background-primary;
+    background-color: $background-primary-faded;
     padding: 3rem 4rem;
     border: 2px solid $purple-secondary;
     position: relative;

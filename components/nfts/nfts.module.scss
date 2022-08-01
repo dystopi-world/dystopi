@@ -123,3 +123,16 @@
     }
   }
 }
+
+@media (min-width: 2300px) {
+  .Nfts {
+    .imageContainer {
+      width: 600px;
+      height: 800px;
+      margin-top: 5rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+      border-radius: 0.25rem;
+      overflow: hidden;
+    }
+  }
+}

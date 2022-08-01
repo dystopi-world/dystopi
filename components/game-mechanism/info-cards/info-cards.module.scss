@@ -2,7 +2,7 @@
 @import '/styles/variables';
 
 .InfoCards {
-  margin: 10rem 0;
+  margin: 10rem 0 15rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,10 +13,10 @@
 }
 
 .InfoCard {
-  max-width: 320px;
+  max-width: 250px;
   background-color: #26222a;
   position: relative;
-  left: 1rem;
+  left: -2rem;
 
   &:first-of-type {
     transform: translate(-10%, -10%);
@@ -43,7 +43,10 @@
     left: 1.25%;
   }*/
   .contentContainer {
-    transform: translate(10%, 25%);
+    position: relative;
+    left: 45%;
+    top: 8rem;
+    width: 100%;
     h3 {
       padding-top: 5rem;
       margin-bottom: 2rem;
@@ -73,15 +76,15 @@
   .decorBorderRight {
     width: 1px;
     height: calc(100% + 2px);
-    bottom: -8px;
+    bottom: -7px;
     right: -9px;
   }
 
   .decorBorderBottom {
     width: 100%;
     height: 1px;
-    bottom: -9px;
-    right: -7px;
+    bottom: -7px;
+    right: -8px;
   }
 
   .decorBorderLeft {
@@ -92,14 +95,25 @@
   }
 }
 
+@media (min-width: 700px) {
+  .InfoCard {
+    max-width: 320px;
+    left: -7rem;
+
+    .contentContainer {
+      left: 80%;
+    }
+  }
+}
+
 @media (min-width: 1024px) {
   .InfoCards {
     flex-direction: row;
-    gap: 0;
+    gap: 5rem;
   }
 
   .InfoCard {
-    max-width: 380px;
+    max-width: 300px;
     left: 0;
 
     &:first-of-type {
@@ -110,7 +124,52 @@
     }
 
     .contentContainer {
-      transform: translate(15%, 25%);
+      transform: translate(0%, 25%);
+      width: 95%;
+      left: 45%;
+      top: 2rem;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .InfoCards {
+    gap: 3rem;
+    .InfoCard {
+      .contentContainer {
+        left: 70%;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .InfoCards {
+    gap: 8rem;
+  }
+  .InfoCard {
+    max-width: 330px;
+    left: -5rem;
+
+    .contentContainer {
+      width: 100%;
+      transform: translate(3rem, 25%);
+    }
+  }
+}
+
+@media (min-width: 2300px) {
+  .InfoCard {
+    max-width: 480px;
+    min-height: 700px;
+
+    .contentContainer {
+      width: 115%;
+      top: 11rem;
+
+      h3 {
+        font-size: 3.5rem;
+      }
     }
   }
 }
