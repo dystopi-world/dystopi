@@ -38,3 +38,24 @@ export const getVideos = async () => {
 
   return result.videos;
 };
+
+export const getTimelineItems = async () => {
+  const query = gql`
+    query GetTimelineItems {
+      timelineItemsConnection {
+        edges {
+          node {
+            title
+            tiemlineListItems {
+              text
+              progressState
+            }
+          }
+        }
+      }
+    }
+  `;
+  const result = await request(CMS_API, query);
+
+  return result.timelineItemsConnection.edges;
+};

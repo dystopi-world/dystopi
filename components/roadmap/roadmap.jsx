@@ -1,6 +1,8 @@
 import { useRef, useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
+import { BsArrowLeft, BsArrowRight, BsClockHistory } from 'react-icons/bs';
+import { IoCheckmarkDone } from 'react-icons/io5';
+import { BiCalendarExclamation } from 'react-icons/bi';
 import SectionSeparator from '../section-separator/section-separator';
 // Import Swiper React components
 import { Navigation, EffectFade } from 'swiper';
@@ -14,7 +16,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 import { roadmapData } from './roadmap-data';
 
-function Roadmap() {
+function Roadmap({ timelineItems }) {
+  console.log(timelineItems);
   const swiperPrevButtonRef = useRef(null);
   const swiperNextButtonRef = useRef(null);
 
@@ -74,6 +77,15 @@ function Roadmap() {
     position: 'relative',
     top: sliderInView ? 0 : '4rem',
     opacity: sliderInView ? 1 : 0,
+  };
+
+  const getIcon = (timelineListItem) => {
+    if (timelineListItem.progressState === 'completed')
+      return <IoCheckmarkDone />;
+    if (timelineListItem.progressState === 'in_progress')
+      return <BsClockHistory />;
+    if (timelineListItem.progressState === 'will_be_done')
+      return <BiCalendarExclamation />;
   };
 
   return (
@@ -141,7 +153,7 @@ function Roadmap() {
             swiper.navigation.update();
           }}
         >
-          {roadmapData.map((roadmap, index) => (
+          {timelineItems.map((timelineItem, index) => (
             <SwiperSlide key={index}>
               <article>
                 <div
@@ -152,11 +164,24 @@ function Roadmap() {
                   className={styles.decorLineDot}
                   style={decorLineDotStyle('1000ms')}
                 ></div>
-                <h4>{roadmap.year}</h4>
+                <h4>{timelineItem.node.title}</h4>
                 <ul>
-                  {roadmap.milestones.map((milestone, index) => (
-                    <li key={index}>{milestone}</li>
-                  ))}
+                  {timelineItem.node.tiemlineListItems.map(
+                    (timelineListItem, index) => (
+                      <li key={index}>
+                        {timelineListItem.progressState === 'completed' && (
+                          <IoCheckmarkDone />
+                        )}
+                        {timelineListItem.progressState === 'in_progress' && (
+                          <BsClockHistory />
+                        )}
+                        {timelineListItem.progressState === 'will_be_done' && (
+                          <BiCalendarExclamation />
+                        )}
+                        {timelineListItem.text}
+                      </li>
+                    ),
+                  )}
                 </ul>
               </article>
             </SwiperSlide>
