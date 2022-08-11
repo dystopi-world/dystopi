@@ -17,6 +17,7 @@ export async function getStaticProps() {
   const timelineItems = (await getTimelineItems()) || [];
   return {
     props: { timelineItems },
+    revalidate: 900,
   };
 }
 /**
