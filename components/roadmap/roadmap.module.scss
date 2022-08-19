@@ -1,148 +1,165 @@
-@import '/styles/mixins';
-@import '/styles/variables';
+@import "/styles/mixins";
+@import "/styles/variables";
 
 .Roadmap {
-  margin-bottom: 5rem;
+	margin-bottom: 5rem;
 
-  .title,
-  .sectionInfo {
-    position: relative;
-    transition: $text-transition;
-  }
+	.title,
+	.sectionInfo {
+		position: relative;
+		transition: $text-transition;
+	}
 
-  .sectionInfo {
-    transition-delay: $text-transition-delay;
-  }
+	.sectionInfo {
+		transition-delay: $text-transition-delay;
+	}
 
-  h2 {
-    text-align: center;
-  }
+	h2 {
+		text-align: center;
+	}
 
-  p {
-    text-align: center;
-    margin: 2rem auto 4rem;
-    color: $text-secondary;
-    max-width: 70ch;
-  }
+	p {
+		text-align: center;
+		margin: 2rem auto 4rem;
+		color: $text-secondary;
+		max-width: 70ch;
+	}
 
-  .buttonGroup {
-    transition: $text-transition;
-    transition-delay: $text-transition-delay;
-    position: absolute;
-    right: 8rem;
-    top: 40% !important;
-    button {
-      margin: 0 0.5rem;
-      padding: 0.5rem;
-      color: $text-primary;
-      background-color: transparent;
-      border: 1px solid $purple-primary;
-      position: relative;
-      cursor: pointer;
+	.buttonGroup {
+		transition: $text-transition;
+		transition-delay: $text-transition-delay;
+		position: absolute;
+		right: 50%;
+		transform: translateX(50%);
+		top: -1rem !important;
+		button {
+			margin: 0 0.5rem;
+			padding: 0.5rem;
+			color: $text-primary;
+			background-color: transparent;
+			border: 1px solid $purple-primary;
+			position: relative;
+			cursor: pointer;
 
-      &::before {
-        content: '';
-        width: calc(100% + 6px);
-        height: calc(100% + 6px);
-        position: absolute;
-        top: -4px;
-        left: -4px;
-        border: 1px solid $purple-primary;
-      }
-    }
-  }
-  .sliderContainer {
-    margin: 8rem 0 2rem;
-    padding: 0 3rem;
-    position: relative;
+			&::before {
+				content: "";
+				width: calc(100% + 6px);
+				height: calc(100% + 6px);
+				position: absolute;
+				top: -4px;
+				left: -4px;
+				border: 1px solid $purple-primary;
+			}
+		}
+	}
+	.sliderContainer {
+		margin: 8rem 0 2rem;
+		padding: 0 3rem;
+		position: relative;
 
-    .decorLine {
-      height: 2px;
-      background: $purple-secondary;
-      margin-bottom: 1.5rem;
-      position: relative;
-      top: 44px;
+		.decorLine {
+			height: 2px;
+			background: $purple-secondary;
+			margin-bottom: 1.5rem;
+			position: relative;
+			top: 44px;
 
-      &::after {
-        content: '';
-        width: 20%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        right: 0;
-        background: linear-gradient(to left, rgba(0, 0, 0, 0.75), transparent);
-      }
-    }
+			&::after {
+				content: "";
+				width: 20%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				right: 0;
+				background: linear-gradient(
+					to left,
+					rgba(0, 0, 0, 0.75),
+					transparent
+				);
+			}
+		}
 
-    article {
-      padding-top: 2.5rem;
-      position: relative;
+		article {
+			padding-top: 2.5rem;
+			position: relative;
 
-      div {
-        transition: 2000ms;
-        position: absolute;
-        top: 1rem;
-        left: 1.1rem;
-        z-index: 10;
-        width: 7px;
-        height: 7px;
-        background-color: $purple-secondary;
-        border-radius: 50%;
-        box-shadow: 0 0 8px 1px $purple-secondary;
+			div {
+				transition: 2000ms;
+				position: absolute;
+				top: 1rem;
+				left: 1.1rem;
+				z-index: 10;
+				width: 7px;
+				height: 7px;
+				background-color: $purple-secondary;
+				border-radius: 50%;
+				box-shadow: 0 0 8px 1px $purple-secondary;
 
-        &:last-of-type {
-          border: 1px solid $purple-secondary;
-          background-color: transparent;
-          transform: scale(2) translate(-0, -0);
-        }
-      }
+				&:last-of-type {
+					border: 1px solid $purple-secondary;
+					background-color: transparent;
+					transform: scale(2) translate(-0, -0);
+				}
+			}
 
-      h4 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-      }
+			h4 {
+				font-size: 1.5rem;
+				margin-bottom: 1.5rem;
+			}
 
-      ul {
-        padding-left: 0.5rem;
+			.swiper {
+				background-color: red !important;
+				overflow-y: visible !important;
+			}
 
-        li {
-          margin: 0.5rem 0;
-          color: $text-secondary;
-          display: flex;
-          justify-content: flex-start;
-          gap: 0.5rem;
+			ul {
+				padding-left: 0.5rem;
 
-          svg {
-            min-width: 16px;
-            min-height: 16px;
-          }
-        }
-      }
-    }
-  }
+				li {
+					padding: 0.25rem 0;
+					color: $text-secondary;
+					display: flex;
+					justify-content: flex-start;
+					gap: 0.5rem;
+					cursor: grabbing;
+					// cursor: pointer;
+
+					svg {
+						min-width: 16px;
+						min-height: 16px;
+					}
+				}
+			}
+		}
+	}
 }
 
 @media (min-width: 1024px) {
-  .Roadmap {
-    margin-bottom: 10rem;
-  }
+	.Roadmap {
+		margin-bottom: 10rem;
+
+		.buttonGroup {
+			right: 10%;
+			transform: translateX(0);
+		}
+	}
 }
 
 @media (min-width: 2300px) {
-  .Roadmap {
-    padding: 0 10%;
+	.Roadmap {
+		padding: 0 10%;
 
-    .sliderContainer {
-      article {
-        ul {
-          li {
-            svg {
-              min-width: 24px;
-              min-height: 24px;
-            }
-          }
-        }
-      }
-    }
-  }
+		.sliderContainer {
+			article {
+				ul {
+					li {
+						svg {
+							min-width: 24px;
+							min-height: 24px;
+						}
+					}
+				}
+			}
+		}
+	}
 }
