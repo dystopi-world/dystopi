@@ -1,254 +1,256 @@
-@import '/styles/mixins';
-@import '/styles/variables';
+@import "/styles/mixins";
+@import "/styles/variables";
 
 .Characters {
-  @include flexCenter(column);
-  position: relative;
+	@include flexCenter(column);
+	position: relative;
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -40%;
-    width: 2px;
-    height: 145%;
-    background: linear-gradient(to bottom, #a967ff18, #a967ff98, #a967ff18);
-    border-radius: 5px;
-    z-index: 100;
-  }
-  &::before {
-    left: 0;
-  }
-  &::after {
-    right: 0;
-  }
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: -40%;
+		width: 2px;
+		height: 145%;
+		background: linear-gradient(to bottom, #a967ff18, #a967ff98, #a967ff18);
+		border-radius: 5px;
+		z-index: 100;
+	}
+	&::before {
+		left: 0;
+	}
+	&::after {
+		right: 0;
+	}
 
-  .decorContainer {
-    @include flexCenter(column);
-    transform: translateY(-2rem);
-  }
+	.decorContainer {
+		@include flexCenter(column);
+		transform: translateY(-2rem);
+	}
 
-  h6 {
-    font-size: 1rem;
-    letter-spacing: 0.15em;
-  }
+	h6 {
+		font-size: 1rem;
+		letter-spacing: 0.15em;
+	}
 
-  .arrow {
-    position: absolute;
-    top: 45%;
-    font-size: 2rem;
-    z-index: 10;
-    cursor: pointer;
-    background-color: transparent;
-    color: $text-primary;
-    border: none;
-  }
+	.arrow {
+		position: absolute;
+		top: 45%;
+		font-size: 2rem;
+		z-index: 10;
+		cursor: pointer;
+		background-color: transparent;
+		color: $text-primary;
+		border: none;
+	}
 
-  .arrowLeft {
-    left: 1rem;
-  }
+	.arrowLeft {
+		left: 1rem;
+	}
 
-  .arrowRight {
-    right: 1rem;
-  }
-  .characterContainer {
-    position: relative;
-    width: 100%;
+	.arrowRight {
+		right: 1rem;
+	}
+	.characterContainer {
+		position: relative;
+		width: 100%;
 
-    //.swiper
-    & > div:first-of-type {
-      max-width: 300px;
-    }
-  }
+		//.swiper
+		& > div:first-of-type {
+			max-width: 300px;
+		}
+	}
 
-  .Character {
-    text-align: center;
-    padding: 0.5rem;
-    position: relative;
+	.Character {
+		text-align: center;
+		padding: 0.5rem;
+		position: relative;
 
-    .imageContainer {
-      position: relative;
-      min-width: 300px;
-      min-height: 300px;
-    }
+		.imageContainer {
+			position: relative;
+			min-width: 300px;
+			min-height: 300px;
+		}
 
-    .characterImage {
-      width: 350px;
-      position: absolute;
-      top: -20px;
-      left: -25px;
-    }
+		.characterImage {
+			width: 350px;
+			position: absolute;
+			top: -20px;
+			left: -25px;
+		}
 
-    h5 {
-      margin: 10px 0 8px;
-      font-size: 2rem;
-      position: relative;
-      z-index: 10;
-    }
+		h5 {
+			margin: 10px 0 8px;
+			font-size: 2rem;
+			position: relative;
+			z-index: 10;
+		}
 
-    p {
-      color: $text-secondary;
-      max-width: 50ch;
-      margin: 0 auto;
-    }
-  }
+		p {
+			color: $text-secondary;
+			max-width: 50ch;
+			margin: 0 auto;
+		}
+	}
 }
 
 @media (min-width: 767px) {
-  .Characters {
-    .characterContainer {
-      max-width: 500px;
-      //.swiper
-      & > div:first-of-type {
-        max-width: 500px;
-      }
-    }
+	.Characters {
+		.characterContainer {
+			max-width: 500px;
+			//.swiper
+			& > div:first-of-type {
+				max-width: 500px;
+			}
+		}
 
-    .Character {
-      .characterImage {
-        width: 600px;
-        position: absolute;
-        top: -50px;
-        left: -50px;
-      }
+		.Character {
+			.characterImage {
+				width: 600px;
+				position: absolute;
+				top: -50px;
+				left: -50px;
+			}
 
-      h5 {
-        margin-top: 210px;
-        position: relative;
-        z-index: 10;
-      }
-    }
-  }
+			h5 {
+				margin-top: 210px;
+				position: relative;
+				z-index: 10;
+			}
+		}
+	}
 }
 
 @media (min-width: 1024px) {
-  .Characters {
-    max-width: 500px;
-    margin: auto;
-    transform: translateX(20px);
+	.Characters {
+		max-width: 500px;
+		margin: auto;
+		transform: translateX(20px);
 
-    .decorContainer {
-      transform: translateY(-3rem);
-      h6 {
-        transform: translateY(-1.5rem);
-      }
-    }
+		.decorContainer {
+			transform: translateY(-3rem);
+			h6 {
+				transform: translateY(-1.5rem);
+			}
+		}
 
-    .characterContainer {
-      max-width: 500px;
-    }
+		.characterContainer {
+			max-width: 500px;
+		}
 
-    .Character {
-      .characterImage {
-        width: 420px;
-        position: absolute;
-        top: -40px;
-        left: 40px;
-      }
+		.Character {
+			.characterImage {
+				width: 420px;
+				position: absolute;
+				top: -40px;
+				left: 40px;
+			}
 
-      h5 {
-        margin-top: 20px;
-      }
-      h5,
-      p {
-        position: relative;
-        top: -2rem;
-        z-index: 50;
-      }
-    }
-  }
+			h5 {
+				margin-top: 20px;
+			}
+			h5,
+			p {
+				position: relative;
+				top: -2rem;
+				z-index: 50;
+			}
+		}
+	}
 }
 
 @media (min-width: 1280px) {
-  .Characters {
-    max-width: 500px;
+	.Characters {
+		max-width: 500px;
 
-    .arrow {
-      font-size: 3rem;
-      top: 25%;
-    }
+		.arrow {
+			font-size: 3rem;
+			top: 25%;
+		}
 
-    .decorContainer {
-      transform: translateY(-7.5rem);
-    }
+		.decorContainer {
+			transform: translateY(-7.5rem);
+		}
 
-    .characterContainer {
-      width: 100%;
-      transform: translateY(-8rem);
+		.characterContainer {
+			width: 100%;
+			transform: translateY(-8rem);
 
-      .Character {
-        height: 500px;
-        h5,
-        p {
-          transform: translateY(5rem);
-          top: 0;
-        }
-      }
+			.Character {
+				height: 500px;
+				h5,
+				p {
+					transform: translateY(5rem);
+					top: 0;
+				}
+			}
 
-      .characterImage {
-        width: 450px;
-        left: 25px;
-      }
-    }
-  }
+			.characterImage {
+				width: 450px;
+				left: 25px;
+			}
+		}
+	}
 }
 
 @media (min-width: 1500px) {
-  .Characters {
-    min-width: 700px;
-    padding: 5rem 0;
-    position: relative;
+	.Characters {
+		min-width: 700px;
+		padding: 5rem 0;
+		position: relative;
 
-    .decorContainer {
-      transform: translateY(-8rem);
-    }
-    .arrow {
-      font-size: 5rem;
-      top: 30%;
-    }
+		.decorContainer {
+			transform: translateY(-10.5rem);
+		}
+		.arrow {
+			font-size: 5rem;
+			top: 30%;
+		}
 
-    .characterContainer {
-      .Character {
-        width: 100%;
+		.characterContainer {
+			.Character {
+				width: 100%;
 
-        h5,
-        p {
-          transform: translateY(16rem);
-        }
-      }
-    }
+				h5,
+				p {
+					transform: translateY(16rem);
+				}
+			}
+		}
 
-    .characterContainer {
-      min-height: 400px;
-      min-width: 900px;
-      width: 900px;
+		.characterContainer {
+			min-height: 400px;
+			max-width: 700px !important;
+			width: 700px;
 
-      & > div {
-        overflow-y: visible !important;
-        height: 750px;
-        transform: translateY(-8rem);
-      }
+			& > div {
+				max-width: 700px !important;
+				width: 700px;
+				overflow-y: visible !important;
+				height: 750px;
+				transform: translateY(-4rem);
+			}
 
-      .characterImage {
-        width: 750px;
-        top: -4rem;
-        left: -125px;
-      }
-    }
-  }
+			.characterImage {
+				width: 750px;
+				top: -4rem;
+				left: -25px;
+			}
+		}
+	}
 }
 
 @media (min-width: 2300px) {
-  .Characters {
-    .characterContainer {
-      top: 8rem;
+	.Characters {
+		.characterContainer {
+			top: 8rem;
 
-      .Character {
-        h5,
-        p {
-          top: 2rem;
-        }
-      }
-    }
-  }
+			.Character {
+				h5,
+				p {
+					top: 2rem;
+				}
+			}
+		}
+	}
 }
