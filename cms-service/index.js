@@ -1,61 +1,61 @@
-import { request, gql } from 'graphql-request';
+import { request, gql } from "graphql-request";
 
 const CMS_API = process.env.NEXT_PUBLIC_CMS_ENDPOINT;
 
 export const getImages = async () => {
-  const query = gql`
-    query GetImages {
-      imagesConnection(first: 100) {
-        edges {
-          node {
-            image {
-              mimeType
-              url
-            }
-          }
-        }
-      }
-    }
-  `;
-  const result = await request(CMS_API, query);
+	const query = gql`
+		query GetImages {
+			imagesConnection(first: 100) {
+				edges {
+					node {
+						image {
+							mimeType
+							url
+						}
+					}
+				}
+			}
+		}
+	`;
+	const result = await request(CMS_API, query);
 
-  return result.imagesConnection.edges;
+	return result.imagesConnection.edges;
 };
 
 export const getVideos = async () => {
-  const query = gql`
-    query MyQuery {
-      videos {
-        video {
-          mimeType
-          url
-          fileName
-        }
-      }
-    }
-  `;
-  const result = await request(CMS_API, query);
+	const query = gql`
+		query MyQuery {
+			videos {
+				video {
+					mimeType
+					url
+					fileName
+				}
+			}
+		}
+	`;
+	const result = await request(CMS_API, query);
 
-  return result.videos;
+	return result.videos;
 };
 
 export const getTimelineItems = async () => {
-  const query = gql`
-    query GetTimelineItems {
-      timelineItemsConnection {
-        edges {
-          node {
-            title
-            tiemlineListItems {
-              text
-              progressState
-            }
-          }
-        }
-      }
-    }
-  `;
-  const result = await request(CMS_API, query);
+	const query = gql`
+		query GetTimelineItems {
+			timelineItemsConnection {
+				edges {
+					node {
+						title
+						tiemlineListItems {
+							text
+							progressState
+						}
+					}
+				}
+			}
+		}
+	`;
+	const result = await request(CMS_API, query);
 
-  return result.timelineItemsConnection.edges;
+	return result.timelineItemsConnection.edges;
 };
