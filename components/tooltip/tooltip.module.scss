@@ -1,0 +1,57 @@
+@import "/styles/variables";
+
+.tooltip {
+	width: 280px;
+	padding: 0.5rem;
+	border: 1px solid $purple-primary;
+	position: absolute;
+	backdrop-filter: blur(8px);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 250ms;
+
+	p {
+		margin: 0 !important;
+		text-align: left;
+	}
+}
+
+.tooltipAnimationOpen {
+	animation: scaleUpFadeIn 300ms ease-in forwards;
+}
+.tooltipAnimationClose {
+	animation: scaleDownFadeOut 250ms ease-in forwards;
+}
+
+@keyframes scaleUp {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes scaleUpFadeIn {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes scaleDownFadeOut {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(0);
+		opacity: 0;
+	}
+}
