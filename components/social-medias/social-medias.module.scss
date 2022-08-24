@@ -2,37 +2,37 @@
 @import "/styles/variables";
 
 .SocialMedias {
-  transform: translateY(5rem);
-  width: 3rem;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 15%;
-  right: 2rem;
-  float: right;
-  display: none;
-  z-index: 100;
+	transform: translateY(5rem);
+	width: 3rem;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 15%;
+	right: 2rem;
+	float: right;
+	display: none;
+	z-index: 100;
 
-  ul {
-    @include flexCenter(column);
-    gap: 1.75rem;
-    color: $purple-primary;
-    font-size: 1.5rem;
+	ul {
+		@include flexCenter(column);
+		gap: 1.75rem;
+		color: $purple-primary;
+		font-size: 1.5rem;
 
-    li {
-      transition: 150ms;
+		li {
+			transition: 150ms;
 
-      &:active {
-        color: $purple-secondary;
-      }
-    }
-  }
+			&:active {
+				color: $purple-secondary;
+			}
+		}
+	}
 }
 
 @media (min-width: 1024px) {
-  .SocialMedias {
-    display: block;
-    ul li:hover {
-      color: $purple-secondary;
-    }
-  }
+	.SocialMedias {
+		display: block;
+		ul li:hover {
+			color: $purple-secondary;
+		}
+	}
 }
