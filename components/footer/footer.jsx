@@ -87,27 +87,15 @@ function Footer() {
 				</div>
 				<div className={styles.separatorDot}></div>
 				<div ref={socialsRef} className={styles.desktopSocials}>
-					<a
-						href="https://t.me/+U8zjMRT5LpxmN2Fk"
-						style={socialStyle(0)}
-						target="blank"
-					>
+					<a href="https://t.me/+U8zjMRT5LpxmN2Fk" target="blank">
 						<FaTelegramPlane color="#8c8a8e" />
 						<span>TELEGRAM</span>
 					</a>
-					<a
-						href="https://twitter.com/DystopiWorld"
-						style={socialStyle("200ms")}
-						target="blank"
-					>
+					<a href="https://twitter.com/DystopiWorld" target="blank">
 						<FaTwitter />
 						<span>TWITTER</span>
 					</a>
-					<a
-						href="https://linktr.ee/dystopi"
-						style={socialStyle("400ms")}
-						target="blank"
-					>
+					<a href="https://linktr.ee/dystopi" target="blank">
 						<LinktreeIcon color="#8c8a8e" />
 						<span>LINKTREE</span>
 					</a>
