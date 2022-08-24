@@ -1,97 +1,96 @@
-@import '/styles/variables';
+@import "/styles/variables";
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-weight: 400;
-  font-family: gambetta;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-weight: 400;
+	font-family: gambetta;
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: $background-primary;
-  color: $text-primary;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	background-color: $background-primary;
+	color: $text-primary;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 strong {
-  font-weight: 600;
+	font-weight: 600;
 }
 
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 section {
-  position: relative;
+	position: relative;
 }
 
 section > p {
-  padding: 0 1rem;
+	padding: 0 1rem;
 }
 
 main {
-  position: relative;
-  overflow: hidden;
+	position: relative;
 }
 
 h2 {
-  font-size: 1.75rem;
+	font-size: 1.75rem;
 }
 h3 {
-  font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 @media (min-width: 767px) {
-  h2 {
-    font-size: 2rem;
-  }
+	h2 {
+		font-size: 2rem;
+	}
 
-  section > p {
-    padding: 0;
-  }
+	section > p {
+		padding: 0;
+	}
 }
 
 @media (min-width: 2300px) {
-  h2 {
-    font-size: 2.75rem;
-  }
-  h3 {
-    font-size: 2.25rem;
-  }
-  h3 {
-    font-size: 2rem;
-  }
-  h4 {
-    font-size: 1.75rem;
-  }
-  h5,
-  h6 {
-    font-size: 1.5rem;
-  }
+	h2 {
+		font-size: 2.75rem;
+	}
+	h3 {
+		font-size: 2.25rem;
+	}
+	h3 {
+		font-size: 2rem;
+	}
+	h4 {
+		font-size: 1.75rem;
+	}
+	h5,
+	h6 {
+		font-size: 1.5rem;
+	}
 
-  p,
-  li,
-  a,
-  span,
-  button {
-    font-size: 1.3rem !important;
-    line-height: 1.7rem;
-  }
+	p,
+	li,
+	a,
+	span,
+	button {
+		font-size: 1.3rem !important;
+		line-height: 1.7rem;
+	}
 }
 
 @font-face {
-  font-family: gambetta;
-  src: url('./gambetta-font/gambetta-light.otf') format('opentype');
+	font-family: gambetta;
+	src: url("./gambetta-font/gambetta-light.otf") format("opentype");
 }
