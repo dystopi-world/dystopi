@@ -52,8 +52,27 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-evenly;
-		font-size: 1.5rem;
+		font-size: 1rem;
 		color: $purple-primary;
+
+		a {
+			display: flex;
+			align-items: center;
+			gap: 0.25rem;
+		}
+	}
+
+	.desktopSocials {
+		display: none;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+
+		a {
+			display: flex;
+			align-items: center;
+			gap: 0.25rem;
+		}
 	}
 }
 
@@ -66,9 +85,11 @@
 			gap: 1rem;
 
 			a {
-				transition: 200ms;
+				transition: 200ms !important;
 				&:hover {
-					color: $text-primary;
+					span {
+						color: $text-primary;
+					}
 				}
 			}
 
@@ -84,5 +105,9 @@
 	}
 	.mobileSocials {
 		display: none;
+	}
+
+	.desktopSocials {
+		display: flex !important;
 	}
 }

@@ -6,6 +6,7 @@ import { FaTelegramPlane, FaTwitter } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 
 import styles from "./footer.module.scss";
+import LinktreeIcon from "./linktree-icon";
 
 function Footer() {
 	const [isMobile, setIsMobile] = useState(false);
@@ -84,6 +85,33 @@ function Footer() {
 						<a>GALLERY</a>
 					</Link>
 				</div>
+				<div className={styles.separatorDot}></div>
+				<div ref={socialsRef} className={styles.desktopSocials}>
+					<a
+						href="https://t.me/+U8zjMRT5LpxmN2Fk"
+						style={socialStyle(0)}
+						target="blank"
+					>
+						<FaTelegramPlane color="#8c8a8e" />
+						<span>TELEGRAM</span>
+					</a>
+					<a
+						href="https://twitter.com/DystopiWorld"
+						style={socialStyle("200ms")}
+						target="blank"
+					>
+						<FaTwitter />
+						<span>TWITTER</span>
+					</a>
+					<a
+						href="https://linktr.ee/dystopi"
+						style={socialStyle("400ms")}
+						target="blank"
+					>
+						<LinktreeIcon color="#8c8a8e" />
+						<span>LINKTREE</span>
+					</a>
+				</div>
 			</nav>
 			{isMobile && (
 				<div ref={socialsRef} className={styles.mobileSocials}>
@@ -93,6 +121,7 @@ function Footer() {
 						target="blank"
 					>
 						<FaTelegramPlane />
+						<span>Telegram</span>
 					</a>
 					<a
 						href="https://twitter.com/DystopiWorld"
@@ -100,18 +129,15 @@ function Footer() {
 						target="blank"
 					>
 						<FaTwitter />
+						<span>Twitter</span>
 					</a>
 					<a
 						href="https://linktr.ee/dystopi"
 						style={socialStyle("400ms")}
 						target="blank"
 					>
-						<Image
-							width={24}
-							height={24}
-							src="/images/linktree.svg"
-							alt="link for linktree"
-						/>
+						<LinktreeIcon color="#a967ff" />
+						<span>Linktree</span>
 					</a>
 				</div>
 			)}
