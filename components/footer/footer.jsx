@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { FaTelegramPlane, FaTwitter } from "react-icons/fa";
+import { FaMedium, FaReddit, FaTelegramPlane, FaTwitter } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 
 import styles from "./footer.module.scss";
@@ -87,6 +87,17 @@ function Footer() {
 				</div>
 				<div className={styles.separatorDot}></div>
 				<div ref={socialsRef} className={styles.desktopSocials}>
+					<a href="https://medium.com/@DYSTOPI" target="blank">
+						<FaMedium color="#8c8a8e" />
+						<span>MEDIUM</span>
+					</a>
+					<a
+						href="https://www.reddit.com/user/Dystopi_world"
+						target="blank"
+					>
+						<FaReddit color="#8c8a8e" />
+						<span>REDDIT</span>
+					</a>
 					<a href="https://t.me/+U8zjMRT5LpxmN2Fk" target="blank">
 						<FaTelegramPlane color="#8c8a8e" />
 						<span>TELEGRAM</span>
@@ -95,37 +106,41 @@ function Footer() {
 						<FaTwitter />
 						<span>TWITTER</span>
 					</a>
-					<a href="https://linktr.ee/dystopi" target="blank">
-						<LinktreeIcon color="#8c8a8e" />
-						<span>LINKTREE</span>
-					</a>
 				</div>
 			</nav>
 			{isMobile && (
 				<div ref={socialsRef} className={styles.mobileSocials}>
 					<a
-						href="https://t.me/+U8zjMRT5LpxmN2Fk"
+						href="https://medium.com/@DYSTOPI"
 						style={socialStyle(0)}
 						target="blank"
 					>
-						<FaTelegramPlane />
-						<span>Telegram</span>
+						<FaMedium color="#a967ff" />
+						<span>MEDIUM</span>
 					</a>
 					<a
-						href="https://twitter.com/DystopiWorld"
+						href="https://www.reddit.com/user/Dystopi_world"
 						style={socialStyle("200ms")}
 						target="blank"
 					>
-						<FaTwitter />
-						<span>Twitter</span>
+						<FaReddit />
+						<span>REDDIT</span>
 					</a>
 					<a
-						href="https://linktr.ee/dystopi"
+						href="https://t.me/+U8zjMRT5LpxmN2Fk"
 						style={socialStyle("400ms")}
 						target="blank"
 					>
-						<LinktreeIcon color="#a967ff" />
-						<span>Linktree</span>
+						<FaTelegramPlane />
+						<span>TELEGRAM</span>
+					</a>
+					<a
+						href="https://twitter.com/DystopiWorld"
+						style={socialStyle("600ms")}
+						target="blank"
+					>
+						<FaTwitter />
+						<span>TWITTER</span>
 					</a>
 				</div>
 			)}
