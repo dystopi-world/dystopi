@@ -76,6 +76,17 @@
 	}
 }
 
+@media (min-width: 767px) {
+	.Footer {
+		.desktopSocials {
+			display: flex !important;
+		}
+		.mobileSocials {
+			display: none;
+		}
+	}
+}
+
 @media (min-width: 1024px) {
 	.Footer {
 		flex-direction: row;
@@ -87,8 +98,10 @@
 			a {
 				transition: 200ms !important;
 				&:hover {
-					span {
-						color: $text-primary;
+					color: $text-primary;
+
+					svg {
+						fill: $text-primary;
 					}
 				}
 			}
@@ -102,12 +115,5 @@
 				display: block;
 			}
 		}
-	}
-	.mobileSocials {
-		display: none;
-	}
-
-	.desktopSocials {
-		display: flex !important;
 	}
 }
