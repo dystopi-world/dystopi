@@ -18,15 +18,16 @@
 		position: relative;
 		width: 180%;
 		height: 100%;
-		left: -17rem;
+		left: -16.5rem;
+		top: -1rem;
 	}
 
 	@media (min-width: 759px) {
 		.imageContainer {
-			width: 110%;
-			height: 110%;
-			left: -5%;
-			top: -5%;
+			width: 106%;
+			height: 106%;
+			left: -3%;
+			top: -3%;
 		}
 	}
 
