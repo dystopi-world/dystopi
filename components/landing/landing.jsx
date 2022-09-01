@@ -5,12 +5,19 @@ import ScrollForMore from "./scroll-for-more/scroll-for-more";
 import styles from "./landing.module.scss";
 
 function Landing() {
+	const [isMobile, setIsMobile] = useState(false);
+	useEffect(() => {
+		if (window.innerWidth < 768) {
+			setIsMobile(true);
+		}
+	}, []);
+
 	const tiltRef = useRef(null);
 
 	const [options, setOptions] = useState({
 		scale: 1,
 		speed: 2000,
-		max: 7
+		max: isMobile ? 7 : 3
 		// glare: true,
 	});
 
