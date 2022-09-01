@@ -10,7 +10,7 @@ function Landing() {
 	const [options, setOptions] = useState({
 		scale: 1,
 		speed: 2000,
-		max: 5
+		max: 7
 		// glare: true,
 	});
 
