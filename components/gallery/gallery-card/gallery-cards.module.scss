@@ -1,0 +1,12 @@
+.galleryCards {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+
+	.galleryCard {
+		width: 250px;
+		height: 400px;
+		background-color: #597c7c;
+	}
+}

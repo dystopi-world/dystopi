@@ -1,0 +1,60 @@
+@import "/styles/mixins";
+@import "/styles/variables";
+
+.galleryCard {
+	position: absolute;
+	top: 0;
+	left: 8%;
+	width: 100%;
+	max-width: 300px;
+	height: 100%;
+	border-radius: 4px;
+	box-shadow: 4px 8px 6px rgba(0, 0, 0, 0.5), 0 0 12px $purple-primary-faded;
+
+	.extracInfoContainer {
+		transition: 250ms;
+		width: 100%;
+		position: absolute;
+		top: -1rem;
+		left: 0;
+		z-index: 1;
+		background-color: rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(8px);
+		padding: 0.5rem;
+		border-radius: 8px;
+		box-shadow: 6px 6px 4px 4px rgba(0, 0, 0, 0.5);
+		border: 1px solid rgba(100, 100, 100, 0.75);
+	}
+
+	.extraInfoVisible {
+		transform: scale(1);
+	}
+	.extraInfoHidden {
+		transform: scale(0);
+	}
+
+	img {
+		border-radius: 4px;
+	}
+
+	svg {
+		position: absolute;
+		bottom: -0.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		color: $purple-primary;
+		font-size: 1.75rem;
+		box-shadow: 0 0 12px 2px $purple-primary-faded;
+		border-radius: 50%;
+	}
+}
+
+@media (min-width: 767px) {
+	.galleryCard {
+		.extracInfoContainer {
+			left: -3rem;
+			top: 1.5rem;
+			width: 80%;
+		}
+	}
+}

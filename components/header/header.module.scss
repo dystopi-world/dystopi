@@ -1,106 +1,106 @@
-@import '/styles/variables';
-@import '/styles/mixins';
+@import "/styles/variables";
+@import "/styles/mixins";
 
 .Header {
-  width: 100%;
-  // height: 5rem;
-  padding: 0.25rem 1.5rem;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  opacity: 0;
-  animation: fadeDown 1400ms 600ms ease forwards;
-  .imageContainer {
-    position: relative;
-    width: 50px;
-    height: 40px;
-    cursor: pointer;
-  }
+	width: 100%;
+	// height: 5rem;
+	padding: 1.25rem 1.5rem;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	opacity: 0;
+	animation: fadeDown 1400ms 600ms ease forwards;
+	.imageContainer {
+		position: relative;
+		width: 50px;
+		height: 40px;
+		cursor: pointer;
+	}
 
-  video {
-    height: 35px;
-    width: auto;
-  }
+	video {
+		height: 35px;
+		width: auto;
+	}
 
-  nav {
-    display: none;
-    ul {
-      @include flexCenter(row);
-      gap: 1.5rem;
-      transform: translateX(3rem);
+	nav {
+		display: none;
+		ul {
+			@include flexCenter(row);
+			gap: 1.5rem;
+			transform: translateX(3rem);
 
-      a {
-        color: #ffffff;
-        font-family: 'Gambetta';
-        font-size: 0.8rem;
-        font-style: normal;
-        font-weight: 500;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        position: relative;
+			a {
+				color: #ffffff;
+				font-family: "Gambetta";
+				font-size: 0.8rem;
+				font-style: normal;
+				font-weight: 500;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				position: relative;
 
-        &::before,
-        &::after {
-          content: '';
-          width: 0;
-          height: 2px;
-          background-color: $purple-primary;
-          border-radius: 1rem;
-          position: absolute;
-          bottom: -6px;
-          transition: 200ms;
-        }
+				&::before,
+				&::after {
+					content: "";
+					width: 0;
+					height: 2px;
+					background-color: $purple-primary;
+					border-radius: 1rem;
+					position: absolute;
+					bottom: -6px;
+					transition: 200ms;
+				}
 
-        &:active::before,
-        &:active::after {
-          width: 35%;
-        }
+				&:active::before,
+				&:active::after {
+					width: 35%;
+				}
 
-        &::before {
-          left: 50%;
-        }
-        &::after {
-          right: 50%;
-        }
-      }
-    }
-  }
+				&::before {
+					left: 50%;
+				}
+				&::after {
+					right: 50%;
+				}
+			}
+		}
+	}
 }
 
 @keyframes fadeDown {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+	0% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 @media (min-width: 1024px) {
-  .Header {
-    padding: 0.25rem 3rem;
-    nav {
-      display: block;
-      a:hover::before,
-      a:hover::after {
-        width: 35%;
-      }
-    }
-  }
+	.Header {
+		padding: 1.25rem 3rem;
+		nav {
+			display: block;
+			a:hover::before,
+			a:hover::after {
+				width: 35%;
+			}
+		}
+	}
 }
 
 @media (min-width: 2300px) {
-  .Header {
-    video {
-      height: 45px;
-    }
-  }
+	.Header {
+		video {
+			height: 45px;
+		}
+	}
 }
