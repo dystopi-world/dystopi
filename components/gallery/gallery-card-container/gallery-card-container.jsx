@@ -32,8 +32,7 @@ function GalleryCardContainer({
 				modules={[EffectCoverflow, Navigation]}
 				spaceBetween={125}
 				slidesPerView={sliderPerView}
-				centeredSlides
-				centeredSlidesBounds
+				centeredSlides={true}
 				onRealIndexChange={(stuff) =>
 					changeBackgroundImage(stuff.realIndex)
 				}

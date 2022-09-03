@@ -6,7 +6,7 @@ import landing from "../../../public/images/landing.jpg";
 import styles from "./gallery-card.module.scss";
 import { BsInfoCircle, BsFillInfoCircleFill } from "react-icons/bs";
 
-export default function GalleryCard({ image }) {
+export default function GalleryCard({ image, swipedNTimes = 0 }) {
 	const swiperSlide = useSwiperSlide();
 	const tiltRef = useRef(null);
 
@@ -30,13 +30,17 @@ export default function GalleryCard({ image }) {
 		transform: showInfo ? "scale(1)" : "scale(0)"
 	};
 
+	useEffect(() => {
+		setShowInfo(false);
+	}, [swipedNTimes]);
+
 	return (
 		<article
 			ref={tiltRef}
 			onMouseLeave={() => updateShowInfo(false)}
 			className={styles.galleryCard}
-			onTouchStart={() => updateShowInfo(true)}
-			onTouchEnd={() => updateShowInfo(false)}
+			onTouchStart={() => updateShowInfo(!showInfo)}
+			// onTouchEnd={() => updateShowInfo(false)}
 		>
 			<section
 				className={styles.extracInfoContainer}

@@ -16,9 +16,19 @@ import GalleryCardContainer from "../components/gallery/gallery-card-container/g
 function Gallery({ images, videos }) {
 	const [sliderPerView, setSlidesPerView] = useState(3);
 	useEffect(() => {
-		if (window.innerWidth < 900) {
+		if (window.innerWidth < 767) {
 			setSlidesPerView(1);
+			return;
 		}
+		if (window.innerWidth < 1024) {
+			setSlidesPerView(2);
+			return;
+		}
+		if (window.innerWidth < 2400) {
+			setSlidesPerView(3);
+			return;
+		}
+		setSlidesPerView(4);
 	}, []);
 
 	const swiperPrevButtonRef = useRef(null);
