@@ -35,7 +35,7 @@ function Gallery({ images, videos }) {
 	const swiperNextButtonRef = useRef(null);
 
 	const [backgroundImage, setBackgroundImage] = useState(
-		"/images/landing.jpg"
+		images[0].node.image.url
 	);
 
 	const [backgroundOpacity, setBackgroundOpacity] = useState(0.15);
