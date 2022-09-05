@@ -1,35 +1,37 @@
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-
 import {
 	HiOutlineArrowNarrowLeft,
 	HiOutlineArrowNarrowRight
 } from "react-icons/hi";
 import { getImages, getVideos } from "../cms-service";
-
 import "swiper/css";
-import Image from "next/image";
-import Presale from "../components/presale/presale";
-import GalleryTabs from "../components/gallery/gallery-tabs/gallery-tabs";
-import styles from "../styles/gallery.module.scss";
+
 import GalleryCardContainer from "../components/gallery/gallery-card-container/gallery-card-container";
+import GalleryTabs from "../components/gallery/gallery-tabs/gallery-tabs";
+import Presale from "../components/presale/presale";
+import styles from "../styles/gallery.module.scss";
 
 function Gallery({ images, videos }) {
-	const [sliderPerView, setSlidesPerView] = useState(3);
+	const [coverflowStrech, setCoverflowStrech] = useState(0);
+	const [isMobile, setIsMobile] = useState(false);
+	const [sliderPerView, setSlidesPerView] = useState(null);
+
 	useEffect(() => {
+		if (window.innerWidth < 500) {
+			setIsMobile(true);
+		}
 		if (window.innerWidth < 767) {
 			setSlidesPerView(1);
-			return;
-		}
-		if (window.innerWidth < 1024) {
-			setSlidesPerView(2);
-			return;
-		}
-		if (window.innerWidth < 2400) {
+			setCoverflowStrech(2);
+		} else if (window.innerWidth < 2400) {
 			setSlidesPerView(3);
-			return;
+			setCoverflowStrech(32);
+		} else {
+			setSlidesPerView(4);
+			setCoverflowStrech(8);
 		}
-		setSlidesPerView(4);
-	}, []);
+	}, [sliderPerView]);
 
 	const swiperPrevButtonRef = useRef(null);
 	const swiperNextButtonRef = useRef(null);
@@ -47,13 +49,6 @@ function Gallery({ images, videos }) {
 		}, 200);
 		setBackgroundOpacity(0);
 	};
-	const [isMobile, setIsMobile] = useState(false);
-	useEffect(() => {
-		if (window.innerWidth < 500) {
-			setIsMobile(true);
-			return;
-		}
-	}, []);
 
 	const backgroundImageStyle = {
 		opacity: backgroundOpacity,
@@ -66,19 +61,21 @@ function Gallery({ images, videos }) {
 	const [tabOpacity, setTabOpacity] = useState(1);
 
 	const changeActualTab = (tab) => {
+		console.log("lol");
+		console.log("actualTab is:", actualTab);
 		if (tab === "images") {
 			setIndicatorLinePosition("left");
 		} else {
 			setIndicatorLinePosition("right");
-			// setSlidesPerView(1);
 		}
 
+		setTabOpacity(0);
+
 		setTimeout(() => {
-			setTabOpacity(1);
 			setActualTab(tab);
+			setTabOpacity(1);
 			setSlidesPerView(!isMobile && actualTab === "videos" ? 3 : 1);
 		}, 300);
-		setTabOpacity(0);
 	};
 
 	const indicatorLineStyle = {
@@ -101,8 +98,9 @@ function Gallery({ images, videos }) {
 			<div className={styles.galleryContainer}>
 				<Presale />
 				<GalleryTabs
-					indicatorLineStyle={indicatorLineStyle}
+					actualTab={actualTab}
 					changeActualTab={changeActualTab}
+					indicatorLineStyle={indicatorLineStyle}
 				/>
 				<div className={styles.sliderContainer}>
 					<button
@@ -117,19 +115,21 @@ function Gallery({ images, videos }) {
 					>
 						<HiOutlineArrowNarrowRight style={nextButtonStyle} />
 					</button>
-					<GalleryCardContainer
-						actualTab={actualTab}
-						changeBackgroundImage={changeBackgroundImage}
-						images={images}
-						isMobile={isMobile}
-						sliderPerView={sliderPerView}
-						swiperPrevButtonRef={swiperPrevButtonRef}
-						swiperNextButtonRef={swiperNextButtonRef}
-						tabOpacity={tabOpacity}
-						videos={videos}
-					/>
+					{sliderPerView && (
+						<GalleryCardContainer
+							actualTab={actualTab}
+							changeBackgroundImage={changeBackgroundImage}
+							coverflowStrech={coverflowStrech}
+							images={images}
+							isMobile={isMobile}
+							sliderPerView={sliderPerView}
+							swiperPrevButtonRef={swiperPrevButtonRef}
+							swiperNextButtonRef={swiperNextButtonRef}
+							tabOpacity={tabOpacity}
+							videos={videos}
+						/>
+					)}
 				</div>
-				{/* <div className={styles.extraHeight}></div> */}
 			</div>
 			{actualTab === "images" && (
 				<div className={styles.backgroundImageContainer}>

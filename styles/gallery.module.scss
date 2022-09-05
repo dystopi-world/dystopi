@@ -40,7 +40,7 @@
 
 	video {
 		position: relative;
-		transform: translateY(3.5rem); // scale(0.75);
+		transform: translateY(3.5rem);
 		animation: scaleUp 300ms ease forwards;
 	}
 
@@ -68,12 +68,10 @@
 	}
 
 	.sliderContainer {
-		// border: 2px solid $purple-primary;
 		transition: 500ms;
 		padding: 0;
 		position: relative;
 		width: 98%;
-		// max-width: 300px;
 		margin: 0 auto 10rem;
 		max-width: 360px;
 		top: -2rem;
@@ -104,12 +102,10 @@
 		}
 
 		.galleryImageContainer {
-			// min-height: 20rem;
 			width: 300px;
 		}
 
 		.galleryImageContainer {
-			// min-height: 22rem;
 			min-height: 15rem;
 			width: auto;
 			background-color: transparent;
@@ -125,8 +121,7 @@
 		.swiperButtonNext {
 			overflow: hidden;
 			position: absolute;
-			top: 107%;
-			transform: translateY(-50%);
+			bottom: -3rem;
 			z-index: 10;
 			color: $text-secondary;
 			border: none;
@@ -193,7 +188,6 @@
 			// .swiper
 			div:nth-of-type(1) {
 				padding: 0;
-				//margin: 0;
 				margin: 1rem 0 1rem;
 				transform: translateY(0.5rem);
 			}
@@ -219,17 +213,11 @@
 	}
 }
 
-@media (min-width: 2300px) {
+@media (min-width: 2100px) {
 	.Gallery {
 		padding-top: 10rem;
 		.sliderContainer {
-			max-width: 2000px;
-
-			// .swiper-slide,
-			// .swiper-slide-visible,
-			// .swiper-slide-active {
-			// 	width: 300px !important;
-			// }
+			max-width: 1880px;
 
 			.galleryImageContainer {
 				min-height: 40rem !important;
@@ -253,12 +241,3 @@
 		height: calc(100% + 16px);
 	}
 }
-
-// @keyframes scaleUp {
-// 	0% {
-// 		transform: scale(0.75);
-// 	}
-// 	100% {
-// 		transform: scale(1);
-// 	}
-// }

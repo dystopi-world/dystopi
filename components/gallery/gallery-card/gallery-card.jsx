@@ -1,20 +1,16 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { useSwiperSlide } from "swiper/react";
 import VanillaTilt from "vanilla-tilt";
-import landing from "../../../public/images/landing.jpg";
 import styles from "./gallery-card.module.scss";
-import { BsInfoCircle, BsFillInfoCircleFill } from "react-icons/bs";
+import { BsInfoCircle } from "react-icons/bs";
 
-export default function GalleryCard({ image, swipedNTimes = 0 }) {
-	const swiperSlide = useSwiperSlide();
+export default function GalleryCard({ image }) {
 	const tiltRef = useRef(null);
 
 	const [options, setOptions] = useState({
 		scale: 1.1,
 		speed: 1000,
 		max: 15
-		// glare: true,
 	});
 
 	useEffect(() => {
@@ -30,17 +26,12 @@ export default function GalleryCard({ image, swipedNTimes = 0 }) {
 		transform: showInfo ? "scale(1)" : "scale(0)"
 	};
 
-	useEffect(() => {
-		setShowInfo(false);
-	}, [swipedNTimes]);
-
 	return (
 		<article
 			ref={tiltRef}
 			onMouseLeave={() => updateShowInfo(false)}
 			className={styles.galleryCard}
 			onTouchStart={() => updateShowInfo(!showInfo)}
-			// onTouchEnd={() => updateShowInfo(false)}
 		>
 			<section
 				className={styles.extracInfoContainer}
@@ -48,8 +39,6 @@ export default function GalleryCard({ image, swipedNTimes = 0 }) {
 			>
 				<p className={styles.extracInfoText}>
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-					Enim eos iure harum impedit adipisci, ipsam commodi delectus
-					alias quod exercitationem dicta. Quisquam, aspernatur sunt.
 				</p>
 			</section>
 			<Image
@@ -58,7 +47,6 @@ export default function GalleryCard({ image, swipedNTimes = 0 }) {
 				objectFit="cover"
 				objectPosition="center"
 				alt=""
-				// priority
 			/>
 			<BsInfoCircle
 				onClick={() => updateShowInfo(false)}

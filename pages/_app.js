@@ -1,15 +1,18 @@
-import Layout from '../components/layout';
-import PresaleWrapper from '../contexts/presale-wrapper';
-import '../styles/globals.scss';
+import Layout from "../components/layout";
+import GalleryWrapper from "../contexts/gallery/gallery-wrapper";
+import PresaleWrapper from "../contexts/presale/presale-wrapper";
+import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <PresaleWrapper>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </PresaleWrapper>
-  );
+	return (
+		<GalleryWrapper>
+			<PresaleWrapper>
+				<Layout>
+					<Component {...pageProps} />
+				</Layout>
+			</PresaleWrapper>
+		</GalleryWrapper>
+	);
 }
 
 export default MyApp;

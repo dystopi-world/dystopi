@@ -1,17 +1,19 @@
 import React from "react";
 import styles from "./gallery-tabs.module.scss";
 
-function GalleryTabs({ indicatorLineStyle, changeActualTab }) {
+function GalleryTabs({ actualTab, changeActualTab, indicatorLineStyle }) {
 	return (
 		<section className={styles.galleryNavigation}>
 			<button
 				className={styles.galleryImagesButton}
+				disabled={actualTab === "images"}
 				onClick={() => changeActualTab("images")}
 			>
 				IMAGES
 			</button>
 			<button
 				className={styles.galleryVideosButton}
+				disabled={actualTab === "videos"}
 				onClick={() => changeActualTab("videos")}
 			>
 				VIDEOS
