@@ -17,7 +17,7 @@ function Landing() {
 	const [options, setOptions] = useState({
 		scale: 1,
 		speed: 2000,
-		max: isMobile ? 7 : 5
+		max: isMobile ? 7 : 2
 		// glare: true,
 	});
 
