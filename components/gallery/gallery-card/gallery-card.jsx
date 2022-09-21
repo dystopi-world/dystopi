@@ -31,7 +31,7 @@ export default function GalleryCard({ image }) {
 			ref={tiltRef}
 			onMouseLeave={() => updateShowInfo(false)}
 			className={styles.galleryCard}
-			onTouchStart={() => updateShowInfo(!showInfo)}
+			//onTouchStart={() => updateShowInfo(!showInfo)}
 		>
 			<section
 				className={styles.extracInfoContainer}
@@ -48,10 +48,10 @@ export default function GalleryCard({ image }) {
 				objectPosition="center"
 				alt=""
 			/>
-			<BsInfoCircle
+			{/* <BsInfoCircle
 				onClick={() => updateShowInfo(false)}
 				onMouseEnter={() => updateShowInfo(true)}
-			/>
+			/> */}
 		</article>
 	);
 }

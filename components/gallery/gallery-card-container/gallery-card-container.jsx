@@ -106,7 +106,6 @@ function GalleryCardContainer({
 					>
 						<video
 							width={isMobile ? "100%" : "92%"}
-							height="100%"
 							src={videos[0].video.url}
 							type={videos[0].video.mimeType}
 							controls

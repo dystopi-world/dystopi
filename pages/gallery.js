@@ -61,8 +61,6 @@ function Gallery({ images, videos }) {
 	const [tabOpacity, setTabOpacity] = useState(1);
 
 	const changeActualTab = (tab) => {
-		console.log("lol");
-		console.log("actualTab is:", actualTab);
 		if (tab === "images") {
 			setIndicatorLinePosition("left");
 		} else {
