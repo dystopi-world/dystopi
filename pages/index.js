@@ -21,9 +21,6 @@ export async function getStaticProps() {
 		revalidate: 900
 	};
 }
-/**
- * icons: double tick, clock / loading stuff, calendar
- */
 
 export default function Home({ timelineItems }) {
 	return (

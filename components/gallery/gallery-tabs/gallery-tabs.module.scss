@@ -1,0 +1,36 @@
+@import "/styles/mixins";
+@import "/styles/variables";
+
+.galleryNavigation {
+	width: 200px;
+	padding: 0;
+	margin: 0 auto 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+	font-size: 1.5rem;
+	position: relative;
+	top: -2.5rem;
+	z-index: 2;
+
+	button {
+		border: none;
+		color: $text-primary;
+		background-color: transparent;
+		font-size: 1.5rem;
+		cursor: pointer;
+	}
+
+	.indicatorLine {
+		width: 60px;
+		height: 3px;
+		border-radius: 4px;
+		background-color: $purple-primary;
+		position: absolute;
+		bottom: -4px;
+		left: calc(100% - 72px);
+		transition: 250ms;
+		transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+}
