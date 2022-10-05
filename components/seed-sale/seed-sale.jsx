@@ -89,21 +89,29 @@ function SeedSale() {
 		temporaryModalIsVisible && (
 			<section className={styles.SeedSale}>
 				<button
+					aria-label="Close button"
 					className={styles.closeButton}
 					onClick={() => setTemporaryModalIsVisible(false)}
 				>
 					<AiOutlineClose />
 				</button>
 				<div className={styles.languageSelectorContainer}>
-					<button onClick={() => setPdfLanguage("EN")}>
+					<button
+						aria-label="Set PDF language to english"
+						onClick={() => setPdfLanguage("EN")}
+					>
 						English
 					</button>
-					<button onClick={() => setPdfLanguage("HU")}>
+					<button
+						aria-label="Set PDF language to hungarian"
+						onClick={() => setPdfLanguage("HU")}
+					>
 						Hungarian
 					</button>
 					<div className={styles.decorLine} style={decorLineStyle} />
 				</div>
 				<Button
+					ariaLabel="copy address to clipboard"
 					style={copyButtonStyle}
 					onClick={copyAddressToClipboard}
 				>

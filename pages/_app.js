@@ -1,3 +1,4 @@
+import React from "react";
 import Head from "next/head";
 import Script from "next/script";
 import Layout from "../components/layout";
@@ -5,10 +6,16 @@ import GalleryWrapper from "../contexts/gallery/gallery-wrapper";
 import PresaleWrapper from "../contexts/presale/presale-wrapper";
 import "../styles/globals.scss";
 
+if (typeof window !== "undefined" && process.env.NODE_ENV !== "production") {
+	const ReactDOM = require("react-dom");
+	const axe = require("@axe-core/react");
+	axe(React, ReactDOM, 1000);
+}
+
 function MyApp({ Component, pageProps }) {
 	return (
 		<>
-			<Script
+			{/* <Script
 				strategy="lazyOnload"
 				src={`https://www.googletagmanager.com/gtag/js?id=G-JG73V8LGXW`}
 			/>
@@ -22,15 +29,8 @@ function MyApp({ Component, pageProps }) {
 								page_path: window.location.pathname,
 							});
 					`}
-			</Script>
+			</Script> */}
 
-			<Head>
-				<title>Welcome!</title>
-				<meta
-					name="viewport"
-					content="initial-scale=1, width=device-width"
-				/>
-			</Head>
 			<GalleryWrapper>
 				<PresaleWrapper>
 					<Layout>

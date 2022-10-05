@@ -5,6 +5,7 @@ function GalleryTabs({ actualTab, changeActualTab, indicatorLineStyle }) {
 	return (
 		<section className={styles.galleryNavigation}>
 			<button
+				aria-label="show images"
 				className={styles.galleryImagesButton}
 				disabled={actualTab === "images"}
 				onClick={() => changeActualTab("images")}
@@ -12,6 +13,7 @@ function GalleryTabs({ actualTab, changeActualTab, indicatorLineStyle }) {
 				IMAGES
 			</button>
 			<button
+				aria-label="show videos"
 				className={styles.galleryVideosButton}
 				disabled={actualTab === "videos"}
 				onClick={() => changeActualTab("videos")}

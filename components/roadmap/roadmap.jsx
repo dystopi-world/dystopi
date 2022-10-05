@@ -108,10 +108,16 @@ function Roadmap({ timelineItems }) {
 					className={styles.buttonGroup}
 					style={buttonGroupStyle}
 				>
-					<button ref={swiperPrevButtonRef}>
+					<button
+						aria-label="previous roadmap item"
+						ref={swiperPrevButtonRef}
+					>
 						<BsArrowLeft />
 					</button>
-					<button ref={swiperNextButtonRef}>
+					<button
+						aria-label="previous roadmap item"
+						ref={swiperNextButtonRef}
+					>
 						<BsArrowRight />
 					</button>
 				</div>
