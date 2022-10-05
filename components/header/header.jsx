@@ -1,10 +1,10 @@
-import { useContext, useEffect, useRef } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import Image from "next/image";
-import Button from "../button/button";
-import styles from "./header.module.scss";
-import PresaleContext from "../../contexts/presale/presale-context";
+import { useContext, useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import Image from 'next/image';
+import Button from '../button/button';
+import styles from './header.module.scss';
+import PresaleContext from '../../contexts/presale/presale-context';
 
 function Header() {
 	const { setIsVisible } = useContext(PresaleContext);
@@ -20,7 +20,7 @@ function Header() {
 		videoEl &&
 			videoEl.current &&
 			videoEl.current.play().catch((error) => {
-				console.error("Error attempting to play", error);
+				console.error('Error attempting to play', error);
 			});
 	};
 	const attemptPlayRepeat = () => {
@@ -28,7 +28,7 @@ function Header() {
 			videoEl.current &&
 			setInterval(() => {
 				videoEl.current.play().catch((error) => {
-					console.error("Error attempting to play", error);
+					console.error('Error attempting to play', error);
 				});
 			}, 45000);
 	};
@@ -41,111 +41,64 @@ function Header() {
 	}, []);
 
 	const presaleButtonStyle = {
-		fontSize: "12px",
-		background: "#201d24bb",
-		transform: "scale(0.9)"
+		fontSize: '12px',
+		background: '#201d24bb',
+		transform: 'scale(0.9)'
 	};
 	return (
 		<header className={styles.Header}>
-			<div
-				className={styles.imageContainer}
-				onClick={(event) => handleClick(event, "/")}
-			>
-				<Image
-					src="/images/logo.png"
-					style={{ transform: "scale(0.7)" }}
-					alt="Dystopi logo"
-					layout="fill"
-					objectFit="contain"
-				/>
-			</div>
-			{/*  <Link href="/#home">
-        <a onClick={(event) => handleClick(event, '/#home')}>
-          <video
-            src="/animations/logo2-anim.mp4"
-            autoPlay
-            playsInline
-            muted
-            ref={videoEl}
-          ></video>
-        </a>
-  </Link> */}
-			<nav>
+			<Link aria-label="Navigate to home" href="/" passHref>
+				<a href="dummy" className={styles.imageContainer}>
+					<Image
+						src="/images/logo.png"
+						style={{ transform: 'scale(0.7)' }}
+						alt="Dystopi logo"
+						layout="fill"
+						objectFit="contain"
+					/>
+				</a>
+			</Link>
+			<nav aria-label="Main menu" role="navigation">
 				<ul>
 					<li>
-						<Link href="/#home">
-							<a
-								onClick={(event) =>
-									handleClick(event, "/#home")
-								}
-							>
-								HOME
-							</a>
+						<Link aria-label="Navigate to home" href="/" passHref>
+							<a href="dummy">HOME</a>
 						</Link>
 					</li>
 					<li>
-						<Link href="/#story">
-							<a
-								onClick={(event) =>
-									handleClick(event, "/#story")
-								}
-							>
-								STORY
-							</a>
+						<Link href="/#story" passHref>
+							<a href="dummy">STORY</a>
 						</Link>
 					</li>
 					<li>
-						<Link href="/#game-mechanism">
-							<a
-								onClick={(event) =>
-									handleClick(event, "/#game-mechanism")
-								}
-							>
-								GAME MECHANISM
-							</a>
+						<Link href="/#game-mechanism" passHref>
+							<a href="dummy">GAME MECHANISM</a>
 						</Link>
 					</li>
 					<li>
-						<Link href="/#nfts">
-							<a
-								onClick={(event) =>
-									handleClick(event, "/#nfts")
-								}
-							>
-								NFT
-							</a>
+						<Link href="/#nfts" passHref>
+							<a href="dummy">NFT</a>
 						</Link>
 					</li>
 					<li>
-						<Link href="/#tokenomics">
-							<a
-								onClick={(event) =>
-									handleClick(event, "/#tokenomics")
-								}
-							>
-								TOKENOMICS
-							</a>
+						<Link href="/#tokenomics" passHref>
+							<a href="dummy">TOKENOMICS</a>
 						</Link>
 					</li>
 					<li>
-						<Link href="/#whitepaper">
-							<a
-								onClick={(event) =>
-									handleClick(event, "/#whitepaper")
-								}
-							>
-								WHITEPAPER
-							</a>
+						<Link href="/#whitepaper" passHref>
+							<a href="dummy">WHITEPAPER</a>
 						</Link>
 					</li>
 					<li>
-						<Link href="/gallery">
-							<a>GALLERY</a>
+						<Link href="/gallery" passHref>
+							<a href="dummy">GALLERY</a>
 						</Link>
 					</li>
 				</ul>
 			</nav>
 			<Button
+				aria-label="Join presale"
 				onClick={() => setIsVisible(true)}
 				style={presaleButtonStyle}
 			>

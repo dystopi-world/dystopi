@@ -36,13 +36,16 @@ function Presale() {
 		isVisible && (
 			<div className={styles.Presale}>
 				<form
-					onSubmit={(event) => subscribe(event)}
+					aria-label="Subscribe to newsletter"
 					className={styles.form}
+					method="POST"
+					onSubmit={(event) => subscribe(event)}
 				>
 					<button
-						onClick={() => setIsVisible(false)}
+						aria-label="close modal"
 						className={styles.closeButton}
 						type="button"
+						onClick={() => setIsVisible(false)}
 					>
 						<AiOutlineClose />
 					</button>
@@ -54,7 +57,9 @@ function Presale() {
 					<div>
 						<label>
 							<input
-								type="text"
+								autoComplete="on"
+								name="email"
+								type="email"
 								value={email}
 								onChange={(event) =>
 									setEmail(event.target.value)
@@ -62,7 +67,12 @@ function Presale() {
 								placeholder="john.doe@gmail.com"
 							/>
 						</label>
-						<Button type="submit">SUBSCRIBE</Button>
+						<Button
+							ariaLabel="Subscribe to newsletter"
+							type="submit"
+						>
+							SUBSCRIBE
+						</Button>
 					</div>
 				</form>
 				{state === "ERROR" && (

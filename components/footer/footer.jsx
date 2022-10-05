@@ -1,12 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { FaMedium, FaReddit, FaTelegramPlane, FaTwitter } from "react-icons/fa";
-import { useInView } from "react-intersection-observer";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { FaMedium, FaReddit, FaTelegramPlane, FaTwitter } from 'react-icons/fa';
+import { useInView } from 'react-intersection-observer';
 
-import styles from "./footer.module.scss";
-import LinktreeIcon from "./linktree-icon";
+import styles from './footer.module.scss';
 
 function Footer() {
 	const [isMobile, setIsMobile] = useState(false);
@@ -21,10 +20,10 @@ function Footer() {
 		triggerOnce: true
 	});
 	const socialStyle = (delay) => ({
-		transition: "900ms",
+		transition: '900ms',
 		transitionDelay: delay,
-		position: "relative",
-		top: socialsInView ? 0 : "2.5rem",
+		position: 'relative',
+		top: socialsInView ? 0 : '2.5rem',
 		opacity: socialsInView ? 1 : 0
 	});
 
@@ -39,70 +38,59 @@ function Footer() {
 			<nav>
 				<div>
 					<div className={styles.separatorDot}></div>
-					<Link href="#home">
-						<a onClick={(event) => handleClick(event, "/#home")}>
-							HOME
-						</a>
+					<Link href="#home" passHref>
+						<a href="dummy">HOME</a>
 					</Link>
-					<Link href="#story">
-						<a onClick={(event) => handleClick(event, "/#story")}>
-							STORY
-						</a>
+					<Link href="#story" passHref>
+						<a href="dummy">STORY</a>
 					</Link>
-					<Link href="#game-mechanism">
-						<a
-							onClick={(event) =>
-								handleClick(event, "/#game-mechanism")
-							}
-						>
-							GAME MECHANISM
-						</a>
+					<Link href="#game-mechanism" passHref>
+						<a href="dummy">GAME MECHANISM</a>
 					</Link>
-					<Link href="#nfts">
-						<a onClick={(event) => handleClick(event, "/#nfts")}>
-							NFT
-						</a>
+					<Link href="#nfts" passHref>
+						<a href="dummy">NFT</a>
 					</Link>
-					<Link href="#tokenomics">
-						<a
-							onClick={(event) =>
-								handleClick(event, "/#tokenomics")
-							}
-						>
-							TOKENOMICS
-						</a>
+					<Link href="#tokenomics" passHref>
+						<a href="dummy">TOKENOMICS</a>
 					</Link>
-					<Link href="#whitepaper">
-						<a
-							onClick={(event) =>
-								handleClick(event, "/#whitepaper")
-							}
-						>
-							WHITEPAPER
-						</a>
+					<Link href="#whitepaper" passHref>
+						<a href="dummy">WHITEPAPER</a>
 					</Link>
-					<Link href="/gallery">
-						<a>GALLERY</a>
+					<Link href="/gallery" passHref>
+						<a href="dummy">GALLERY</a>
 					</Link>
 				</div>
 				<div className={styles.separatorDot}></div>
 				<div ref={socialsRef} className={styles.desktopSocials}>
-					<a href="https://medium.com/@DYSTOPI" target="blank">
+					<a
+						aria-label="Navigate to Dystopi's medium.com page"
+						href="https://medium.com/@DYSTOPI"
+						target="blank"
+					>
 						<FaMedium color="#8c8a8e" />
 						<span>MEDIUM</span>
 					</a>
 					<a
+						aria-label="Navigate to Dystopi's reddit page"
 						href="https://www.reddit.com/user/Dystopi_world"
 						target="blank"
 					>
 						<FaReddit color="#8c8a8e" />
 						<span>REDDIT</span>
 					</a>
-					<a href="https://t.me/+U8zjMRT5LpxmN2Fk" target="blank">
+					<a
+						aria-label="Navigate to Dystopi's telegram page"
+						href="https://t.me/+U8zjMRT5LpxmN2Fk"
+						target="blank"
+					>
 						<FaTelegramPlane color="#8c8a8e" />
 						<span>TELEGRAM</span>
 					</a>
-					<a href="https://twitter.com/DystopiWorld" target="blank">
+					<a
+						aria-label="Navigate to Dystopi's twitter page"
+						href="https://twitter.com/DystopiWorld"
+						target="blank"
+					>
 						<FaTwitter />
 						<span>TWITTER</span>
 					</a>
@@ -111,6 +99,7 @@ function Footer() {
 			{isMobile && (
 				<div ref={socialsRef} className={styles.mobileSocials}>
 					<a
+						aria-label="Navigate to Dystopi's medium.com page"
 						href="https://medium.com/@DYSTOPI"
 						style={socialStyle(0)}
 						target="blank"
@@ -119,24 +108,27 @@ function Footer() {
 						<span>MEDIUM</span>
 					</a>
 					<a
+						aria-label="Navigate to Dystopi's reddit page"
 						href="https://www.reddit.com/user/Dystopi_world"
-						style={socialStyle("200ms")}
+						style={socialStyle('200ms')}
 						target="blank"
 					>
 						<FaReddit />
 						<span>REDDIT</span>
 					</a>
 					<a
+						aria-label="Navigate to Dystopi's telegram page"
 						href="https://t.me/+U8zjMRT5LpxmN2Fk"
-						style={socialStyle("400ms")}
+						style={socialStyle('400ms')}
 						target="blank"
 					>
 						<FaTelegramPlane />
 						<span>TELEGRAM</span>
 					</a>
 					<a
+						aria-label="Navigate to Dystopi's twitter page"
 						href="https://twitter.com/DystopiWorld"
-						style={socialStyle("600ms")}
+						style={socialStyle('600ms')}
 						target="blank"
 					>
 						<FaTwitter />
@@ -144,14 +136,16 @@ function Footer() {
 					</a>
 				</div>
 			)}
-			<Link href="#home">
+			<Link href="/" passHref>
 				<a
+					aria-label="Navigate to home"
+					href="dummy"
 					className={styles.logo}
-					onClick={(event) => handleClick(event, "/#home")}
+					onClick={(event) => handleClick(event, '/#home')}
 				>
 					<Image
 						src="/images/logo.png"
-						style={{ transform: "scale(0.7)" }}
+						style={{ transform: 'scale(0.7)' }}
 						alt="Dystopi logo"
 						layout="fill"
 						objectFit="contain"
