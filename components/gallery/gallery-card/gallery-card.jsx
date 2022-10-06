@@ -1,8 +1,8 @@
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import VanillaTilt from "vanilla-tilt";
-import styles from "./gallery-card.module.scss";
-import { BsInfoCircle } from "react-icons/bs";
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
+import VanillaTilt from 'vanilla-tilt';
+import styles from './gallery-card.module.scss';
+import { BsInfoCircle } from 'react-icons/bs';
 
 export default function GalleryCard({ image }) {
 	const tiltRef = useRef(null);
@@ -23,7 +23,7 @@ export default function GalleryCard({ image }) {
 	};
 
 	const extraInfoStyle = {
-		transform: showInfo ? "scale(1)" : "scale(0)"
+		transform: showInfo ? 'scale(1)' : 'scale(0)'
 	};
 
 	return (
@@ -46,7 +46,7 @@ export default function GalleryCard({ image }) {
 				layout="fill"
 				objectFit="cover"
 				objectPosition="center"
-				alt=""
+				alt="Dystopi image"
 			/>
 			{/* <BsInfoCircle
 				onClick={() => updateShowInfo(false)}

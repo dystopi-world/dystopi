@@ -1,16 +1,17 @@
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import Image from 'next/image';
+import Head from 'next/head';
+import { useEffect, useRef, useState } from 'react';
 import {
 	HiOutlineArrowNarrowLeft,
 	HiOutlineArrowNarrowRight
-} from "react-icons/hi";
-import { getImages, getVideos } from "../cms-service";
-import "swiper/css";
+} from 'react-icons/hi';
+import { getImages, getVideos } from '../cms-service';
+import 'swiper/css';
 
-import GalleryCardContainer from "../components/gallery/gallery-card-container/gallery-card-container";
-import GalleryTabs from "../components/gallery/gallery-tabs/gallery-tabs";
-import Presale from "../components/presale/presale";
-import styles from "../styles/gallery.module.scss";
+import GalleryCardContainer from '../components/gallery/gallery-card-container/gallery-card-container';
+import GalleryTabs from '../components/gallery/gallery-tabs/gallery-tabs';
+import Presale from '../components/presale/presale';
+import styles from '../styles/gallery.module.scss';
 
 function Gallery({ images, videos }) {
 	const [coverflowStrech, setCoverflowStrech] = useState(0);
@@ -52,19 +53,19 @@ function Gallery({ images, videos }) {
 
 	const backgroundImageStyle = {
 		opacity: backgroundOpacity,
-		transition: "200ms",
-		margin: "0 auto"
+		transition: '200ms',
+		margin: '0 auto'
 	};
 
-	const [actualTab, setActualTab] = useState("images");
-	const [indicatorLinePosition, setIndicatorLinePosition] = useState("left");
+	const [actualTab, setActualTab] = useState('images');
+	const [indicatorLinePosition, setIndicatorLinePosition] = useState('left');
 	const [tabOpacity, setTabOpacity] = useState(1);
 
 	const changeActualTab = (tab) => {
-		if (tab === "images") {
-			setIndicatorLinePosition("left");
+		if (tab === 'images') {
+			setIndicatorLinePosition('left');
 		} else {
-			setIndicatorLinePosition("right");
+			setIndicatorLinePosition('right');
 		}
 
 		setTabOpacity(0);
@@ -72,27 +73,35 @@ function Gallery({ images, videos }) {
 		setTimeout(() => {
 			setActualTab(tab);
 			setTabOpacity(1);
-			setSlidesPerView(!isMobile && actualTab === "videos" ? 3 : 1);
+			setSlidesPerView(!isMobile && actualTab === 'videos' ? 3 : 1);
 		}, 300);
 	};
 
 	const indicatorLineStyle = {
-		left: indicatorLinePosition === "left" ? "16px" : "calc(100% - 72px)"
+		left: indicatorLinePosition === 'left' ? '16px' : 'calc(100% - 72px)'
 	};
 
 	const prevButtonStyle = {
-		transition: "250ms",
-		transform: actualTab === "images" ? "translateX(0)" : "translateX(5rem)"
+		transition: '250ms',
+		transform: actualTab === 'images' ? 'translateX(0)' : 'translateX(5rem)'
 	};
 
 	const nextButtonStyle = {
-		transition: "250ms",
+		transition: '250ms',
 		transform:
-			actualTab === "images" ? "translateX(0)" : "translateX(-5rem)"
+			actualTab === 'images' ? 'translateX(0)' : 'translateX(-5rem)'
 	};
 
 	return (
 		<section className={styles.Gallery}>
+			<Head>
+				<title>Dystopi Gallery</title>
+				<meta
+					name="description"
+					content="A new generation NFT game, save the earth from alien invasion! Check out our gallery and discover amazing artworks!"
+				/>
+				<link rel="icon" href="/images/logo.svg" />
+			</Head>
 			<div className={styles.galleryContainer}>
 				<Presale />
 				<GalleryTabs
@@ -102,14 +111,16 @@ function Gallery({ images, videos }) {
 				/>
 				<div className={styles.sliderContainer}>
 					<button
-						ref={swiperPrevButtonRef}
+						aria-label="Slide to previous image"
 						className={styles.swiperButtonPrev}
+						ref={swiperPrevButtonRef}
 					>
 						<HiOutlineArrowNarrowLeft style={prevButtonStyle} />
 					</button>
 					<button
-						ref={swiperNextButtonRef}
+						aria-label="Slide to next image"
 						className={styles.swiperButtonNext}
+						ref={swiperNextButtonRef}
 					>
 						<HiOutlineArrowNarrowRight style={nextButtonStyle} />
 					</button>
@@ -129,14 +140,14 @@ function Gallery({ images, videos }) {
 					)}
 				</div>
 			</div>
-			{actualTab === "images" && (
+			{actualTab === 'images' && (
 				<div className={styles.backgroundImageContainer}>
 					<Image
 						src={backgroundImage}
 						layout="fill"
 						objectFit="cover"
 						objectPosition="center"
-						alt=""
+						alt="Dystopi art"
 						style={backgroundImageStyle}
 					/>
 				</div>

@@ -1,8 +1,8 @@
-import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
-import VanillaTilt from "vanilla-tilt";
-import ScrollForMore from "./scroll-for-more/scroll-for-more";
-import styles from "./landing.module.scss";
+import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
+import VanillaTilt from 'vanilla-tilt';
+import ScrollForMore from './scroll-for-more/scroll-for-more';
+import styles from './landing.module.scss';
 
 function Landing() {
 	const [isMobile, setIsMobile] = useState(false);
@@ -26,13 +26,13 @@ function Landing() {
 	}, [options]);
 
 	return (
-		<section className={styles.Landing} id="home">
+		<section className={styles.Landing} id="home" role="banner">
 			<div ref={tiltRef} className={styles.imageContainer}>
 				<Image
 					src="/images/landing.jpg"
 					layout="fill"
 					objectFit="cover"
-					alt="Dystopi city"
+					alt="Dystopi heroes fighting against a monster to earn NFTs"
 					priority
 				/>
 			</div>
