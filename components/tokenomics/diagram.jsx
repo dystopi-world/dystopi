@@ -19,6 +19,13 @@ function Diagram() {
 			? '-5px -5px 100px 10px #a967ff'
 			: '0 0 0 0 transparent'
 	};
+	const [greenHovered, setGreenHovered] = useState(false);
+	const greenStyle = {
+		transition: '250ms',
+		boxShadow: greenHovered
+			? '-5px -5px 100px 10px #38d21f'
+			: '0 0 0 0 transparent'
+	};
 	const [indigoHovered, setIndigoHovered] = useState(false);
 	const indigoStyle = {
 		transition: '250ms',
@@ -68,6 +75,59 @@ function Diagram() {
 			? '30px -10px 100px 12px #ee4492'
 			: '0 0 0 0 transparent'
 	};
+
+	const getInfoActions = (color) => {
+		if (color == 'indigo')
+			return {
+				onMouseEnter: () => setIndigoHovered(true),
+				onMouseLeave: () => setIndigoHovered(false)
+			};
+		if (color == 'aqua')
+			return {
+				onMouseEnter: () => setAquaHovered(true),
+				onMouseLeave: () => setAquaHovered(false)
+			};
+		if (color == 'green')
+			return {
+				onMouseEnter: () => setGreenHovered(true),
+				onMouseLeave: () => setGreenHovered(false)
+			};
+		if (color == 'turquoise')
+			return {
+				onMouseEnter: () => setTurquoiseHovered(true),
+				onMouseLeave: () => setTurquoiseHovered(false)
+			};
+		if (color == 'purple')
+			return {
+				onMouseEnter: () => setPurpleHovered(true),
+				onMouseLeave: () => setPurpleHovered(false)
+			};
+		if (color == 'rose')
+			return {
+				onMouseEnter: () => setRoseHovered(true),
+				onMouseLeave: () => setRoseHovered(false)
+			};
+		if (color == 'teal')
+			return {
+				onMouseEnter: () => setTealHovered(true),
+				onMouseLeave: () => setTealHovered(false)
+			};
+		if (color == 'eggplant')
+			return {
+				onMouseEnter: () => setEggplantHovered(true),
+				onMouseLeave: () => setEggplantHovered(false)
+			};
+		if (color == 'kingBlue')
+			return {
+				onMouseEnter: () => setKingBlueHovered(true),
+				onMouseLeave: () => setKingBlueHovered(false)
+			};
+		if (color == 'iceBlue')
+			return {
+				onMouseEnter: () => setIceBlueHovered(true),
+				onMouseLeave: () => setIceBlueHovered(false)
+			};
+	};
 	return (
 		<div className={styles.Diagram}>
 			<div
@@ -77,6 +137,10 @@ function Diagram() {
 			<div
 				style={eggplantStyle}
 				className={`${styles.coloredBorderBox} ${styles.coloredBorderBoxEggplant}`}
+			></div>
+			<div
+				style={greenStyle}
+				className={`${styles.coloredBorderBox} ${styles.coloredBorderBoxGreen}`}
 			></div>
 			<div
 				style={indigoStyle}
@@ -106,154 +170,22 @@ function Diagram() {
 				style={roseStyle}
 				className={`${styles.coloredBorderBox} ${styles.coloredBorderBoxRose}`}
 			></div>
-			<DiagramInfo
-				onMouseEnter={() => setIndigoHovered(true)}
-				onMouseLeave={() => setIndigoHovered(false)}
-				aligment="right"
-				color="indigo"
-				infos={{
-					percentage: '5%',
-					intro: 'Liquidity',
-					subInfo: 'Released at TGE',
-					tokens: 'TOKENS',
-					amount: '15,000,000'
-				}}
-			/>
-			<DiagramInfo
-				onMouseEnter={() => setAquaHovered(true)}
-				onMouseLeave={() => setAquaHovered(false)}
-				aligment="left"
-				color="aqua"
-				infos={{
-					percentage: '1%',
-					intro: 'Private Sale',
-					subInfo: '20% TGE + 20%/month',
-					tokens: 'TOKENS',
-					amount: '3,000,000'
-				}}
-			/>
-			<DiagramInfo
-				onMouseEnter={() => setTurquoiseHovered(true)}
-				onMouseLeave={() => setTurquoiseHovered(false)}
-				aligment="right"
-				color="turquoise"
-				infos={{
-					percentage: '60%',
-					intro: 'Reward/Quest',
-					subInfo: 'First 2 year 123 287 DYS token/day',
-					tokens: 'TOKENS',
-					amount: '180,000,000'
-				}}
-			/>
-			<DiagramInfo
-				onMouseEnter={() => setPurpleHovered(true)}
-				onMouseLeave={() => setPurpleHovered(false)}
-				aligment="left"
-				color="purple"
-				infos={{
-					percentage: '1%',
-					intro: 'Airdrop',
-					subInfo: 'Released at TGE',
-					tokens: 'TOKENS',
-					amount: '3,000,000'
-				}}
-			/>
-			<DiagramInfo
-				onMouseEnter={() => setKingBlueHovered(true)}
-				onMouseLeave={() => setKingBlueHovered(false)}
-				aligment="left"
-				color="kingBlue"
-				infos={{
-					percentage: '1%',
-					intro: 'Seed Sale',
-					subInfo: '10% TGE + 15%/month',
-					tokens: 'TOKENS',
-					amount: '3,000,000'
-				}}
-			/>
-			<DiagramInfo
-				onMouseEnter={() => setIceBlueHovered(true)}
-				onMouseLeave={() => setIceBlueHovered(false)}
-				aligment="left"
-				color="iceBlue"
-				infos={{
-					percentage: '10%',
-					intro: 'Team',
-					subInfo: '365 day cliff, after 10% / month',
-					tokens: 'TOKENS',
-					amount: '30,000,000'
-				}}
-			/>
-			<DiagramInfo
-				onMouseEnter={() => setRoseHovered(true)}
-				onMouseLeave={() => setRoseHovered(false)}
-				aligment="left"
-				color="rose"
-				infos={{
-					percentage: '3%',
-					intro: 'Advisors',
-					subInfo: '365 day cliff, after 10% / month',
-					tokens: 'TOKENS',
-					amount: '9,000,000'
-				}}
-			/>
-			<DiagramInfo
-				onMouseEnter={() => setTealHovered(true)}
-				onMouseLeave={() => setTealHovered(false)}
-				aligment="right"
-				color="teal"
-				infos={{
-					percentage: '10%',
-					intro: 'PreSale',
-					subInfo: '20% TGE + 20%/month',
-					tokens: 'TOKENS',
-					amount: '30,000,000'
-				}}
-			/>
-			<DiagramInfo
-				onMouseEnter={() => setEggplantHovered(true)}
-				onMouseLeave={() => setEggplantHovered(false)}
-				aligment="right"
-				color="eggplant"
-				infos={{
-					percentage: '9%',
-					intro: 'Dev/Marketing',
-					subInfo: '5% TGE + 5%/month',
-					tokens: 'TOKENS',
-					amount: '27,000,000'
-				}}
-			/>
-			{/*
-        <>
-          <DiagramInfo
-            onMouseEnter={() => setEggplantHovered(true)}
-            onMouseLeave={() => setEggplantHovered(false)}
-            aligment="right"
-            color="eggplant"
-            infos={{
-              percentage: '10%',
-              intro: 'Team',
-              subInfo: '365 day cliff, after 10% / month',
-              tokens: 'TOKENS',
-              amount: '30,000,000',
-            }}
-          />
-          <DiagramInfo
-            onMouseEnter={() => setEggplantHovered(true)}
-            onMouseLeave={() => setEggplantHovered(false)}
-            aligment="right"
-            color="eggplant"
-            infos={{
-              percentage: '60%',
-              intro: 'Reward/Quest',
-              subInfo:
-                'First 2 year 123 287 DYS token/day, (Halves every second year)',
-              tokens: 'TOKENS',
-              amount: '180,000,000',
-            }}
-          />
-        </>
-    */}
+			{diagramData &&
+				diagramData.map((data, index) => (
+					<DiagramInfo
+						key={index}
+						onMouseEnter={
+							getInfoActions(data.infos.color).onMouseEnter
+						}
+						onMouseLeave={
+							getInfoActions(data.infos.color).onMouseLeave
+						}
+						aligment={data.aligment}
+						color={data.infos.color}
+						infos={data.infos}
+					/>
+				))}
+
 			<Image
 				src={'/images/diagram.svg'}
 				className={styles.diagramImage}

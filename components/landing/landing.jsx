@@ -27,7 +27,10 @@ function Landing() {
 
 	return (
 		<section className={styles.Landing} id="home" role="banner">
-			<div ref={tiltRef} className={styles.imageContainer}>
+			<div
+				ref={isMobile ? tiltRef : null}
+				className={styles.imageContainer}
+			>
 				<Image
 					src="/images/landing.jpg"
 					layout="fill"

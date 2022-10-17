@@ -2,137 +2,137 @@
 @import '/styles/variables';
 
 .Nfts {
-  padding: 4rem 0;
-  .nftImageContainer {
-    min-height: 22rem;
-    width: auto;
-  }
+	padding: 4rem 0;
+	.nftImageContainer {
+		min-height: 22rem;
+		width: auto;
+	}
 
-  .title,
-  .sectionInfo {
-    transition: $text-transition;
-  }
+	.title,
+	.sectionInfo {
+		transition: $text-transition;
+	}
 
-  .sectionInfo {
-    transition-delay: $text-transition-delay;
-  }
+	.sectionInfo {
+		transition-delay: $text-transition-delay;
+	}
 
-  h2 {
-    text-align: center;
-  }
-  & > p {
-    text-align: center;
-    margin: 1rem auto 3rem;
-    max-width: 70ch;
-  }
+	h2 {
+		text-align: center;
+	}
+	& > p {
+		text-align: center;
+		margin: 1rem auto 3rem;
+		max-width: 70ch;
+	}
 
-  .imageContainer {
-    width: 300px;
-    height: 400px;
-    position: relative;
-    margin: 2rem auto;
-  }
+	.imageContainer {
+		width: 300px;
+		height: 550px;
+		position: relative;
+		margin: 2rem auto;
+	}
 
-  .sliderContainer {
-    padding: 0 1rem;
-    position: relative;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto 10rem;
+	.sliderContainer {
+		padding: 0 1rem;
+		position: relative;
+		width: 100%;
+		max-width: 300px;
+		margin: 0 auto 10rem;
 
-    .swiperButtonPrev,
-    .swiperButtonNext {
-      position: absolute;
-      top: 115%;
-      transform: translateY(-50%);
-      z-index: 10;
-      color: $text-secondary;
-      border: none;
-      background-color: transparent;
-      font-size: 2.5rem;
-      width: 5rem;
-      @include flexCenter(row);
-      cursor: pointer;
-      color: $text-primary;
-    }
-    .swiperButtonPrev {
-      left: 1rem;
-    }
-    .swiperButtonNext {
-      right: 1rem;
-    }
-  }
+		.swiperButtonPrev,
+		.swiperButtonNext {
+			position: absolute;
+			top: 115%;
+			transform: translateY(-50%);
+			z-index: 10;
+			color: $text-secondary;
+			border: none;
+			background-color: transparent;
+			font-size: 2.5rem;
+			width: 5rem;
+			@include flexCenter(row);
+			cursor: pointer;
+			color: $text-primary;
+		}
+		.swiperButtonPrev {
+			left: 1rem;
+		}
+		.swiperButtonNext {
+			right: 1rem;
+		}
+	}
 }
 
 @media (min-width: 760px) {
-  .Nfts {
-    .imageContainer {
-      width: 400px;
-      height: 550px;
-    }
+	.Nfts {
+		.imageContainer {
+			width: 400px;
+			height: 650px;
+		}
 
-    .nftImageContainer {
-      min-height: 30rem;
-    }
+		.nftImageContainer {
+			min-height: 30rem;
+		}
 
-    .sliderContainer {
-      padding: 0;
-      margin-bottom: 6rem;
-      max-width: 400px;
+		.sliderContainer {
+			padding: 0;
+			margin-bottom: 6rem;
+			max-width: 400px;
 
-      .swiperButtonPrev,
-      .swiperButtonNext {
-        transition: 200ms;
-        top: 50%;
-        transform: translateY(-50%);
+			.swiperButtonPrev,
+			.swiperButtonNext {
+				transition: 200ms;
+				top: 50%;
+				transform: translateY(-50%);
 
-        &:hover {
-          color: $text-primary;
-        }
-      }
+				&:hover {
+					color: $text-primary;
+				}
+			}
 
-      .swiperButtonPrev {
-        left: -7rem;
-      }
-      .swiperButtonNext {
-        right: -7rem;
-      }
-    }
-  }
+			.swiperButtonPrev {
+				left: -7rem;
+			}
+			.swiperButtonNext {
+				right: -7rem;
+			}
+		}
+	}
 }
 
 @media (min-width: 1024px) {
-  .Nfts {
-    .imageContainer {
-      width: 300px;
-      height: 400px;
-    }
-    .sliderContainer {
-      max-width: 1050px;
+	.Nfts {
+		.imageContainer {
+			width: 300px;
+			height: 550px;
+		}
+		.sliderContainer {
+			max-width: 1050px;
 
-      .swiperButtonPrev {
-        left: 1rem;
-      }
-      .swiperButtonNext {
-        right: 1rem;
-      }
+			.swiperButtonPrev {
+				left: 1rem;
+			}
+			.swiperButtonNext {
+				right: 1rem;
+			}
 
-      .nftImageContainer {
-        min-height: 20rem;
-      }
-    }
-  }
+			.nftImageContainer {
+				min-height: 20rem;
+			}
+		}
+	}
 }
 
 @media (min-width: 2300px) {
-  .Nfts {
-    .imageContainer {
-      width: 600px;
-      height: 800px;
-      margin-top: 5rem;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-      border-radius: 0.25rem;
-      overflow: hidden;
-    }
-  }
+	.Nfts {
+		.imageContainer {
+			width: 600px;
+			height: 1100px;
+			margin-top: 5rem;
+			box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+			border-radius: 0.25rem;
+			overflow: hidden;
+		}
+	}
 }
