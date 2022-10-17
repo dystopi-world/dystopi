@@ -2,39 +2,39 @@
 @import '/styles/variables';
 
 .Tokenomics {
-  padding: 2rem 0 5rem;
-  background: linear-gradient(to bottom, transparent, #1e1625);
+	padding: 2rem 0 5rem;
+	background: linear-gradient(to bottom, transparent, #1e1625);
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: translateY(50%);
-    width: 100%;
-    height: 6rem;
-    background: linear-gradient(to bottom, #1e1625, $background-primary);
-  }
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		transform: translateY(50%);
+		width: 100%;
+		height: 6rem;
+		background: linear-gradient(to bottom, #1e1625, $background-primary);
+	}
 
-  .title,
-  .sectionInfo {
-    position: relative;
-    transition: $text-transition;
-  }
+	.title,
+	.sectionInfo {
+		position: relative;
+		transition: $text-transition;
+	}
 
-  .sectionInfo {
-    transition-delay: $text-transition-delay;
-  }
+	.sectionInfo {
+		transition-delay: $text-transition-delay;
+	}
 
-  h2 {
-    text-align: center;
-  }
+	h2 {
+		text-align: center;
+	}
 
-  & > p {
-    max-width: 70ch;
-    text-align: center;
-    margin: 2rem auto 5rem;
-  }
+	& > p {
+		max-width: 70ch;
+		text-align: center;
+		margin: 2rem auto 5rem;
+	}
 }
 
 /*
@@ -53,249 +53,255 @@ ice blue - #aee9ff
 */
 
 .Diagram {
-  width: 320px;
-  height: 320px;
-  margin: 0 auto;
-  border-radius: 50%;
-  border: 3px solid transparent;
-  position: relative;
-  @include flexCenter(row);
+	width: 320px;
+	height: 320px;
+	margin: 0 auto;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	position: relative;
+	@include flexCenter(row);
 
-  .diagramImage {
-    transform-origin: center;
-    transform: scale(1.4);
-  }
+	.diagramImage {
+		transform-origin: center;
+		transform: scale(1.4);
+	}
 
-  .coloredBorderBox {
-    width: 75px;
-    height: 75px;
-    position: absolute;
-    box-shadow: 0 0 0 0 transparent;
-  }
+	.coloredBorderBox {
+		width: 75px;
+		height: 75px;
+		position: absolute;
+		box-shadow: 0 0 0 0 transparent;
+	}
 
-  .coloredBorderBoxTeal {
-    top: 29%;
-    left: 4%;
-  }
+	.coloredBorderBoxGreen {
+		top: 18%;
+		right: 71%;
+	}
 
-  .coloredBorderBoxEggplant {
-    top: 15%;
-    left: 15%;
-  }
+	.coloredBorderBoxTeal {
+		top: 25%;
+		left: 76%;
+	}
 
-  .coloredBorderBoxIndigo {
-    top: 4%;
-    left: 30%;
-  }
+	.coloredBorderBoxEggplant {
+		top: 10%;
+		right: 21%;
+	}
 
-  .coloredBorderBoxAqua {
-    top: 35%;
-    right: 5%;
-  }
+	.coloredBorderBoxIndigo {
+		top: 28%;
+		right: 10%;
+	}
 
-  .coloredBorderBoxTurquoise {
-    top: 40%;
-    right: 51%;
-  }
+	.coloredBorderBoxAqua {
+		bottom: 80%;
+		left: 45%;
+	}
 
-  .coloredBorderBoxPurple {
-    top: 5%;
-    left: 48%;
-  }
+	.coloredBorderBoxTurquoise {
+		top: 35%;
+		right: 50%;
+	}
 
-  .coloredBorderBoxRose {
-    top: 27%;
-    left: 75%;
-  }
+	.coloredBorderBoxPurple {
+		top: 30%;
+		left: 5%;
+	}
 
-  .coloredBorderBoxKingBlue {
-    top: 5%;
-    left: 55%;
-  }
+	.coloredBorderBoxRose {
+		top: 7%;
+		left: 51%;
+	}
 
-  .coloredBorderBoxIceBlue {
-    top: 17%;
-    left: 62%;
-  }
+	.coloredBorderBoxKingBlue {
+		top: 4%;
+		left: 30%;
+	}
 
-  .dashedCircle {
-    width: 65%;
-    height: 65%;
-    border: 3px dashed $purple-primary;
-    border-radius: 50%;
-    position: relative;
-    animation: rotateToLeft 60s linear infinite;
-    @include flexCenter(row);
+	.coloredBorderBoxIceBlue {
+		top: 20%;
+		right: 65%;
+	}
 
-    .content {
-      width: 75%;
-      height: 75%;
-      border-radius: 50%;
-      background-color: #332441;
-      animation: rotateToRight 60s linear infinite;
-      @include flexCenter(column);
-      transition: 500ms;
-      box-shadow: 0 0 0 #a967ffaa;
+	.dashedCircle {
+		width: 65%;
+		height: 65%;
+		border: 3px dashed $purple-primary;
+		border-radius: 50%;
+		position: relative;
+		animation: rotateToLeft 60s linear infinite;
+		@include flexCenter(row);
 
-      h6,
-      p {
-        align-items: center;
-        margin: 0 auto;
-        font-weight: 300;
-      }
+		.content {
+			width: 75%;
+			height: 75%;
+			border-radius: 50%;
+			background-color: #332441;
+			animation: rotateToRight 60s linear infinite;
+			@include flexCenter(column);
+			transition: 500ms;
+			box-shadow: 0 0 0 #a967ffaa;
 
-      h6 {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-        transition: 400ms;
-      }
+			h6,
+			p {
+				align-items: center;
+				margin: 0 auto;
+				font-weight: 300;
+			}
 
-      p {
-        color: $text-secondary;
-        transition: 600ms;
-      }
-    }
-  }
+			h6 {
+				font-size: 1rem;
+				margin-bottom: 0.5rem;
+				transition: 400ms;
+			}
 
-  .mobilePercentages {
-    color: #fff;
-    p {
-      position: absolute;
-      font-size: 1.1rem;
-    }
-    .percentageIndigo {
-      top: 7%;
-      left: 38%;
-    }
-    .percentageAqua {
-      top: 42%;
-      right: 5%;
-    }
-    .percentageTurquoise {
-      top: 90%;
-      right: 45%;
-    }
-    .percentagePurple {
-      top: 6%;
-      left: 52%;
-    }
-    .percentageRose {
-      top: 30%;
-      left: 85%;
-    }
-    .percentageTeal {
-      top: 32%;
-      left: 8%;
-    }
-    .percentageEggplant {
-      top: 14%;
-      left: 21%;
-    }
-    .percentageKingBlue {
-      top: 8%;
-      left: 62%;
-    }
-    .percentageIceBlue {
-      top: 16%;
-      left: 74%;
-    }
-  }
+			p {
+				color: $text-secondary;
+				transition: 600ms;
+			}
+		}
+	}
+
+	.mobilePercentages {
+		display: none;
+		color: #fff;
+		p {
+			position: absolute;
+			font-size: 1.1rem;
+		}
+		.percentageIndigo {
+			top: 7%;
+			left: 38%;
+		}
+		.percentageAqua {
+			top: 42%;
+			right: 5%;
+		}
+		.percentageTurquoise {
+			top: 90%;
+			right: 45%;
+		}
+		.percentagePurple {
+			top: 6%;
+			left: 52%;
+		}
+		.percentageRose {
+			top: 30%;
+			left: 85%;
+		}
+		.percentageTeal {
+			top: 32%;
+			left: 8%;
+		}
+		.percentageEggplant {
+			top: 14%;
+			left: 21%;
+		}
+		.percentageKingBlue {
+			top: 8%;
+			left: 62%;
+		}
+		.percentageIceBlue {
+			top: 16%;
+			left: 74%;
+		}
+	}
 }
 
 @media (min-width: 768px) {
-  .Diagram {
-    width: 425px;
-    height: 425px;
-  }
+	.Diagram {
+		width: 425px;
+		height: 425px;
+	}
 }
 @media (min-width: 1024px) {
-  .Tokenomics {
-    padding-bottom: 10rem;
-  }
-  .Tokenomics > p {
-    margin-bottom: 10rem;
-  }
-  .Diagram {
-    width: 450px;
-    height: 450px;
-    transform-origin: center;
-    transform: scale(0.85);
+	.Tokenomics {
+		padding-bottom: 10rem;
+	}
+	.Tokenomics > p {
+		margin-bottom: 10rem;
+	}
+	.Diagram {
+		width: 450px;
+		height: 450px;
+		transform-origin: center;
+		transform: scale(0.85);
 
-    .content {
-      transition: 400ms;
-      &:hover {
-        box-shadow: 0 0 20px #a967ffaa;
+		.content {
+			transition: 400ms;
+			&:hover {
+				box-shadow: 0 0 20px #a967ffaa;
 
-        h6,
-        p {
-          transform-origin: center;
-          transform: scale(1.2);
-          letter-spacing: 1px;
-        }
+				h6,
+				p {
+					transform-origin: center;
+					transform: scale(1.2);
+					letter-spacing: 1px;
+				}
 
-        p {
-          transform: scale(1.2) translateY(0.25rem);
-        }
-      }
-    }
+				p {
+					transform: scale(1.2) translateY(0.25rem);
+				}
+			}
+		}
 
-    .mobilePercentages {
-      display: none;
-    }
-  }
+		.mobilePercentages {
+			display: none;
+		}
+	}
 }
 
 @media (min-width: 1130px) {
-  .Diagram {
-    transform: scale(0.9);
-  }
+	.Diagram {
+		transform: scale(0.9);
+	}
 }
 
 @media (min-width: 1440px) {
-  .Tokenomics {
-    padding-bottom: 10rem;
+	.Tokenomics {
+		padding-bottom: 10rem;
 
-    &::after {
-      height: 8rem;
-      transform: translateY(50%);
-    }
-  }
-  .Diagram {
-    width: 500px;
-    height: 500px;
+		&::after {
+			height: 8rem;
+			transform: translateY(50%);
+		}
+	}
+	.Diagram {
+		width: 500px;
+		height: 500px;
 
-    .infoIndigo {
-      p {
-      }
-    }
-  }
+		.infoIndigo {
+			p {
+			}
+		}
+	}
 }
 
 @media (min-width: 2300px) {
-  .Diagram {
-    width: 700px;
-    height: 700px;
+	.Diagram {
+		width: 700px;
+		height: 700px;
 
-    .coloredBorderBoxTurquoise {
-      top: 50%;
-      right: 51%;
-    }
-  }
+		.coloredBorderBoxTurquoise {
+			top: 50%;
+			right: 51%;
+		}
+	}
 }
 
 @keyframes rotateToRight {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 @keyframes rotateToLeft {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
 }
