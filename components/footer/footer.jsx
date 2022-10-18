@@ -2,7 +2,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { FaMedium, FaReddit, FaTelegramPlane, FaTwitter } from 'react-icons/fa';
+import {
+	FaMedium,
+	FaReddit,
+	FaTelegramPlane,
+	FaTwitter,
+	FaFacebook,
+	FaInstagramSquare
+} from 'react-icons/fa';
+import { AiFillInstagram } from 'react-icons/ai';
 import { useInView } from 'react-intersection-observer';
 
 import styles from './footer.module.scss';
@@ -94,6 +102,22 @@ function Footer() {
 						<FaTwitter />
 						<span>TWITTER</span>
 					</a>
+					<a
+						aria-label="Navigate to Dystopi's facebook page"
+						href="https://www.facebook.com/dystopi01"
+						target="blank"
+					>
+						<FaFacebook />
+						<span>FACEBOOK</span>
+					</a>
+					<a
+						aria-label="Navigate to Dystopi's instagram page"
+						href="https://www.instagram.com/dystopi.world/"
+						target="blank"
+					>
+						<AiFillInstagram />
+						<span>INSTAGRAM</span>
+					</a>
 				</div>
 			</nav>
 			{isMobile && (
@@ -133,6 +157,22 @@ function Footer() {
 					>
 						<FaTwitter />
 						<span>TWITTER</span>
+					</a>
+					<a
+						aria-label="Navigate to Dystopi's facebook page"
+						href="https://www.facebook.com/dystopi01"
+						target="blank"
+					>
+						<FaFacebook />
+						<span>FACEBOOK</span>
+					</a>
+					<a
+						aria-label="Navigate to Dystopi's instagram page"
+						href="https://www.instagram.com/dystopi.world/"
+						target="blank"
+					>
+						<AiFillInstagram />
+						<span>INSTAGRAM</span>
 					</a>
 				</div>
 			)}
