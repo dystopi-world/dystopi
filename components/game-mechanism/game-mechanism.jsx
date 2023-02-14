@@ -161,6 +161,7 @@ function GameMechanism() {
 					alt="Dystopi city"
 					objectFit="cover"
 				/>
+				<SectionSeparator />
 				<div className={styles.container}>
 					<h2
 						ref={titleRef}

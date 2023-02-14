@@ -45,7 +45,6 @@ export default function Home({ timelineItems }) {
 				<InfoCards />
 				<SectionSeparator />
 				<Story />
-				<SectionSeparator />
 				<GameMechanism />
 				<SectionSeparator />
 				<Nfts />
