@@ -7,6 +7,7 @@ import { useEffect, useState, useRef } from 'react';
 import SectionSeparator from '../section-separator/section-separator';
 function GameMechanism() {
 	const [isMobile, setIsMobile] = useState(false);
+
 	useEffect(() => {
 		if (window.innerWidth < 1024) {
 			setIsMobile(true);
@@ -120,6 +121,7 @@ function GameMechanism() {
 	const [containerheight, setContainerheight] = useState(0);
 	const [cardWidth, setCardWidth] = useState(0);
 	const [cardHeight, setCardHeight] = useState(0);
+
 	useEffect(() => {
 		setXCoord(contentRef.current.getBoundingClientRect().left);
 		setYCoord(contentRef.current.getBoundingClientRect().top);
@@ -133,52 +135,32 @@ function GameMechanism() {
 	}, []);
 
 	const gearImageStyle = {
-		height: `${containerheight}px`,
-		// left: isMobile ? `-${xCoord}px` : `-${xCoord + 8}px`,
-		// bottom: isMobile ? `-${cardHeight * 3}px` : '-3px',
-		left: isMobile ? `-700px` : `-${xCoord + 8}px`,
-		bottom: isMobile ? `-250px` : '-3px',
 		opacity: gearCardInView && isMobile ? 1 : 0,
 		transform: isMobile && gearCardInView ? 'scale(1.1)' : 'scale(1)'
 	};
 	const fightImageStyle = {
-		height: `${containerheight}px`,
-		// left: isMobile ? `-${xCoord}px` : `-${xCoord + cardWidth + 8}px`,
-		// bottom: isMobile ? `-${cardHeight * 2}px` : '-3px',
-		left: isMobile ? `-980px` : `-${xCoord + cardWidth + 8}px`,
-		bottom: isMobile ? `-770px` : '-3px',
 		opacity: fightCardInView && isMobile ? 1 : 0,
 		transform: isMobile && fightCardInView ? 'scale(1.1)' : 'scale(1)',
 		transformOrigin: isMobile ? 'bottom right' : 'center'
 	};
 	const earnImageStyle = {
-		height: `${containerheight}px`,
-		left: isMobile ? `-300px` : `-${xCoord + cardWidth * 2 + 8}px`,
-		bottom: isMobile ? `-450px` : '-3px',
 		opacity: earnCardInView && isMobile ? 1 : 0,
 		transform: isMobile && earnCardInView ? 'scale(1.1)' : 'scale(1)'
 	};
 	const repeatImageStyle = {
-		height: `${containerheight}px`,
-		// left: isMobile ? `-${xCoord}px` : `-${xCoord + cardWidth * 3 + 8}px`,
-		left: isMobile ? `0` : `-${xCoord + cardWidth * 3 + 8}px`,
-		bottom: isMobile && '-140px',
 		opacity: repeatCardInView && isMobile ? 1 : 0,
-		transform: isMobile && repeatCardInView ? 'scale(1.1)' : 'scale(1)',
-		transformOrigin: isMobile ? 'top left' : 'center'
+		transform: isMobile && repeatCardInView ? 'scale(1.1)' : 'scale(1)'
 	};
 
 	return (
 		<section className={styles.GameMechanism} id="game-mechanism">
 			<div ref={containerRef} className={styles.imageContainer}>
 				<Image
-					//src={'/images/game-mechanism.png'}
 					src={'/images/city-init.png'}
 					layout="fill"
 					alt="Dystopi city"
 					objectFit="cover"
 				/>
-				<SectionSeparator />
 				<div className={styles.container}>
 					<h2
 						ref={titleRef}
@@ -240,7 +222,9 @@ function GameMechanism() {
 								>
 									<img
 										className={styles.hiddenImage}
-										src={'/images/city-end.png'}
+										src={
+											'/images/game-mechanism/city-end-1.png'
+										}
 										alt="fill"
 										style={gearImageStyle}
 									/>
@@ -277,7 +261,9 @@ function GameMechanism() {
 								<div ref={fightCardRef} className={styles.card}>
 									<img
 										className={styles.hiddenImage}
-										src={'/images/city-end.png'}
+										src={
+											'/images/game-mechanism/city-end-2.png'
+										}
 										alt="fill"
 										style={fightImageStyle}
 									/>
@@ -314,7 +300,9 @@ function GameMechanism() {
 								<div ref={earnCardRef} className={styles.card}>
 									<img
 										className={styles.hiddenImage}
-										src={'/images/city-end.png'}
+										src={
+											'/images/game-mechanism/city-end-3.png'
+										}
 										alt="fill"
 										style={earnImageStyle}
 									/>
@@ -353,7 +341,9 @@ function GameMechanism() {
 								>
 									<img
 										className={styles.hiddenImage}
-										src={'/images/city-end.png'}
+										src={
+											'/images/game-mechanism/city-end-4.png'
+										}
 										alt="fill"
 										style={repeatImageStyle}
 									/>
@@ -378,7 +368,6 @@ function GameMechanism() {
 					</div>
 				</div>
 			</div>
-			<InfoCards />
 		</section>
 	);
 }

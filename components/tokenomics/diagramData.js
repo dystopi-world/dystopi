@@ -3,88 +3,67 @@ export const diagramData = [
 		aligment: 'left',
 		infos: {
 			color: 'indigo',
-			percentage: '1%',
+			percentage: '1.5%',
 			intro: 'Seed Sale',
-			subInfo: '10% TGE + 5%/month',
+			subInfo: '1/24 monthly from TGE',
 			tokens: 'TOKENS',
-			amount: '10,000,000'
+			amount: '15,000,000 ($DYS)'
 		}
 	},
 	{
 		aligment: 'left',
 		infos: {
 			color: 'aqua',
-			percentage: '2%',
+			percentage: '20%',
 			intro: 'Private Sale',
-			subInfo: '10% TGE + 5%/month',
+			subInfo: '1/24 monthly from TGE',
 			tokens: 'TOKENS',
-			amount: '20,000,000'
-		}
-	},
-	{
-		aligment: 'right',
-		infos: {
-			color: 'iceBlue',
-			percentage: '1%',
-			intro: 'Pre Sale',
-			subInfo: 'Released at TGE',
-			tokens: 'TOKENS',
-			amount: '20,000,000'
+			amount: '200,000,000 ($DYS)'
 		}
 	},
 	{
 		aligment: 'right',
 		infos: {
 			color: 'green',
-			percentage: '8%',
+			percentage: '1.5%',
 			intro: 'Public Sale',
-			subInfo: 'Released at TGE',
+			subInfo: 'NO VESTING',
 			tokens: 'TOKENS',
-			amount: '80,000,000'
+			amount: '15,000,000 ($DYS)'
 		}
 	},
 	{
 		aligment: 'right',
 		infos: {
-			color: 'purple',
-			percentage: '1%',
-			intro: 'Airdrop',
-			subInfo: 'Released at TGE',
-			tokens: 'TOKENS',
-			amount: '10,000,000'
-		}
-	},
-	{
-		aligment: 'left',
-		infos: {
 			color: 'rose',
-			percentage: '5%',
+			percentage: '2%',
 			intro: 'Liquidity',
-			subInfo: 'Released at TGE',
+			subInfo: 'NO VESTING',
 			tokens: 'TOKENS',
-			amount: '50,000,000'
+			amount: '20,000,000 ($DYS)'
 		}
 	},
 	{
 		aligment: 'left',
 		infos: {
 			color: 'teal',
-			percentage: '8%',
-			intro: 'Dev/Marketing',
-			subInfo: '5% TGE + 5%/month',
+			percentage: '4%',
+			intro: 'Marketing',
+			subInfo: 'NO VESTING',
 			tokens: 'TOKENS',
-			amount: '80,000,000'
+			amount: '40,000,000 ($DYS)'
 		}
 	},
 	{
-		aligment: 'left',
+		aligment: 'right',
 		infos: {
 			color: 'eggplant',
-			percentage: '3%',
+			percentage: '1%',
 			intro: 'Advisors',
-			subInfo: '365 day cliff, after 10%/month',
+			subInfo: '365 day cliff, after 10%/monthly from TGE',
 			tokens: 'TOKENS',
-			amount: '30,000,000'
+			amount: '10,000,000 ($DYS)',
+			big: true
 		}
 	},
 	{
@@ -93,20 +72,23 @@ export const diagramData = [
 			color: 'kingBlue',
 			percentage: '10%',
 			intro: 'Team',
-			subInfo: '365 day cliff, after 10%/month',
+			subInfo: '65 day cliff, after 10%/monthly from TGE',
 			tokens: 'TOKENS',
-			amount: '100,000,000'
+			amount: '100,000,000 ($DYS)',
+			big: true
 		}
 	},
 	{
-		aligment: 'right',
+		aligment: 'left',
 		infos: {
 			color: 'turquoise',
 			percentage: '60%',
-			intro: 'Reward/Quest',
-			subInfo: 'First 2 years 410 958 DYS token/day',
+			intro: 'Reward',
+			subInfo:
+				'First 2 years 410 958 DYS token/day, (Halves every second year)',
 			tokens: 'TOKENS',
-			amount: '600,000,000'
+			amount: '600,000,000 ($DYS)',
+			big: true
 		}
 	}
 ];

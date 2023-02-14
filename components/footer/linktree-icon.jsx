@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-function LinktreeIcon({ color = "#8a8a8a", height = 16, width = 16 }) {
+function LinktreeIcon({ color = '#a967ff', height = 24, width = 24 }) {
 	return (
 		<svg
 			width={width}

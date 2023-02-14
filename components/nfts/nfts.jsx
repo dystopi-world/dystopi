@@ -61,13 +61,16 @@ function Nfts() {
 				NFT
 			</h2>
 			<p ref={subTitleRef} style={subTitleStyle}>
-				Design your strategy and collect NFT armor sets and weapons for
-				your hero to maximize earnings! NFT armors are designed to
-				increase your hero&apos;s combat points: they determine your
-				resilience, the size of your attacks, carriable supply and how
-				much you can fight actively or in legion mode. Certain areas of
-				the map may only be reached in special armor. The reward you get
-				at the end of the day depends a lot on what your hero wears!
+				Unleash your strategic skills and equip your hero with powerful
+				NFT armor sets and weapons! The right combination of NFT armor
+				will greatly impact your hero&apos;s combat points, determining
+				your resilience, attack power, supply capacity, and ability to
+				fight solo or as part of a larger group. With special armor,
+				you&apos;ll be able to access areas of the map that would
+				otherwise be out of reach. So, choose your NFT armor wisely and
+				watch your hero&apos;s rewards soar at the end of each day! Get
+				ready to dominate the battlefield and claim your share of the
+				glory!
 			</p>
 			<div className={styles.imageContainer} ref={tiltRef}>
 				<Image

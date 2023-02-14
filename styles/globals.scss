@@ -1,4 +1,4 @@
-@import "/styles/variables";
+@import '/styles/variables';
 
 * {
 	box-sizing: border-box;
@@ -96,5 +96,11 @@ video[poster] {
 
 @font-face {
 	font-family: gambetta;
-	src: url("./gambetta-font/gambetta-light.otf") format("opentype");
+	src: url('./gambetta-font/gambetta-light.otf') format('opentype');
+}
+
+.testDiv {
+	width: 100%;
+	height: 100vh;
+	background-color: red;
 }

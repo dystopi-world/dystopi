@@ -1,0 +1,37 @@
+@import '/styles/variables';
+
+.partners {
+	padding: 4rem 1rem;
+
+	h2 {
+		text-align: center;
+		margin-bottom: 6rem;
+	}
+}
+
+.partnersWrapper {
+	width: 90%;
+	margin: 0 auto;
+	max-width: 1500px;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(6, 1fr);
+}
+
+.partner {
+	border: 3px solid $purple-primary;
+	width: 160px;
+	height: 160px;
+	position: relative;
+
+	&::before {
+		content: '';
+		width: 120%;
+		height: 120%;
+		border: 1px solid $purple-primary;
+		position: absolute;
+		top: -10.5%;
+		left: -10.5%;
+		box-shadow: 0 -8px 32px $purple-primary-fadedXl;
+	}
+}

@@ -16,14 +16,14 @@ function Diagram() {
 	const eggplantStyle = {
 		transition: '250ms',
 		boxShadow: eggplantHovered
-			? '-5px -5px 100px 10px #a967ff'
+			? '-10px -5px 70px 10px #a967ff'
 			: '0 0 0 0 transparent'
 	};
 	const [greenHovered, setGreenHovered] = useState(false);
 	const greenStyle = {
 		transition: '250ms',
 		boxShadow: greenHovered
-			? '-5px -5px 100px 10px #38d21f'
+			? '-10px -5px 60px 14px #148EFF'
 			: '0 0 0 0 transparent'
 	};
 	const [indigoHovered, setIndigoHovered] = useState(false);
@@ -37,7 +37,7 @@ function Diagram() {
 	const aquaStyle = {
 		transition: '250ms',
 		boxShadow: aquaHovered
-			? '5px -2px 100px 10px #007afd'
+			? '5px -2px 140px 70px #007afd'
 			: '0 0 0 0 transparent'
 	};
 	const [turquoiseHovered, setTurquoiseHovered] = useState(false);
@@ -58,7 +58,7 @@ function Diagram() {
 	const kingBlueStyle = {
 		transition: '250ms',
 		boxShadow: kingBlueHovered
-			? '10px -3px 65px 12px #2323ff'
+			? '-10px -3px 90px 16px #2323ff'
 			: '0 0 0 0 transparent'
 	};
 	const [iceBlueHovered, setIceBlueHovered] = useState(false);
@@ -72,7 +72,7 @@ function Diagram() {
 	const roseStyle = {
 		transition: '250ms',
 		boxShadow: roseHovered
-			? '30px -10px 100px 12px #ee4492'
+			? '0px -10px 80px 12px #ee4492'
 			: '0 0 0 0 transparent'
 	};
 
@@ -222,9 +222,6 @@ function Diagram() {
 				</p>
 				<p className={styles.percentageIceBlue}>
 					{diagramData[7].infos.percentage}
-				</p>
-				<p className={styles.percentageTurquoise}>
-					{diagramData[8].infos.percentage}
 				</p>
 			</div>
 		</div>

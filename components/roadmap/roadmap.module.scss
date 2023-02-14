@@ -1,5 +1,5 @@
-@import "/styles/mixins";
-@import "/styles/variables";
+@import '/styles/mixins';
+@import '/styles/variables';
 
 .Roadmap {
 	margin-bottom: 5rem;
@@ -33,6 +33,7 @@
 		right: 50%;
 		transform: translateX(50%);
 		top: -1rem !important;
+
 		button {
 			margin: 0 0.5rem;
 			padding: 0.5rem;
@@ -43,7 +44,7 @@
 			cursor: pointer;
 
 			&::before {
-				content: "";
+				content: '';
 				width: calc(100% + 6px);
 				height: calc(100% + 6px);
 				position: absolute;
@@ -66,7 +67,7 @@
 			top: 44px;
 
 			&::after {
-				content: "";
+				content: '';
 				width: 20%;
 				height: 100%;
 				position: absolute;
