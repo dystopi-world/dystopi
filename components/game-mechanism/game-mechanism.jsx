@@ -71,7 +71,7 @@ function GameMechanism() {
 	const gearTextStyle = {
 		top: gearTextInView ? 0 : '3rem',
 		opacity: gearTextInView ? 1 : 0,
-		color: isMobile && gearCardInView ? '#fff' : 'transparent'
+		color: isMobile && gearCardInView ? '#d0c5ac' : 'transparent'
 	};
 	const gearHiddenTextStyle = {
 		top: isMobile && gearCardInView ? '50%' : '60%',
@@ -80,7 +80,7 @@ function GameMechanism() {
 	const fightTextStyle = {
 		top: fightTextInView ? 0 : '3rem',
 		opacity: fightTextInView ? 1 : 0,
-		color: isMobile && fightCardInView ? '#fff' : 'transparent'
+		color: isMobile && fightCardInView ? '#d0c5ac' : 'transparent'
 	};
 	const fightHiddenTextStyle = {
 		top: isMobile && fightCardInView ? '50%' : '60%',
@@ -89,7 +89,7 @@ function GameMechanism() {
 	const earnTextStyle = {
 		top: earnTextInView ? 0 : '3rem',
 		opacity: earnTextInView ? 1 : 0,
-		color: isMobile && earnCardInView ? '#fff' : 'transparent'
+		color: isMobile && earnCardInView ? '#d0c5ac' : 'transparent'
 	};
 	const earnHiddenTextStyle = {
 		top: isMobile && earnCardInView ? '50%' : '60%',
@@ -98,7 +98,7 @@ function GameMechanism() {
 	const repeatTextStyle = {
 		top: repeatTextInView ? 0 : '3rem',
 		opacity: repeatTextInView ? 1 : 0,
-		color: isMobile && repeatCardInView ? '#fff' : 'transparent'
+		color: isMobile && repeatCardInView ? '#d0c5ac' : 'transparent'
 	};
 	const repeatHiddenTextStyle = {
 		top: isMobile && repeatCardInView ? '50%' : '60%',

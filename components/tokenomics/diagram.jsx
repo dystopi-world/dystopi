@@ -195,7 +195,7 @@ function Diagram() {
 			<div className={styles.dashedCircle}>
 				<div className={styles.content}>
 					<h6>TOTAL SUPPLY</h6>
-					<p>300.000.000 tokens</p>
+					<p>1 000 000 000 tokens</p>
 				</div>
 			</div>
 			<div className={styles.mobilePercentages}>

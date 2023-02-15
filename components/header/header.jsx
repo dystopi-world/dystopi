@@ -71,11 +71,6 @@ function Header() {
 						</Link>
 					</li>
 					<li>
-						<Link href="/#game-mechanism" passHref>
-							<a href="dummy">GAME MECHANISM</a>
-						</Link>
-					</li>
-					<li>
 						<Link href="/#nfts" passHref>
 							<a href="dummy">NFT</a>
 						</Link>
@@ -102,7 +97,7 @@ function Header() {
 				onClick={() => setIsVisible(true)}
 				style={presaleButtonStyle}
 			>
-				JOIN PRESALE
+				SUBSCRIBE
 			</Button>
 		</header>
 	);

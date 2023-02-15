@@ -26,13 +26,33 @@
 		max-width: 70ch;
 	}
 
+	.iconExplanationsList {
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 1.5rem;
+		transform: translateY(-5.5rem);
+		width: fit-content;
+		margin: 0 auto;
+	}
+
+	.iconExplanationsListItem {
+		@include flexCenter('row');
+		gap: 0.25rem;
+
+		p {
+			margin: unset;
+			text-align: left;
+		}
+	}
+
 	.buttonGroup {
 		transition: $text-transition;
 		transition-delay: $text-transition-delay;
 		position: absolute;
 		right: 50%;
 		transform: translateX(50%);
-		top: -1rem !important;
+		top: 9.5rem !important;
 
 		button {
 			margin: 0 0.5rem;
@@ -132,6 +152,24 @@
 					}
 				}
 			}
+		}
+	}
+}
+
+@media (min-width: 600px) {
+	.Roadmap {
+		.iconExplanationsList {
+			transform: translateY(-5.5rem);
+			flex-direction: row;
+		}
+		.iconExplanationsListItem {
+			gap: 1rem;
+			justify-content: center;
+			text-align: left;
+		}
+
+		.buttonGroup {
+			top: 0rem !important;
 		}
 	}
 }

@@ -41,7 +41,8 @@ export default function Home({ timelineItems }) {
 				{/* <SectionSeparator /> nem kell
 				<Partners /> nem kell
 				<SectionSeparator /> nem kell */}
-				<SocialMedias />
+				{/* innentől */}
+				{/* <SocialMedias />
 				<InfoCards />
 				<SectionSeparator />
 				<Story />
@@ -49,7 +50,7 @@ export default function Home({ timelineItems }) {
 				<SectionSeparator />
 				<Nfts />
 				<SectionSeparator />
-				<Tokenomics />
+				<Tokenomics /> */}
 				<Roadmap timelineItems={timelineItems} />
 				<Whitepaper />
 				<ToGallery />

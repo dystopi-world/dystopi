@@ -53,9 +53,6 @@ function Footer() {
 					<Link href="#story" passHref>
 						<a href="dummy">STORY</a>
 					</Link>
-					<Link href="#game-mechanism" passHref>
-						<a href="dummy">GAME MECHANISM</a>
-					</Link>
 					<Link href="#nfts" passHref>
 						<a href="dummy">NFT</a>
 					</Link>

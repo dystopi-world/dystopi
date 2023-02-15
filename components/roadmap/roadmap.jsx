@@ -2,7 +2,10 @@ import { useRef, useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { BsArrowLeft, BsArrowRight, BsClockHistory } from 'react-icons/bs';
 import { IoCheckmarkDone } from 'react-icons/io5';
-import { BiCalendarExclamation } from 'react-icons/bi';
+import { BiCalendarExclamation, BiTimer } from 'react-icons/bi';
+import { GrTest } from 'react-icons/gr';
+import { HiOutlineLightBulb } from 'react-icons/hi';
+import { RiTestTubeFill, RiTestTubeLine } from 'react-icons/ri';
 import SectionSeparator from '../section-separator/section-separator';
 // Import Swiper React components
 import { Navigation, EffectFade } from 'swiper';
@@ -114,6 +117,24 @@ function Roadmap({ timelineItems }) {
 				Milestones reached, in progress and to be done.
 			</p>
 			<div ref={sliderRef} className={styles.sliderContainer}>
+				<ul className={styles.iconExplanationsList}>
+					<li className={styles.iconExplanationsListItem}>
+						<HiOutlineLightBulb color="#f626a3" size={32} />
+						<p>Planned</p>
+					</li>
+					<li className={styles.iconExplanationsListItem}>
+						<BiTimer color="#ffca28" size={32} />
+						<p>In progress</p>
+					</li>
+					<li className={styles.iconExplanationsListItem}>
+						<RiTestTubeFill color="#26d3f6" size={32} />
+						<p>Testing</p>
+					</li>
+					<li className={styles.iconExplanationsListItem}>
+						<IoCheckmarkDone color="#00e676" size={32} />
+						<p>Finished</p>
+					</li>
+				</ul>
 				<div
 					ref={buttonGroupRef}
 					className={styles.buttonGroup}

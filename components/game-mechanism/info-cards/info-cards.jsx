@@ -12,7 +12,7 @@ function InfoCards() {
 		triggerOnce: true
 	});
 	return (
-		<div className={styles.InfoCards}>
+		<div className={styles.InfoCards} id="story">
 			<InfoCard
 				cardRef={firstCardRef}
 				cardInView={firstCardInView}

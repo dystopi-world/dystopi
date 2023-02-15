@@ -1,5 +1,5 @@
-@import "/styles/mixins";
-@import "/styles/variables";
+@import '/styles/mixins';
+@import '/styles/variables';
 
 .Landing {
 	max-width: 100vw;
@@ -14,9 +14,21 @@
 		opacity: 0;
 	}
 
+	.imagesContainer {
+		width: 216vw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		animation-name: slide;
+		animation-duration: 30000ms;
+		animation-delay: 1000ms;
+		animation-fill-mode: both;
+		animation-iteration-count: infinite;
+	}
+
 	.imageContainer {
 		position: relative;
-		width: 180%;
+		width: 100vw;
 		height: 103%;
 		left: -17rem;
 		top: -3%;
@@ -24,10 +36,16 @@
 
 	@media (min-width: 759px) {
 		.imageContainer {
-			width: 106%;
-			height: 106%;
-			left: -3%;
-			top: -3%;
+			width: 50%;
+			height: 100vh;
+			left: 0;
+			top: 0;
+
+			&:last-of-type {
+				width: 30%;
+				margin-left: 20%;
+				left: -8%;
+			}
 		}
 	}
 
@@ -49,7 +67,7 @@
 		transform: translateX(-50%);
 		text-align: center;
 		color: $text-primary;
-		font-family: "Gambetta";
+		font-family: 'agaramond';
 		font-style: italic;
 		font-weight: 400;
 		opacity: 0;
@@ -65,5 +83,23 @@
 	100% {
 		bottom: 2.5rem;
 		opacity: 1;
+	}
+}
+
+@keyframes slide {
+	0% {
+		transform: translateX(0);
+	}
+	49% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(-117vw);
+	}
+	99% {
+		transform: translateX(-117vw);
+	}
+	100% {
+		transform: translateX(0);
 	}
 }

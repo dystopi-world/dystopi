@@ -5,7 +5,7 @@
 	padding: 0;
 	margin: 0;
 	font-weight: 400;
-	font-family: gambetta;
+	font-family: agaramond;
 }
 
 html {
@@ -95,8 +95,9 @@ video[poster] {
 }
 
 @font-face {
-	font-family: gambetta;
-	src: url('./gambetta-font/gambetta-light.otf') format('opentype');
+	font-family: agaramond;
+	src: url('/fonts/agaramond-lt.bold-regular.otf') format('opentype');
+	// src: url('./agaramond-font/adobe-garamond-lt-bold.ttf') format('opentype');
 }
 
 .testDiv {
