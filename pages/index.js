@@ -43,7 +43,6 @@ export default function Home({ timelineItems }) {
 				<SectionSeparator /> nem kell */}
 				{/* innentől */}
 				<SocialMedias />
-				<SectionSeparator />
 				<InfoCards />
 				<SectionSeparator />
 				<Story />

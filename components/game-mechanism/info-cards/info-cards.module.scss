@@ -146,6 +146,7 @@
 
 @media (min-width: 1024px) {
 	.InfoCards {
+		height: 100vh;
 		flex-direction: row;
 		gap: 5rem;
 
@@ -157,13 +158,14 @@
 
 			img {
 				object-position: top;
+				border-radius: 4px;
 			}
 		}
 
 		.infoBoxContainer {
 			width: 30%;
 			position: absolute;
-			top: 20%;
+			top: 10%;
 			left: 10%;
 		}
 	}
@@ -215,6 +217,27 @@
 }
 
 @media (min-width: 2300px) {
+	.InfoCards {
+		.infoBoxContainer {
+			left: 15%;
+			top: 30%;
+		}
+
+		.infoBox {
+			margin-bottom: 6rem;
+
+			h3 {
+				font-size: 2.75rem;
+				margin-bottom: 2rem;
+			}
+
+			p {
+				font-size: 1.75rem !important;
+				line-height: 32px;
+			}
+		}
+	}
+
 	.InfoCard {
 		max-width: 480px;
 		min-height: 700px;
