@@ -42,7 +42,7 @@ export default function GalleryCard({ image }) {
 				</p>
 			</section>
 			<Image
-				src={image.node.image.url}
+				src={image.node.image.url ? image.node.image.url : ''}
 				layout="fill"
 				objectFit="cover"
 				objectPosition="center"
