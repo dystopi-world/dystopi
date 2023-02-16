@@ -1,17 +1,19 @@
-import Head from "next/head";
-import { getTimelineItems } from "../cms-service";
-import GameMechanism from "../components/game-mechanism/game-mechanism";
-import Landing from "../components/landing/landing";
-import Newsletter from "../components/newsletter/newsletter";
-import Nfts from "../components/nfts/nfts";
-import Presale from "../components/presale/presale";
-import Roadmap from "../components/roadmap/roadmap";
-import SectionSeparator from "../components/section-separator/section-separator";
-import SocialMedias from "../components/social-medias/social-medias";
-import Story from "../components/story/story";
-import ToGallery from "../components/to-gallery/to-gallery";
-import Tokenomics from "../components/tokenomics/tokenomics";
-import Whitepaper from "../components/whitepaper/whitepaper";
+import Head from 'next/head';
+import { getTimelineItems } from '../cms-service';
+import GameMechanism from '../components/game-mechanism/game-mechanism';
+import InfoCards from '../components/game-mechanism/info-cards/info-cards';
+import Landing from '../components/landing/landing';
+import Newsletter from '../components/newsletter/newsletter';
+import Nfts from '../components/nfts/nfts';
+import Partners from '../components/partners/partners';
+import Presale from '../components/presale/presale';
+import Roadmap from '../components/roadmap/roadmap';
+import SectionSeparator from '../components/section-separator/section-separator';
+import SocialMedias from '../components/social-medias/social-medias';
+import Story from '../components/story/story';
+import ToGallery from '../components/to-gallery/to-gallery';
+import Tokenomics from '../components/tokenomics/tokenomics';
+import Whitepaper from '../components/whitepaper/whitepaper';
 
 export async function getStaticProps() {
 	const timelineItems = (await getTimelineItems()) || [];
@@ -32,13 +34,18 @@ export default function Home({ timelineItems }) {
 				/>
 				<link rel="icon" href="/images/logo.svg" />
 			</Head>
-			<main role="main">
+			<main>
 				<Presale />
-				{/* <SeedSale /> */}
+				{/* <SeedSale /> nem kell */}
 				<Landing />
+				{/* <SectionSeparator /> nem kell
+				<Partners /> nem kell
+				<SectionSeparator /> nem kell */}
+				{/* innentől */}
 				<SocialMedias />
+				<InfoCards />
+				<SectionSeparator />
 				<Story />
-				{/* <SectionSeparator /> */}
 				<GameMechanism />
 				<SectionSeparator />
 				<Nfts />

@@ -15,7 +15,9 @@ function MobileInfosContainer() {
 			{diagramData &&
 				diagramData.map(
 					(data, index) =>
-						index < 2 && <DiagramInfoMobile infos={data.infos} />
+						index < 2 && (
+							<DiagramInfoMobile key={index} infos={data.infos} />
+						)
 				)}
 			<button
 				aria-label="Show more information"
@@ -31,7 +33,10 @@ function MobileInfosContainer() {
 					diagramData.map(
 						(data, index) =>
 							index > 1 && (
-								<DiagramInfoMobile infos={data.infos} />
+								<DiagramInfoMobile
+									key={index}
+									infos={data.infos}
+								/>
 							)
 					)}
 			</div>

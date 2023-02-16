@@ -1,5 +1,5 @@
-@import "/styles/mixins";
-@import "/styles/variables";
+@import '/styles/mixins';
+@import '/styles/variables';
 
 .Landing {
 	max-width: 100vw;
@@ -14,21 +14,20 @@
 		opacity: 0;
 	}
 
+	.imagesContainer {
+		width: 100vw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
 	.imageContainer {
 		position: relative;
-		width: 180%;
-		height: 103%;
-		left: -17rem;
-		top: -3%;
+		width: 100%;
+		height: 100vh;
 	}
 
 	@media (min-width: 759px) {
-		.imageContainer {
-			width: 106%;
-			height: 106%;
-			left: -3%;
-			top: -3%;
-		}
 	}
 
 	@keyframes fadeUpImage {
@@ -49,7 +48,7 @@
 		transform: translateX(-50%);
 		text-align: center;
 		color: $text-primary;
-		font-family: "Gambetta";
+		font-family: 'agaramond';
 		font-style: italic;
 		font-weight: 400;
 		opacity: 0;

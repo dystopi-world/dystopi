@@ -26,6 +26,7 @@ function InfoCard({
 			<Image
 				src={image}
 				objectFit="contain"
+				objectPosition="top"
 				layout="fill"
 				alt="Dystopi NFT"
 			/>

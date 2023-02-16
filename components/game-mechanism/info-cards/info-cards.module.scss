@@ -2,38 +2,69 @@
 @import '/styles/variables';
 
 .InfoCards {
-  margin: 10rem 0 15rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  justify-content: space-evenly;
-  position: relative;
-  z-index: 10;
+	width: 100%;
+	margin: 10rem 0 8rem;
+	position: relative;
+	z-index: 10;
+
+	.imageContainer {
+		position: relative;
+		width: 100vw;
+		height: 80vh;
+		margin: 0 auto;
+		transform: translateY(-7rem);
+
+		img {
+			object-position: top;
+		}
+	}
+
+	.infoBoxContainer {
+		width: 80%;
+		position: relative;
+		top: -3rem;
+		left: 10%;
+	}
+
+	.infoBox {
+		margin-bottom: 2rem;
+		font-size: 1.1rem;
+		line-height: 1.45rem;
+
+		h3 {
+			font-size: 1.5rem;
+		}
+
+		p {
+			&:first-of-type {
+				margin: 1rem 0;
+			}
+		}
+	}
 }
 
 .InfoCard {
-  max-width: 250px;
-  background-color: #26222a;
-  position: relative;
-  left: -2rem;
+	max-width: 250px;
+	background-color: #26222a;
+	position: relative;
+	left: -2rem;
 
-  &:first-of-type {
-    transform: translate(-10%, -10%);
+	&:first-of-type {
+		transform: translate(-10%, -10%);
 
-    img {
-      transform: translateY(-10%);
-    }
-  }
-  &:last-of-type {
-    transform: translate(-10%, 10%);
+		img {
+			transform: translateY(-10%);
+		}
+	}
+	&:last-of-type {
+		transform: translate(-10%, 10%);
 
-    img {
-      transform: scale(0.5) translateY(-55%);
-    }
-  }
+		img {
+			transform: scale(0.5) translateY(-55%);
+		}
+	}
 
-  /*&::before {
+	/*&::before {
     content: '';
     width: 100%;
     height: 100%;
@@ -42,134 +73,182 @@
     top: 1.25%;
     left: 1.25%;
   }*/
-  .contentContainer {
-    position: relative;
-    left: 45%;
-    top: 8rem;
-    width: 100%;
-    h3 {
-      padding-top: 5rem;
-      margin-bottom: 2rem;
-      color: $text-primary;
-      font-size: 1.75rem;
-    }
-    p {
-      color: $text-secondary;
-      margin: 1.5rem 0;
-      font-size: 0.9rem;
-    }
-  }
+	.contentContainer {
+		position: relative;
+		left: 45%;
+		top: 8rem;
+		width: 100%;
+		h3 {
+			padding-top: 5rem;
+			margin-bottom: 2rem;
+			color: $text-primary;
+			font-size: 1.75rem;
+		}
+		p {
+			color: $text-secondary;
+			margin: 1.5rem 0;
+			font-size: 0.9rem;
+		}
+	}
 
-  .decorBorder {
-    transition: $decor-border-transition;
-    position: absolute;
-    background-color: $purple-primary-faded;
-  }
+	.decorBorder {
+		transition: $decor-border-transition;
+		position: absolute;
+		background-color: $purple-primary-faded;
+	}
 
-  .decorBorderTop {
-    width: 100%;
-    height: 1px;
-    top: 7px;
-    left: 8px;
-  }
+	.decorBorderTop {
+		width: 100%;
+		height: 1px;
+		top: 7px;
+		left: 8px;
+	}
 
-  .decorBorderRight {
-    width: 1px;
-    height: calc(100% + 2px);
-    bottom: -7px;
-    right: -9px;
-  }
+	.decorBorderRight {
+		width: 1px;
+		height: calc(100% + 2px);
+		bottom: -7px;
+		right: -9px;
+	}
 
-  .decorBorderBottom {
-    width: 100%;
-    height: 1px;
-    bottom: -7px;
-    right: -8px;
-  }
+	.decorBorderBottom {
+		width: 100%;
+		height: 1px;
+		bottom: -7px;
+		right: -8px;
+	}
 
-  .decorBorderLeft {
-    width: 1px;
-    height: calc(100% + 2px);
-    top: 7px;
-    left: 7px;
-  }
+	.decorBorderLeft {
+		width: 1px;
+		height: calc(100% + 2px);
+		top: 7px;
+		left: 7px;
+	}
 }
 
 @media (min-width: 700px) {
-  .InfoCard {
-    max-width: 320px;
-    left: -7rem;
+	.InfoCards {
+		.infoBoxContainer {
+			width: 60%;
+			left: 15%;
+		}
+	}
 
-    .contentContainer {
-      left: 80%;
-    }
-  }
+	.InfoCard {
+		max-width: 320px;
+		left: -7rem;
+
+		.contentContainer {
+			left: 80%;
+		}
+	}
 }
 
 @media (min-width: 1024px) {
-  .InfoCards {
-    flex-direction: row;
-    gap: 5rem;
-  }
+	.InfoCards {
+		height: 100vh;
+		flex-direction: row;
+		gap: 5rem;
 
-  .InfoCard {
-    max-width: 300px;
-    left: 0;
+		.imageContainer {
+			position: relative;
+			width: 60vw;
+			height: 110%;
+			margin: 0 auto;
 
-    &:first-of-type {
-      transform: translate(-10%, -10%);
-    }
-    &:last-of-type {
-      transform: translate(-10%, 10%);
-    }
+			img {
+				object-position: top;
+				border-radius: 4px;
+			}
+		}
 
-    .contentContainer {
-      transform: translate(0%, 25%);
-      width: 95%;
-      left: 45%;
-      top: 2rem;
-    }
-  }
+		.infoBoxContainer {
+			width: 30%;
+			position: absolute;
+			top: 10%;
+			left: 10%;
+		}
+	}
+
+	.InfoCard {
+		max-width: 300px;
+		left: 0;
+
+		&:first-of-type {
+			transform: translate(-10%, -10%);
+		}
+		&:last-of-type {
+			transform: translate(-10%, 10%);
+		}
+
+		.contentContainer {
+			transform: translate(0%, 25%);
+			width: 95%;
+			left: 45%;
+			top: 2rem;
+		}
+	}
 }
 
 @media (min-width: 1280px) {
-  .InfoCards {
-    gap: 3rem;
-    .InfoCard {
-      .contentContainer {
-        left: 70%;
-      }
-    }
-  }
+	.InfoCards {
+		gap: 3rem;
+		.InfoCard {
+			.contentContainer {
+				left: 70%;
+			}
+		}
+	}
 }
 
 @media (min-width: 1440px) {
-  .InfoCards {
-    gap: 8rem;
-  }
-  .InfoCard {
-    max-width: 330px;
-    left: -5rem;
+	.InfoCards {
+		gap: 8rem;
+	}
+	.InfoCard {
+		max-width: 330px;
+		left: -5rem;
 
-    .contentContainer {
-      width: 100%;
-      transform: translate(3rem, 25%);
-    }
-  }
+		.contentContainer {
+			width: 100%;
+			transform: translate(3rem, 25%);
+		}
+	}
 }
 
 @media (min-width: 2300px) {
-  .InfoCard {
-    max-width: 480px;
-    min-height: 700px;
+	.InfoCards {
+		.infoBoxContainer {
+			left: 15%;
+			top: 30%;
+		}
 
-    .contentContainer {
-      width: 115%;
-      top: 11rem;
+		.infoBox {
+			margin-bottom: 6rem;
 
-      h3 {
-        font-size: 3.5rem;
-      }
-    }
-  }
+			h3 {
+				font-size: 2.75rem;
+				margin-bottom: 2rem;
+			}
+
+			p {
+				font-size: 1.75rem !important;
+				line-height: 32px;
+			}
+		}
+	}
+
+	.InfoCard {
+		max-width: 480px;
+		min-height: 700px;
+
+		.contentContainer {
+			width: 115%;
+			top: 11rem;
+
+			h3 {
+				font-size: 3.5rem;
+			}
+		}
+	}
 }

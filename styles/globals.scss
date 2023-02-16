@@ -1,11 +1,11 @@
-@import "/styles/variables";
+@import '/styles/variables';
 
 * {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
 	font-weight: 400;
-	font-family: gambetta;
+	font-family: agaramond;
 }
 
 html {
@@ -95,6 +95,14 @@ video[poster] {
 }
 
 @font-face {
-	font-family: gambetta;
-	src: url("./gambetta-font/gambetta-light.otf") format("opentype");
+	font-family: agaramond;
+	font-weight: 400;
+	src: url('/fonts/agaramond-lt.bold-regular.otf') format('opentype');
+	// src: url('./agaramond-font/adobe-garamond-lt-bold.ttf') format('opentype');
+}
+
+.testDiv {
+	width: 100%;
+	height: 100vh;
+	background-color: red;
 }

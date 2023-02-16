@@ -112,7 +112,7 @@ function Whitepaper() {
 							Dystopi!
 						</p>
 						<Link
-							href="https://dystopi.gitbook.io/dystopi-whitepaper/"
+							href="https://dystopi.gitbook.io/dystopi-whitepaper-1/"
 							passHref
 						>
 							<a

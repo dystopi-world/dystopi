@@ -1,25 +1,31 @@
-import { useRef, useState, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import { BsArrowLeft, BsArrowRight, BsClockHistory } from "react-icons/bs";
-import { IoCheckmarkDone } from "react-icons/io5";
-import { BiCalendarExclamation } from "react-icons/bi";
-import SectionSeparator from "../section-separator/section-separator";
+import { useRef, useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { BsArrowLeft, BsArrowRight, BsClockHistory } from 'react-icons/bs';
+import { IoCheckmarkDone } from 'react-icons/io5';
+import { BiCalendarExclamation, BiTimer } from 'react-icons/bi';
+import { GrTest } from 'react-icons/gr';
+import { HiOutlineLightBulb } from 'react-icons/hi';
+import { RiTestTubeFill, RiTestTubeLine } from 'react-icons/ri';
+import SectionSeparator from '../section-separator/section-separator';
 // Import Swiper React components
-import { Navigation, EffectFade } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, EffectFade } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import styles from "./roadmap.module.scss";
+import styles from './roadmap.module.scss';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/effect-fade";
-import Tooltip from "../tooltip/tooltip";
-import RoadmapItem from "./roadmap-item";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
+import Tooltip from '../tooltip/tooltip';
+import RoadmapItem from './roadmap-item';
 
 function Roadmap({ timelineItems }) {
 	const swiperPrevButtonRef = useRef(null);
 	const swiperNextButtonRef = useRef(null);
+
+	const [isSwiperAtStart, setIsSwiperAtStart] = useState(true);
+	const [isSwiperAtEnd, setIsSwiperAtEnd] = useState(false);
 
 	const [sliderPerView, setSliderPerView] = useState(4);
 	useEffect(() => {
@@ -49,43 +55,51 @@ function Roadmap({ timelineItems }) {
 	});
 
 	const titleStyle = {
-		top: titleInView ? 0 : "3rem",
+		top: titleInView ? 0 : '3rem',
 		opacity: titleInView ? 1 : 0
 	};
 	const subTitleStyle = {
-		top: subTitleInView ? 0 : "3rem",
+		top: subTitleInView ? 0 : '3rem',
 		opacity: subTitleInView ? 1 : 0
 	};
 	const buttonGroupStyle = {
-		top: buttonGroupInView ? "50%" : "55%",
+		top: buttonGroupInView ? '50%' : '55%',
 		opacity: buttonGroupInView ? 1 : 0
 	};
 
 	const decorLineStyle = {
-		transition: "2000ms",
-		width: sliderInView ? "100%" : 0
+		transition: '2000ms',
+		width: sliderInView ? '100%' : 0
 	};
 
 	const decorLineDotStyle = (delay) => ({
 		opacity: sliderInView ? 1 : 0,
 		transitionDelay: delay,
-		transition: "3000ms"
+		transition: '3000ms'
 	});
 
 	const sliderStyle = {
-		transition: "600ms",
-		position: "relative",
-		top: sliderInView ? 0 : "4rem",
+		transition: '600ms',
+		position: 'relative',
+		top: sliderInView ? 0 : '4rem',
 		opacity: sliderInView ? 1 : 0,
-		overflow: "visible"
+		overflow: 'visible'
+	};
+
+	const navigationButtonPreviousStyle = {
+		opacity: isSwiperAtStart ? 0.6 : 1
+	};
+
+	const navigationButtonNextStyle = {
+		opacity: isSwiperAtEnd ? 0.6 : 1
 	};
 
 	const getIcon = (timelineListItem) => {
-		if (timelineListItem.progressState === "completed")
+		if (timelineListItem.progressState === 'completed')
 			return <IoCheckmarkDone />;
-		if (timelineListItem.progressState === "in_progress")
+		if (timelineListItem.progressState === 'in_progress')
 			return <BsClockHistory />;
-		if (timelineListItem.progressState === "will_be_done")
+		if (timelineListItem.progressState === 'will_be_done')
 			return <BiCalendarExclamation />;
 	};
 
@@ -103,20 +117,42 @@ function Roadmap({ timelineItems }) {
 				Milestones reached, in progress and to be done.
 			</p>
 			<div ref={sliderRef} className={styles.sliderContainer}>
+				<ul className={styles.iconExplanationsList}>
+					<li className={styles.iconExplanationsListItem}>
+						<HiOutlineLightBulb color="#f626a3" size={32} />
+						<p>Planned</p>
+					</li>
+					<li className={styles.iconExplanationsListItem}>
+						<BiTimer color="#ffca28" size={32} />
+						<p>In progress</p>
+					</li>
+					<li className={styles.iconExplanationsListItem}>
+						<RiTestTubeFill color="#26d3f6" size={32} />
+						<p>Testing</p>
+					</li>
+					<li className={styles.iconExplanationsListItem}>
+						<IoCheckmarkDone color="#00e676" size={32} />
+						<p>Finished</p>
+					</li>
+				</ul>
 				<div
 					ref={buttonGroupRef}
 					className={styles.buttonGroup}
 					style={buttonGroupStyle}
 				>
 					<button
+						style={navigationButtonPreviousStyle}
 						aria-label="previous roadmap item"
 						ref={swiperPrevButtonRef}
+						onClick={() => setIsSwiperAtEnd(false)}
 					>
 						<BsArrowLeft />
 					</button>
 					<button
+						style={navigationButtonNextStyle}
 						aria-label="previous roadmap item"
 						ref={swiperNextButtonRef}
+						onClick={() => setIsSwiperAtStart(false)}
 					>
 						<BsArrowRight />
 					</button>
@@ -130,15 +166,15 @@ function Roadmap({ timelineItems }) {
 						<>
 							<div
 								className={styles.decorLineDot}
-								style={decorLineDotStyle("1000ms")}
+								style={decorLineDotStyle('1000ms')}
 							></div>
 							<div
 								className={styles.decorLineDot}
-								style={decorLineDotStyle("2000ms")}
+								style={decorLineDotStyle('2000ms')}
 							></div>
 							<div
 								className={styles.decorLineDot}
-								style={decorLineDotStyle("3000ms")}
+								style={decorLineDotStyle('3000ms')}
 							></div>
 						</>
 					)}
@@ -150,13 +186,12 @@ function Roadmap({ timelineItems }) {
 					modules={[Navigation, EffectFade]}
 					spaceBetween={50}
 					slidesPerView={sliderPerView}
-					//grabCursor={true}
+					// grabCursor={true}
 					navigation={{
 						prevEl: swiperPrevButtonRef.current,
 						nextEl: swiperNextButtonRef.current
 					}}
 					speed={800}
-					loop
 					onInit={(swiper) => {
 						swiper.params.navigation.prevEl =
 							swiperPrevButtonRef.current;
@@ -165,17 +200,23 @@ function Roadmap({ timelineItems }) {
 						swiper.navigation.init();
 						swiper.navigation.update();
 					}}
+					onReachEnd={() => {
+						setIsSwiperAtEnd(true);
+					}}
+					onReachBeginning={() => {
+						setIsSwiperAtStart(true);
+					}}
 				>
 					{timelineItems.map((timelineItem, index) => (
 						<SwiperSlide key={index}>
 							<article>
 								<div
 									className={styles.decorLineDot}
-									style={decorLineDotStyle("1000ms")}
+									style={decorLineDotStyle('1000ms')}
 								></div>
 								<div
 									className={styles.decorLineDot}
-									style={decorLineDotStyle("1000ms")}
+									style={decorLineDotStyle('1000ms')}
 								></div>
 								<h4>{timelineItem.node.title}</h4>
 								<ul>

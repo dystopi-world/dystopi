@@ -5,15 +5,16 @@ import { useEffect, useState } from 'react';
 import {
 	FaMedium,
 	FaReddit,
-	FaTelegramPlane,
 	FaTwitter,
 	FaFacebook,
-	FaInstagramSquare
+	FaInstagramSquare,
+	FaDiscord
 } from 'react-icons/fa';
 import { AiFillInstagram } from 'react-icons/ai';
 import { useInView } from 'react-intersection-observer';
 
 import styles from './footer.module.scss';
+import LinktreeIcon from './linktree-icon';
 
 function Footer() {
 	const [isMobile, setIsMobile] = useState(false);
@@ -52,9 +53,6 @@ function Footer() {
 					<Link href="#story" passHref>
 						<a href="dummy">STORY</a>
 					</Link>
-					<Link href="#game-mechanism" passHref>
-						<a href="dummy">GAME MECHANISM</a>
-					</Link>
 					<Link href="#nfts" passHref>
 						<a href="dummy">NFT</a>
 					</Link>
@@ -68,31 +66,15 @@ function Footer() {
 						<a href="dummy">GALLERY</a>
 					</Link>
 				</div>
-				<div className={styles.separatorDot}></div>
 				<div ref={socialsRef} className={styles.desktopSocials}>
+					<div className={styles.separatorDot}></div>
 					<a
-						aria-label="Navigate to Dystopi's medium.com page"
-						href="https://medium.com/@DYSTOPI"
+						aria-label="Navigate to Dystopi's discord page"
+						href="https://discord.gg/zTxct34m"
 						target="blank"
 					>
-						<FaMedium color="#8c8a8e" />
-						<span>MEDIUM</span>
-					</a>
-					<a
-						aria-label="Navigate to Dystopi's reddit page"
-						href="https://www.reddit.com/user/Dystopi_world"
-						target="blank"
-					>
-						<FaReddit color="#8c8a8e" />
-						<span>REDDIT</span>
-					</a>
-					<a
-						aria-label="Navigate to Dystopi's telegram page"
-						href="https://t.me/+U8zjMRT5LpxmN2Fk"
-						target="blank"
-					>
-						<FaTelegramPlane color="#8c8a8e" />
-						<span>TELEGRAM</span>
+						<FaDiscord />
+						<span>DISCORD</span>
 					</a>
 					<a
 						aria-label="Navigate to Dystopi's twitter page"
@@ -111,6 +93,14 @@ function Footer() {
 						<span>FACEBOOK</span>
 					</a>
 					<a
+						aria-label="Navigate to Dystopi's linktree page"
+						href="https://linktr.ee/dystopi"
+						target="blank"
+					>
+						<LinktreeIcon color="#8a8a8a" width={16} height={16} />
+						<span>LINKTREE</span>
+					</a>
+					<a
 						aria-label="Navigate to Dystopi's instagram page"
 						href="https://www.instagram.com/dystopi.world/"
 						target="blank"
@@ -118,36 +108,33 @@ function Footer() {
 						<AiFillInstagram />
 						<span>INSTAGRAM</span>
 					</a>
+					<a
+						aria-label="Navigate to Dystopi's reddit page"
+						href="https://www.reddit.com/user/Dystopi_world"
+						target="blank"
+					>
+						<FaReddit color="#8c8a8e" />
+						<span>REDDIT</span>
+					</a>
+					<a
+						aria-label="Navigate to Dystopi's medium.com page"
+						href="https://medium.com/@DYSTOPI"
+						target="blank"
+					>
+						<FaMedium color="#8c8a8e" />
+						<span>MEDIUM</span>
+					</a>
 				</div>
 			</nav>
 			{isMobile && (
 				<div ref={socialsRef} className={styles.mobileSocials}>
 					<a
-						aria-label="Navigate to Dystopi's medium.com page"
-						href="https://medium.com/@DYSTOPI"
-						style={socialStyle(0)}
+						aria-label="Navigate to Dystopi's discord page"
+						href="https://discord.gg/zTxct34m"
 						target="blank"
 					>
-						<FaMedium color="#a967ff" />
-						<span>MEDIUM</span>
-					</a>
-					<a
-						aria-label="Navigate to Dystopi's reddit page"
-						href="https://www.reddit.com/user/Dystopi_world"
-						style={socialStyle('200ms')}
-						target="blank"
-					>
-						<FaReddit />
-						<span>REDDIT</span>
-					</a>
-					<a
-						aria-label="Navigate to Dystopi's telegram page"
-						href="https://t.me/+U8zjMRT5LpxmN2Fk"
-						style={socialStyle('400ms')}
-						target="blank"
-					>
-						<FaTelegramPlane />
-						<span>TELEGRAM</span>
+						<FaDiscord color="#a967ff" />
+						<span>DISCORD</span>
 					</a>
 					<a
 						aria-label="Navigate to Dystopi's twitter page"
@@ -167,12 +154,38 @@ function Footer() {
 						<span>FACEBOOK</span>
 					</a>
 					<a
+						aria-label="Navigate to Dystopi's linktree page"
+						href="https://linktr.ee/dystopi"
+						target="blank"
+					>
+						<LinktreeIcon color="#a967ff" width={16} height={16} />
+						<span>LINKTREE</span>
+					</a>
+					<a
 						aria-label="Navigate to Dystopi's instagram page"
 						href="https://www.instagram.com/dystopi.world/"
 						target="blank"
 					>
 						<AiFillInstagram />
 						<span>INSTAGRAM</span>
+					</a>
+					<a
+						aria-label="Navigate to Dystopi's reddit page"
+						href="https://www.reddit.com/user/Dystopi_world"
+						style={socialStyle('200ms')}
+						target="blank"
+					>
+						<FaReddit />
+						<span>REDDIT</span>
+					</a>
+					<a
+						aria-label="Navigate to Dystopi's medium.com page"
+						href="https://medium.com/@DYSTOPI"
+						style={socialStyle(0)}
+						target="blank"
+					>
+						<FaMedium color="#a967ff" />
+						<span>MEDIUM</span>
 					</a>
 				</div>
 			)}
