@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import DecorSquare from '../decor-square/decor-square';
 import styles from './game-mechanism.module.scss';
-import InfoCards from './info-cards/info-cards';
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useState, useRef } from 'react';
 import SectionSeparator from '../section-separator/section-separator';
