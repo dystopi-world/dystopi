@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Scene from '../../3d/scene/scene';
+// import Scene from '../../3d/scene/scene';
 import styles from './info-cards.module.scss';
 
 function InfoCard({

@@ -7,7 +7,6 @@ import {
 	FaReddit,
 	FaTwitter,
 	FaFacebook,
-	FaInstagramSquare,
 	FaDiscord
 } from 'react-icons/fa';
 import { AiFillInstagram } from 'react-icons/ai';

@@ -3,9 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import { BsArrowLeft, BsArrowRight, BsClockHistory } from 'react-icons/bs';
 import { IoCheckmarkDone } from 'react-icons/io5';
 import { BiCalendarExclamation, BiTimer } from 'react-icons/bi';
-import { GrTest } from 'react-icons/gr';
-import { HiOutlineLightBulb } from 'react-icons/hi';
-import { RiTestTubeFill, RiTestTubeLine } from 'react-icons/ri';
+import { HiOutlineLightBulb, HiOutlineClipboardCheck } from 'react-icons/hi';
 import SectionSeparator from '../section-separator/section-separator';
 // Import Swiper React components
 import { Navigation, EffectFade } from 'swiper';
@@ -17,7 +15,6 @@ import styles from './roadmap.module.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
-import Tooltip from '../tooltip/tooltip';
 import RoadmapItem from './roadmap-item';
 
 function Roadmap({ timelineItems }) {
@@ -119,19 +116,19 @@ function Roadmap({ timelineItems }) {
 			<div ref={sliderRef} className={styles.sliderContainer}>
 				<ul className={styles.iconExplanationsList}>
 					<li className={styles.iconExplanationsListItem}>
-						<HiOutlineLightBulb color="#f626a3" size={32} />
+						<HiOutlineLightBulb color="#893982" size={32} />
 						<p>Planned</p>
 					</li>
 					<li className={styles.iconExplanationsListItem}>
-						<BiTimer color="#ffca28" size={32} />
+						<BiTimer color="#B69E4B" size={32} />
 						<p>In progress</p>
 					</li>
 					<li className={styles.iconExplanationsListItem}>
-						<RiTestTubeFill color="#26d3f6" size={32} />
+						<HiOutlineClipboardCheck color="#450DA7" size={32} />
 						<p>Testing</p>
 					</li>
 					<li className={styles.iconExplanationsListItem}>
-						<IoCheckmarkDone color="#00e676" size={32} />
+						<IoCheckmarkDone color="#167D4E" size={32} />
 						<p>Finished</p>
 					</li>
 				</ul>
