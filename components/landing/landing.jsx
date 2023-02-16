@@ -27,31 +27,17 @@ function Landing() {
 
 	return (
 		<section className={styles.Landing} id="home" role="banner">
-			<div className={styles.imagesContainer}>
-				<div
-					ref={isMobile ? tiltRef : null}
-					className={styles.imageContainer}
-				>
-					<Image
-						src="/images/landing.jpg"
-						layout="fill"
-						objectFit="cover"
-						alt="Dystopi heroes fighting against a monster to earn NFTs"
-						priority
-					/>
-				</div>
-				<div
-					ref={isMobile ? tiltRef : null}
-					className={styles.imageContainer}
-				>
-					<Image
-						src="/images/landing2.png"
-						layout="fill"
-						objectFit="cover"
-						alt="Dystopi heroes fighting against a monster to earn NFTs"
-						priority
-					/>
-				</div>
+			<div
+				ref={isMobile ? tiltRef : null}
+				className={styles.imageContainer}
+			>
+				<Image
+					src="/images/landing.jpg"
+					layout="fill"
+					objectFit="cover"
+					alt="Dystopi heroes fighting against a monster to earn NFTs"
+					priority
+				/>
 			</div>
 			<ScrollForMore />
 		</section>

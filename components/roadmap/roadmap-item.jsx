@@ -5,6 +5,7 @@ import { IoCheckmarkDone } from 'react-icons/io5';
 import { BiCalendarExclamation, BiTimer } from 'react-icons/bi';
 import Tooltip from '../tooltip/tooltip';
 import { HiOutlineLightBulb } from 'react-icons/hi';
+import { RiTestTubeFill } from 'react-icons/ri';
 
 function RoadmapItem({ timelineListItem, styles }) {
 	const [showTooltip, setShowTooltip] = useState(false);
@@ -21,11 +22,20 @@ function RoadmapItem({ timelineListItem, styles }) {
 			onMouseEnter={() => setShowTooltip(true)}
 			onMouseLeave={onMouseLeave}
 		>
+			{timelineListItem.progressState === 'finished' && (
+				<IoCheckmarkDone color="#00e676" className={styles.testTick} />
+			)}
 			{timelineListItem.progressState === 'completed' && (
 				<IoCheckmarkDone color="#00e676" className={styles.testTick} />
 			)}
 			{timelineListItem.progressState === 'in_progress' && (
 				<BiTimer color="#ffca28" />
+			)}
+			{timelineListItem.progressState === 'testing' && (
+				<RiTestTubeFill color="#26d3f6" />
+			)}
+			{timelineListItem.progressState === 'planned' && (
+				<HiOutlineLightBulb color="#f626a3" />
 			)}
 			{timelineListItem.progressState === 'will_be_done' && (
 				<HiOutlineLightBulb color="#f626a3" />

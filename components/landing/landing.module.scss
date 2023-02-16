@@ -15,38 +15,19 @@
 	}
 
 	.imagesContainer {
-		width: 216vw;
+		width: 100vw;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		animation-name: slide;
-		animation-duration: 30000ms;
-		animation-delay: 1000ms;
-		animation-fill-mode: both;
-		animation-iteration-count: infinite;
 	}
 
 	.imageContainer {
 		position: relative;
-		width: 50%;
+		width: 100%;
 		height: 100vh;
-		left: -0;
-		top: 0%;
 	}
 
 	@media (min-width: 759px) {
-		.imageContainer {
-			width: 50%;
-			height: 100vh;
-			left: 0;
-			top: 0;
-
-			&:last-of-type {
-				width: 30%;
-				margin-left: 20%;
-				left: -8%;
-			}
-		}
 	}
 
 	@keyframes fadeUpImage {
@@ -83,23 +64,5 @@
 	100% {
 		bottom: 2.5rem;
 		opacity: 1;
-	}
-}
-
-@keyframes slide {
-	0% {
-		transform: translateX(0);
-	}
-	49% {
-		transform: translateX(0);
-	}
-	50% {
-		transform: translateX(-117vw);
-	}
-	99% {
-		transform: translateX(-117vw);
-	}
-	100% {
-		transform: translateX(0);
 	}
 }
