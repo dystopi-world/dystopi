@@ -69,7 +69,7 @@ function Footer() {
 					<div className={styles.separatorDot}></div>
 					<a
 						aria-label="Navigate to Dystopi's discord page"
-						href="https://discord.gg/zTxct34m"
+						href="https://discord.gg/zzt4zzYFC4"
 						target="blank"
 					>
 						<FaDiscord />
@@ -129,7 +129,7 @@ function Footer() {
 				<div ref={socialsRef} className={styles.mobileSocials}>
 					<a
 						aria-label="Navigate to Dystopi's discord page"
-						href="https://discord.gg/zTxct34m"
+						href="https://discord.gg/zzt4zzYFC4"
 						target="blank"
 					>
 						<FaDiscord color="#a967ff" />

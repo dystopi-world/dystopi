@@ -1,18 +1,10 @@
 import { useInView } from 'react-intersection-observer';
-import { useEffect, useState } from 'react';
 
 import Diagram from './diagram';
 import MobileInfosContainer from './mobile-infos-container';
 import styles from './tokenomics.module.scss';
 
 function Tokenomics() {
-	const [isMobile, setIsMobile] = useState(false);
-	useEffect(() => {
-		if (window.innerHeight < 800) {
-			setIsMobile(true);
-		}
-	}, []);
-
 	const [titleRef, titleInView] = useInView({
 		threshold: 0.3,
 		triggerOnce: true

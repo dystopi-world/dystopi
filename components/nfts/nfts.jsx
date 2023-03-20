@@ -36,13 +36,6 @@ function Nfts() {
 		opacity: subTitleInView ? 1 : 0
 	};
 
-	const [isMobile, setIsMobile] = useState(false);
-	useEffect(() => {
-		if (window.innerWidth < 768) {
-			setIsMobile(true);
-		}
-	}, []);
-
 	const tiltRef = useRef(null);
 
 	const [options, setOptions] = useState({

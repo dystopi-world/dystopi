@@ -1,16 +1,7 @@
 import Image from 'next/image';
-import { useInView } from 'react-intersection-observer';
 import styles from './info-cards.module.scss';
 
 function InfoCards() {
-	const [firstCardRef, firstCardInView] = useInView({
-		threshold: 0.4,
-		triggerOnce: true
-	});
-	const [secondCardRef, secondCardInView] = useInView({
-		threshold: 0.4,
-		triggerOnce: true
-	});
 	return (
 		<div className={styles.InfoCards} id="story">
 			<div className={styles.imageContainer}>

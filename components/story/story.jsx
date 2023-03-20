@@ -1,5 +1,4 @@
 import { useInView } from 'react-intersection-observer';
-import SocialMedias from '../social-medias/social-medias';
 import Characters from './characters/characters';
 import styles from './story.module.scss';
 

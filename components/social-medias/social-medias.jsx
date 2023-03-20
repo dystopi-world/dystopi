@@ -21,7 +21,7 @@ function SocialMedias() {
 		<nav className={styles.SocialMedias}>
 			<ul ref={socialMediasRef}>
 				<li style={socialMediasStyle(0)}>
-					<a href="https://discord.gg/zTxct34m" target="blank">
+					<a href="https://discord.gg/zzt4zzYFC4" target="blank">
 						<FaDiscord />
 					</a>
 				</li>

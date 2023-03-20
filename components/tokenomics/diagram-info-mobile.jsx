@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import styles from './diagram-info-mobile.module.scss';
 
 function DiagramInfoMobile({ infos }) {

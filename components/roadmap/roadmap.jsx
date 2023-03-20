@@ -91,15 +91,6 @@ function Roadmap({ timelineItems }) {
 		opacity: isSwiperAtEnd ? 0.6 : 1
 	};
 
-	const getIcon = (timelineListItem) => {
-		if (timelineListItem.progressState === 'completed')
-			return <IoCheckmarkDone />;
-		if (timelineListItem.progressState === 'in_progress')
-			return <BsClockHistory />;
-		if (timelineListItem.progressState === 'will_be_done')
-			return <BiCalendarExclamation />;
-	};
-
 	return (
 		<section className={styles.Roadmap}>
 			<SectionSeparator />

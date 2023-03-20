@@ -1,16 +1,9 @@
-import Image from "next/image";
-import styles from "../characters.module.scss";
+import styles from '../characters.module.scss';
 
 function Character({ image, characterName, description }) {
 	return (
 		<article className={styles.Character}>
 			<div className={styles.imageContainer}>
-				{/*<Image
-          src={image}
-          layout="fill"
-          objectFit="contain"
-          alt={`Dystopi's playable ${characterName} character`}
-  /> */}
 				<video
 					autoPlay
 					playsInline
