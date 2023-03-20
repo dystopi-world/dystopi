@@ -11,8 +11,6 @@ function InfoCard({
 	paragraph_1,
 	paragraph_2
 }) {
-	const cardStyle = (inView) => ({});
-
 	const decorBorderHorizontalStyle = {
 		width: cardInView ? '100%' : 0
 	};

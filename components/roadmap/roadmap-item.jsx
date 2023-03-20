@@ -1,24 +1,11 @@
 import React from 'react';
-import { useState } from 'react';
 import { IoCheckmarkDone } from 'react-icons/io5';
 import { BiTimer } from 'react-icons/bi';
 import { HiOutlineLightBulb, HiOutlineClipboardCheck } from 'react-icons/hi';
 
 function RoadmapItem({ timelineListItem, styles }) {
-	const [showTooltip, setShowTooltip] = useState(false);
-	const [willClose, setWillClose] = useState(false);
-
-	const onMouseLeave = () => {
-		setShowTooltip(false);
-		setWillClose(false);
-	};
-
 	return (
-		<li
-			style={{ position: 'relative' }}
-			onMouseEnter={() => setShowTooltip(true)}
-			onMouseLeave={onMouseLeave}
-		>
+		<li style={{ position: 'relative' }}>
 			{timelineListItem.progressState === 'finished' && (
 				<IoCheckmarkDone color="#167D4E" className={styles.testTick} />
 			)}
@@ -38,12 +25,6 @@ function RoadmapItem({ timelineListItem, styles }) {
 				<HiOutlineLightBulb color="#893982" />
 			)}
 			{timelineListItem.text}
-			{/* <Tooltip
-				showTooltip={showTooltip}
-				bottom="101%"
-				left="1.5rem"
-				willClose={willClose}
-			/> */}
 		</li>
 	);
 }

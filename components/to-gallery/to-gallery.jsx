@@ -1,8 +1,7 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useInView } from "react-intersection-observer";
-import Button from "../button/button";
-import styles from "./to-gallery.module.scss";
+import { useRouter } from 'next/router';
+import { useInView } from 'react-intersection-observer';
+import Button from '../button/button';
+import styles from './to-gallery.module.scss';
 
 function ToGallery() {
 	const router = useRouter();
@@ -12,8 +11,8 @@ function ToGallery() {
 	});
 
 	const decorBorderStyle = {
-		width: galleryInView ? "calc(100% + 6px)" : 0,
-		height: galleryInView ? "calc(100% + 6px)" : 0
+		width: galleryInView ? 'calc(100% + 6px)' : 0,
+		height: galleryInView ? 'calc(100% + 6px)' : 0
 	};
 
 	const buttonZindex = {
@@ -21,7 +20,7 @@ function ToGallery() {
 	};
 
 	const goToGallery = () => {
-		router.push("/gallery");
+		router.push('/gallery');
 	};
 	return (
 		<section ref={galleryRef} className={styles.ToGallery}>
